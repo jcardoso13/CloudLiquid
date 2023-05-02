@@ -1,0 +1,3 @@
+[submodule "ContentFactory"]
+	path = ContentFactory
+	url = git@github.com:AzureIntegrationServicesPT/ContentFactory.git
