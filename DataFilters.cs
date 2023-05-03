@@ -405,5 +405,15 @@ namespace CloudLiquid
             string decodedString = Encoding.UTF8.GetString(data);
             return decodedString;
         }
+
+        public static string FormatDateTime(Context context, object timestamp, string format = "yyyy-MM-ddTHH:mm:ss.fffffffK", string locale = "en-us")
+        {
+            if(timestamp == null)
+                return null;
+            DateTime newdate = new DateTime();
+            newdate = DateTime.Parse(timestamp.ToString());
+            return newdate.ToString(format);
+        }
+        
     }
 }
