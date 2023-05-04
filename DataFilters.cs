@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using System.Xml;
 using Newtonsoft.Json.Linq;
 using System.Text;
+using System.Globalization;
 
 namespace CloudLiquid
 {
@@ -412,7 +413,7 @@ namespace CloudLiquid
                 return null;
             DateTime newdate = new DateTime();
             newdate = DateTime.Parse(timestamp.ToString());
-            return newdate.ToString(format);
+            return newdate.ToString(format,new CultureInfo(locale));
         }
         
     }
