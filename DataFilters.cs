@@ -407,6 +407,7 @@ namespace CloudLiquid
             return decodedString;
         }
 
+        //https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-8.0 for locale and Format usage
         public static string FormatDateTime(Context context, object timestamp, string format = "yyyy-MM-ddTHH:mm:ss.fffffffK", string locale = "en-us")
         {
             if(timestamp == null)
@@ -415,6 +416,5 @@ namespace CloudLiquid
             newdate = DateTime.Parse(timestamp.ToString());
             return newdate.ToString(format,new CultureInfo(locale));
         }
-        
     }
 }
