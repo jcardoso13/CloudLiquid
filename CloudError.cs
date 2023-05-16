@@ -7,14 +7,14 @@ namespace CloudLiquid
 {    
     public class CloudError
 	{
-		private string Error = null;
-		private DateTime TimeStamp; //DateTime.Now
-		private string Function = null;
-		private string Action = null;
+		public string Error = null;
+		public DateTime TimeStamp; //DateTime.Now
+		public string Function = null;
+		public string Action = null;
 
-		private HttpStatusCode Code;
+		public HttpStatusCode Code;
 
-		private string Exception=null;
+		public string Exception=null;
 
 		public CloudError(string _error, string _function,string _action, HttpStatusCode _code,string _exception)
 		{
@@ -31,7 +31,7 @@ namespace CloudLiquid
             string output=null;
             switch(responseContentType)
 			{
-				case "application/json": output= JsonConvert.SerializeObject(this);
+				case "application/json": output= JsonConvert.SerializeObject(this,Formatting.Indented);
 				break;
 				case "application/xml": System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(this.GetType());
 				using(StringWriter textWriter = new StringWriter())
