@@ -25,6 +25,15 @@ namespace CloudLiquid
             {"Checking_Output_For_Errors","InnerException found in the Output from Liquid Engine"}
         };
 
+        static AzureCloudLiquid()
+        {
+            Template.RegisterTag<AzureTags.IncludeAzure>("include_azure");
+            Template.RegisterTag<DataTags.CaptureJSON>("capturejson");
+            Template.RegisterTag<DataTags.CaptureJSON>("capture_json");
+            Template.RegisterTag<DataTags.CaptureXML>("capture_xml");
+            Template.RegisterFilter(typeof(DataFilters));
+        }
+
         public static string Run(Hash input, string file)
         {
             action="CloudLiquid_Start";
@@ -33,11 +42,6 @@ namespace CloudLiquid
             AzureTags.FileSystem = FileSystem;
             AzureTags.log = log;
             // Register Filters
-            Template.RegisterTag<AzureTags.IncludeAzure>("include_azure");
-            Template.RegisterTag<DataTags.CaptureJSON>("capturejson");
-            Template.RegisterTag<DataTags.CaptureJSON>("capture_json");
-            Template.RegisterTag<DataTags.CaptureXML>("capture_xml");
-            Template.RegisterFilter(typeof(DataFilters));
             // Set AzureFIlters Parameters
             try
             {
