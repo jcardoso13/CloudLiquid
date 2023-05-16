@@ -27,6 +27,7 @@ namespace CloudLiquid
 
         static AzureCloudLiquid()
         {
+            // Register Filters
             Template.RegisterTag<AzureTags.IncludeAzure>("include_azure");
             Template.RegisterTag<DataTags.CaptureJSON>("capturejson");
             Template.RegisterTag<DataTags.CaptureJSON>("capture_json");
@@ -41,8 +42,6 @@ namespace CloudLiquid
             // Set AzureTags Parameters
             AzureTags.FileSystem = FileSystem;
             AzureTags.log = log;
-            // Register Filters
-            // Set AzureFIlters Parameters
             try
             {
                 action="Parsing_Liquid";
