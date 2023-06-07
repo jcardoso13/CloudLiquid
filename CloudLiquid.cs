@@ -28,6 +28,7 @@ namespace CloudLiquid
         static AzureCloudLiquid()
         {
             // Register Filters
+            Template.RegisterTag<DataTags.IncludeLocal>("include_local");
             Template.RegisterTag<AzureTags.IncludeAzure>("include_azure");
             Template.RegisterTag<DataTags.CaptureJSON>("capturejson");
             Template.RegisterTag<DataTags.CaptureJSON>("capture_json");
