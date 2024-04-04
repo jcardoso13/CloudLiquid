@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
@@ -9,18 +9,11 @@
 		<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.0.1"/>
 		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1"/>
 		<PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0"/>
-		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.0"/>
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.5"/>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.12.0"/>
+		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.1"/>
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.6"/>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1"/>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0"/>
-    <PackageReference Include="Serilog" Version="2.12.0"/>
-    <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0"/>
-    <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0"/>
-    <ProjectReference Include = "./ContentFactory/ContentFactory.csproj" />
-    <Content Remove="ContentFactory\**" />
-    <Compile Remove="ContentFactory\**" />
-    <EmbeddedResource Remove="ContentFactory\**" />
-    <None Remove="ContentFactory\**" />
+    <PackageReference Include = "CloudLiquid.ContentFactory" Version="1.0.2" />
 </ItemGroup>
 
 </Project>
