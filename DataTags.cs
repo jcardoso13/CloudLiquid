@@ -8,7 +8,7 @@ using DotLiquid.Exceptions;
 using DotLiquid.Util;
 using Azure.Storage.Blobs;
 using Microsoft.Extensions.Logging;
-using TransformData.ContentFactory;
+using CloudLiquid.ContentFactory;
 using Newtonsoft.Json;
 using System.Xml.Linq;
 using DotLiquid.FileSystems;
@@ -23,7 +23,7 @@ namespace CloudLiquid
         {
 
             internal static Regex VariableSegmentRegex => LazyVariableSegmentRegex.Value;
-            private static readonly Lazy<Regex> LazyVariableSegmentRegex = new Lazy<Regex>(() => R.B(R.Q(@"\A\s*(?<Variable>{0}+)\s*\Z"), Liquid.VariableSegment), LazyThreadSafetyMode.ExecutionAndPublication);
+            private static readonly Lazy<Regex> LazyVariableSegmentRegex = new Lazy<Regex>(() => R.B(R.Q(@"\A\s*(?<Variable>{0}+)\s*\Z"), DotLiquid.Liquid.VariableSegment), LazyThreadSafetyMode.ExecutionAndPublication);
 
 
             private string _to;
@@ -57,7 +57,7 @@ namespace CloudLiquid
         {
 
             internal static Regex VariableSegmentRegex => LazyVariableSegmentRegex.Value;
-            private static readonly Lazy<Regex> LazyVariableSegmentRegex = new Lazy<Regex>(() => R.B(R.Q(@"\A\s*(?<Variable>{0}+)\s*\Z"), Liquid.VariableSegment), LazyThreadSafetyMode.ExecutionAndPublication);
+            private static readonly Lazy<Regex> LazyVariableSegmentRegex = new Lazy<Regex>(() => R.B(R.Q(@"\A\s*(?<Variable>{0}+)\s*\Z"), DotLiquid.Liquid.VariableSegment), LazyThreadSafetyMode.ExecutionAndPublication);
 
 
             private string _to;
@@ -94,7 +94,7 @@ namespace CloudLiquid
 
                 public class IncludeLocal : DotLiquid.Block
         {
-            private static readonly Regex Syntax = R.B(@"({0}+)(\s+(?:with|for)\s+({0}+))?", Liquid.QuotedFragment);
+            private static readonly Regex Syntax = R.B(@"({0}+)(\s+(?:with|for)\s+({0}+))?", DotLiquid.Liquid.QuotedFragment);
 
             private string _templateName, _variableName;
             private Dictionary<string, string> _attributes;
@@ -109,7 +109,7 @@ namespace CloudLiquid
                     if (_variableName == string.Empty)
                         _variableName = null;
                     _attributes = new Dictionary<string, string>(Template.NamingConvention.StringComparer);
-                    R.Scan(markup, Liquid.TagAttributes, (key, value) => _attributes[key] = value);
+                    R.Scan(markup, DotLiquid.Liquid.TagAttributes, (key, value) => _attributes[key] = value);
                 }
                 else
                     throw new SyntaxException("Syntax Error in 'include' tag - Valid syntax: include [template]");

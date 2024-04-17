@@ -5,7 +5,7 @@ using DotLiquid.Exceptions;
 using DotLiquid.Util;
 using Azure.Storage.Blobs;
 using Microsoft.Extensions.Logging;
-using TransformData.ContentFactory;
+using CloudLiquid.ContentFactory;
 using Newtonsoft.Json;
 using System.Xml.Linq;
 using System.Xml;
