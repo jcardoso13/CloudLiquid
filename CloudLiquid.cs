@@ -5,7 +5,7 @@ using System.Net;
 
 namespace CloudLiquid
 {
-    public static class AzureCloudLiquid
+    public static class CloudLiquid
     {
 
         public static BlobContainerClient FileSystem;
@@ -25,7 +25,7 @@ namespace CloudLiquid
             {"Checking_Output_For_Errors","InnerException found in the Output from Liquid Engine"}
         };
 
-        static AzureCloudLiquid()
+        static CloudLiquid()
         {
             // Register Filters
             Template.RegisterTag<DataTags.IncludeLocal>("include_local");
