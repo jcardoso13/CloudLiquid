@@ -14,8 +14,13 @@ This is a lib project so it's not a runnable project. It's used by other repos t
 
 This Project is hosted on a public Repo on Github
 
-https://github.com/jcardoso13/CloudLiquid
+<https://github.com/jcardoso13/CloudLiquid>
 
 This project is a WIP (Work-In-Progress)
 
 More Documentation and Improvements to follow
+
+Any Questions or Feature request, please add an Issue or contact Repo Owner
+
+João Pedro Cardoso
+<jpcardoso@outlook.pt>
