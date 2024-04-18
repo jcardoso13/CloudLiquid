@@ -15,6 +15,10 @@ namespace CloudLiquid
 		public HttpStatusCode Code;
 
 		public string Exception=null;
+		
+		public CloudError()
+		{
+		}
 
 		public CloudError(string _error, string _function,string _action, HttpStatusCode _code,string _exception)
 		{
