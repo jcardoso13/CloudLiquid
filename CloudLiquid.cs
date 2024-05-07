@@ -1,82 +1,114 @@
-using DotLiquid;
 using Azure.Storage.Blobs;
+using CloudLiquid.Tags;
+using DotLiquid;
 using Microsoft.Extensions.Logging;
-using System.Net;
+using System.Text;
 
 namespace CloudLiquid
 {
-    public static class Liquid
+    public class CloudLiquid
     {
+        #region Private Members
 
-        public static BlobContainerClient FileSystem;
-        public static ILogger log;
-        public static string sqlConnection;
-
-        public static string output;
-
-        public static string action;
-
-        public static string message;
-
-        internal static Dictionary<string,string> _dict = new Dictionary<string, string>{
+        private static readonly Dictionary<string, string> _dict = new Dictionary<string, string>{
             {"CloudLiquid_Start","Error Registering Tags and Templates"},
             {"Parsing_Liquid","Error parsing Liquid"},
             {"Rendering_Output","Error rendering output using DotLiquid Engine"},
             {"Checking_Output_For_Errors","InnerException found in the Output from Liquid Engine"}
         };
 
-        static Liquid()
+        private readonly BlobContainerClient blobContainerClient;
+        private readonly ILogger logger;
+
+        #endregion
+
+        #region Constructors
+
+        public CloudLiquid() { }
+
+
+        public CloudLiquid(ILogger logger) : this()
         {
-            // Register Filters
-            Template.RegisterTag<DataTags.IncludeLocal>("include_local");
-            Template.RegisterTag<AzureTags.IncludeAzure>("include_azure");
-            Template.RegisterTag<DataTags.CaptureJSON>("capturejson");
-            Template.RegisterTag<DataTags.CaptureJSON>("capture_json");
-            Template.RegisterTag<DataTags.CaptureXML>("capture_xml");
+            this.logger = logger;
+        }
+
+        public CloudLiquid(BlobContainerClient blobContainerClient) : this()
+        {
+            this.blobContainerClient = blobContainerClient;
+        }
+
+        public CloudLiquid(ILogger logger, BlobContainerClient blobContainerClient) : this()
+        {
+            this.logger = logger;
+            this.blobContainerClient = blobContainerClient;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        public void InitializeTagsAndFilters()
+        {
+            Template.RegisterTagFactory(new CloudLiquidTagFactory(typeof(IncludeLocal), "include_local", logger));
+            Template.RegisterTagFactory(new CloudLiquidTagFactory(typeof(AzureTag), "include_azure", logger, blobContainerClient));
+            Template.RegisterTagFactory(new CloudLiquidTagFactory(typeof(CaptureJSON), "capture_json", logger));
+            Template.RegisterTagFactory(new CloudLiquidTagFactory(typeof(CaptureXML), "capture_xml", logger));
             Template.RegisterFilter(typeof(DataFilters));
         }
 
-        public static string Run(Hash input, string file)
+        public string Run(Hash input, string file)
         {
-            action="CloudLiquid_Start";
-            log.LogInformation("Starting CloudLiquidRuntime");
-            // Set AzureTags Parameters
-            AzureTags.FileSystem = FileSystem;
-            AzureTags.log = log;
+            string action = "CloudLiquid_Start";
+
+            logger.LogInformation("Starting CloudLiquidRuntime");
+
+            string output;
+
             try
             {
-                action="Parsing_Liquid";
+                action = "Parsing_Liquid";
+
                 Template liquid = Template.Parse(file);
-                action="Rendering_Output";
+
+                action = "Rendering_Output";
+
                 output = liquid.Render(input);
-                if (liquid.Errors != null && liquid.Errors.Count > 0)
+
+                if (liquid.Errors?.Count > 0)
                 {
-                    log.LogInformation("Errors Found:");
-                    string concat_message = "";
+                    logger.LogInformation("Errors Found:");
+
+                    StringBuilder sbMessage = new();
+
                     int count = liquid.Errors.Count > 5 ? 5 : liquid.Errors.Count;
+
                     for (int i = 0; i < count; i++)
                     {
                         if (liquid.Errors[i].InnerException != null)
                         {
-                            action="Checking_Output_For_Errors";
+                            action = "Checking_Output_For_Errors";
                             throw new Exception(liquid.Errors[i].Message);
                         }
                         else
                         {
-                            concat_message += "Warning rendering Liquid liquid:" + liquid.Errors[i].Message + "\n";
+                            sbMessage.AppendLine($"Warning rendering Liquid liquid: {liquid.Errors[i].Message}");
                         }
                     }
-                    log.LogInformation("Found "+liquid.Errors.Count+" errors but only "+count+" shown");
-                    log.LogInformation(concat_message);
+
+                    logger.LogWarning($"Found {liquid.Errors.Count} errors but only {count} shown.");
+
+                    logger.LogWarning(sbMessage.ToString());
                 }
             }
             catch (Exception ex)
             {
-                try { log.LogError(ex.Message, ex); } catch { }
-                message = _dict[action];
-                throw new Exception(ex.Message);
+                try { logger.LogError(ex.Message, ex); } catch { }
+                throw new Exception($"{_dict[action]}: {ex.Message}");
             }
+
             return output;
         }
+
+        #endregion
     }
 }

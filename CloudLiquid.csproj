@@ -5,16 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
-		<PackageReference Include="DotLiquid" Version="2.2.656"/>
-		<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.0.1"/>
-		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1"/>
-		<PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0"/>
-		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.1"/>
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.6"/>
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1"/>
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0"/>
-    <PackageReference Include ="CloudLiquid.ContentFactory" Version="1.0.3" />
-    <None Include="README.md" Pack="true" PackagePath="\"/>
+		<PackageReference Include="DotLiquid" Version="2.2.656" />
+		<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.0.1" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
+		<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="6.0.1" />
+		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="CloudLiquid.ContentFactory" Version="1.0.3" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
 </ItemGroup>
 <PropertyGroup>
     <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
