@@ -70,10 +70,6 @@ namespace CloudLiquid.Tags
             base.Initialize(tagName, markup, tokens);
         }
 
-        protected override void Parse(List<string> tokens)
-        {
-        }
-
         public override void Render(Context context, TextWriter result)
         {
             if (this.templateName == null || blobContainerClient == null || this.Logger == null || attributes == null)

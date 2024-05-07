@@ -1,4 +1,5 @@
 using Azure.Storage.Blobs;
+using CloudLiquid.ObjectModel;
 using CloudLiquid.Tags;
 using DotLiquid;
 using Microsoft.Extensions.Logging;
@@ -19,6 +20,9 @@ namespace CloudLiquid
 
         private readonly BlobContainerClient blobContainerClient;
         private readonly ILogger logger;
+
+        private string action;
+        private string errorMessage;
 
         #endregion
 
@@ -56,13 +60,15 @@ namespace CloudLiquid
             Template.RegisterFilter(typeof(DataFilters));
         }
 
-        public string Run(Hash input, string file)
+        public RunResult Run(Hash input, string file)
         {
-            string action = "CloudLiquid_Start";
+            RunResult result = new() { Success = true };
+
+            action = "CloudLiquid_Start";
 
             logger.LogInformation("Starting CloudLiquidRuntime");
 
-            string output;
+            string output = null;
 
             try
             {
@@ -103,10 +109,15 @@ namespace CloudLiquid
             catch (Exception ex)
             {
                 try { logger.LogError(ex.Message, ex); } catch { }
-                throw new Exception($"{_dict[action]}: {ex.Message}");
+                errorMessage = _dict[action];
+                result.Success = false;
+                result.ErrorMessage = errorMessage;
+                result.ErrorAction = action;
             }
 
-            return output;
+            result.Output = output;
+
+            return result;
         }
 
         #endregion
