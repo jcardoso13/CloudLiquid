@@ -92,13 +92,13 @@ namespace CloudLiquid.Tags
 
             this.Logger.LogInformation($"Liquid Action:Include Azure\n Filename: {filename}\n Status: FETCHING");
 
-            var container = blobContainerClient.GetBlobClient(filename);
+            var blobClient = blobContainerClient.GetBlobClient(filename);
 
-            this.Logger.LogInformation($"Container/Blob Name is liquid-transforms/{container.Name}");
+            this.Logger.LogInformation($"Container/Blob Name is liquid-transforms/{blobClient.Name}");
 
-            var azResponse = container.Download();
+            var azResponse = blobClient.Download();
 
-            StreamReader reader = new StreamReader(azResponse.Value.Content);
+            StreamReader reader = new(azResponse.Value.Content);
 
             var inputBlob = reader.ReadToEnd();
 

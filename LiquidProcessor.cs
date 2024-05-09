@@ -1,51 +1,30 @@
 using Azure.Storage.Blobs;
+using CloudLiquid.Filters;
 using CloudLiquid.ObjectModel;
 using CloudLiquid.Tags;
 using DotLiquid;
 using Microsoft.Extensions.Logging;
 using System.Text;
 
-namespace CloudLiquid
+namespace CloudLiquid.Core
 {
-    public class CloudLiquid
+    public class LiquidProcessor(ILogger logger, BlobContainerClient blobContainerClient)
     {
         #region Private Members
 
-        private static readonly Dictionary<string, string> _dict = new Dictionary<string, string>{
+        private static readonly Dictionary<string, string> errorDictionary = new()
+        {
             {"CloudLiquid_Start","Error Registering Tags and Templates"},
             {"Parsing_Liquid","Error parsing Liquid"},
             {"Rendering_Output","Error rendering output using DotLiquid Engine"},
             {"Checking_Output_For_Errors","InnerException found in the Output from Liquid Engine"}
         };
 
-        private readonly BlobContainerClient blobContainerClient;
-        private readonly ILogger logger;
+        private readonly BlobContainerClient blobContainerClient = blobContainerClient;
+        private readonly ILogger logger = logger;
 
         private string action;
         private string errorMessage;
-
-        #endregion
-
-        #region Constructors
-
-        public CloudLiquid() { }
-
-
-        public CloudLiquid(ILogger logger) : this()
-        {
-            this.logger = logger;
-        }
-
-        public CloudLiquid(BlobContainerClient blobContainerClient) : this()
-        {
-            this.blobContainerClient = blobContainerClient;
-        }
-
-        public CloudLiquid(ILogger logger, BlobContainerClient blobContainerClient) : this()
-        {
-            this.logger = logger;
-            this.blobContainerClient = blobContainerClient;
-        }
 
         #endregion
 
@@ -108,8 +87,12 @@ namespace CloudLiquid
             }
             catch (Exception ex)
             {
-                try { logger.LogError(ex.Message, ex); } catch { }
-                errorMessage = _dict[action];
+                try 
+                { 
+                    logger.LogError(ex.Message, ex); 
+                } catch { }
+
+                errorMessage = $"{errorDictionary[action]}: {ex.Message}";
                 result.Success = false;
                 result.ErrorMessage = errorMessage;
                 result.ErrorAction = action;

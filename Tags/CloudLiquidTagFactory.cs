@@ -3,7 +3,7 @@ using CloudLiquid.Tags;
 using DotLiquid;
 using Microsoft.Extensions.Logging;
 
-namespace CloudLiquid
+namespace CloudLiquid.Tags
 {
     public class CloudLiquidTagFactory : ITagFactory
     {

@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Text;
 using System.Xml;
 
-namespace CloudLiquid
+namespace CloudLiquid.Filters
 {
     #region Public Methods
     public static class DataFilters
