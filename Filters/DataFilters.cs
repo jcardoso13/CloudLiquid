@@ -1,20 +1,14 @@
-using System.Collections;
-using System.Text.RegularExpressions;
+using CloudLiquid.ContentFactory;
 using DotLiquid;
-using DotLiquid.Exceptions;
-using DotLiquid.Util;
-using Azure.Storage.Blobs;
-using Microsoft.Extensions.Logging;
-using TransformData.ContentFactory;
 using Newtonsoft.Json;
-using System.Xml.Linq;
-using System.Xml;
 using Newtonsoft.Json.Linq;
-using System.Text;
 using System.Globalization;
+using System.Text;
+using System.Xml;
 
-namespace CloudLiquid
+namespace CloudLiquid.Filters
 {
+    #region Public Methods
     public static class DataFilters
     {
         public static string Padleft(Context context, string input, int totalWidth, string padChar = " ")
@@ -42,15 +36,6 @@ namespace CloudLiquid
             return Double.Parse(input);
         }
 
-        private static JsonSerializerSettings jsonSettings = new JsonSerializerSettings
-        {
-            StringEscapeHandling = StringEscapeHandling.Default
-        };
-
-        private static JsonSerializerSettings jsonNoHtmlSettings = new JsonSerializerSettings
-        {
-            StringEscapeHandling = StringEscapeHandling.EscapeHtml
-        };
         public static string Json(Context context, dynamic input)
         {
             return JsonConvert.SerializeObject(input, jsonSettings);
@@ -76,9 +61,13 @@ namespace CloudLiquid
             try
             {
                 if (data[secondObject] != null)
+                {
                     return data[secondObject];
+                }
                 else
+                {
                     return false;
+                }
             }
             catch
             {
@@ -91,38 +80,51 @@ namespace CloudLiquid
             if (data is Hash || data is Dictionary<string, object>)
             {
                 Hash ndata;
-                if (data is Dictionary<string, object>)
-                    ndata = Hash.FromDictionary((Dictionary<string, object>)data);
+                if (data is Dictionary<string, object> dictionary)
+                {
+                    ndata = Hash.FromDictionary(dictionary);
+                }
                 else
+                {
                     ndata = (Hash)data;
+                }
+
                 return ndata.Contains(Obj);
             }
-            else if (data is List<dynamic>)
+            else if (data is List<dynamic> ldata)
             {
-                List<dynamic> ldata = (List<dynamic>)data;
                 foreach (var l in ldata)
                 {
                     if (l is String)
                     {
                         if (l.CompareTo(Obj) == 0)
+                        {
                             return true;
+                        }
                     }
                     else
                     {
                         Hash ndata;
-                        if (l is Dictionary<string, object>)
-                            ndata = Hash.FromDictionary((Dictionary<string, object>)l);
+                        if (l is Dictionary<string, object> dictionary)
+                        {
+                            ndata = Hash.FromDictionary(dictionary);
+                        }
                         else
+                        {
                             ndata = (Hash)data;
+                        }
+
                         Hash outp = Hash.FromDictionary(ndata);
+
                         if (outp.Contains(Obj))
+                        {
                             return true;
+                        }
                     }
                 }
             }
-            else if (data is string)
+            else if (data is string ndata)
             {
-                string ndata = (string)data;
                 return ndata.Contains(Obj);
             }
             else
@@ -168,34 +170,27 @@ namespace CloudLiquid
         }
         public static Boolean IsLoop(Context context, Object data)
         {
-            if (data is List<Object>)
-                return true;
-            else
-                return false;
-
+            return (data is List<Object>);
         }
-
 
         public static Hash ClearNulls(Context context, dynamic data)
         {
             if (data == null)
             {
-                return new Hash();
+                return [];
             }
 
             var result = JsonConvert.SerializeObject(data,
-            new JsonSerializerSettings()
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
+                                                    new JsonSerializerSettings()
+                                                    {
+                                                        NullValueHandling = NullValueHandling.Ignore
+                                                    });
 
             JToken jvar = JToken.Parse(result);
+
             var nresult = Convert.ToString(JsonContentReader.RemoveEmptyChildren(jvar));
 
             var requestJson = JsonConvert.DeserializeObject<IDictionary<string, object>>(nresult, new DictionaryConverter());
-
-
-            //Hash new_result = JsonConvert.DeserializeObject<Hash>(nresult);
 
             return Hash.FromDictionary(requestJson);
         }
@@ -204,15 +199,17 @@ namespace CloudLiquid
         {
 
             var transformInput = new Dictionary<string, object>();
+
             if (key != null)
+            {
                 transformInput.Add(key, null);
+            }
 
             return Hash.FromDictionary(transformInput);
         }
 
         public static List<dynamic> CreateList(Context context, dynamic type = null)
         {
-
             var newA = new List<dynamic>();
             return newA;
         }
@@ -220,16 +217,16 @@ namespace CloudLiquid
         {
             if (insert != null || nullInsert == true)
             {
-                if (unique)
+                if (unique && !data.Contains(insert))
                 {
-                    if (!data.Contains(insert))
-                        data.Add(insert);
+                    data.Add(insert);
                 }
                 else
                 {
                     data.Add(insert);
                 }
             }
+
             return data;
         }
 
@@ -239,14 +236,18 @@ namespace CloudLiquid
             {
                 data.Remove(key);
             }
+
             return data;
         }
         public static List<dynamic> GetListFromHash(Context context, dynamic data, string key)
         {
             if (data == null)
+            {
                 return null;
+            }
 
-            List<dynamic> output = new List<dynamic>();
+            List<dynamic> output = [];
+
             var d = data[key];
             output = (List<dynamic>)d;
 
@@ -265,39 +266,50 @@ namespace CloudLiquid
             {
                 var data = input;
                 if (data == null)
+                {
                     return null;
+                }
 
-                if (key == "" || key == null)
+                if (string.IsNullOrEmpty(key))
+                {
                     return Hash.FromDictionary(data);
+                }
 
-                Hash new_Data = new Hash();
+                Hash newData = [];
 
-                new_Data = Hash.FromDictionary(data);
+                newData = Hash.FromDictionary(data);
 
-                if (new_Data.ContainsKey(key))
-                    new_Data.Remove(key);
+                if (newData.ContainsKey(key))
+                {
+                    newData.Remove(key);
+                }
 
-
-                return new_Data;
+                return newData;
             }
             else
             {
                 var data = input[index];
 
                 if (data == null)
+                {
                     return null;
+                }
 
-                if (key == "" || key == null)
+                if (string.IsNullOrEmpty(key))
+                {
                     return Hash.FromDictionary(input);
+                }
 
-                List<dynamic> new_Data = new List<dynamic>();
+                List<dynamic> newData = [];
 
-                new_Data = (List<dynamic>)input;
+                newData = (List<dynamic>)input;
 
-                if (new_Data[index].ContainsKey(key))
-                    new_Data[index].Remove(key);
+                if (newData[index].ContainsKey(key))
+                {
+                    newData[index].Remove(key);
+                }
 
-                return new_Data;
+                return newData;
 
             }
         }
@@ -307,38 +319,44 @@ namespace CloudLiquid
             {
                 var data = input;
                 if (data == null)
+                {
                     return null;
+                }
 
-                if (key == "" || key == null)
+                if (string.IsNullOrEmpty(key))
+                {
                     return Hash.FromDictionary(data);
+                }
 
+                Hash newData = [];
 
-                Hash new_Data = new Hash();
+                newData = Hash.FromDictionary(data);
 
-                new_Data = Hash.FromDictionary(data);
+                newData[key] = entry;
 
-                new_Data[key] = entry;
-                return Hash.FromDictionary(new_Data);
+                return Hash.FromDictionary(newData);
             }
             else
             {
-
                 if (input == null)
+                {
                     return null;
+                }
 
                 var data = input[index];
 
-                if (key == "" || key == null)
+                if (string.IsNullOrEmpty(key))
+                {
                     return Hash.FromDictionary(input);
+                }
 
-                List<dynamic> new_Data = new List<dynamic>();
+                List<dynamic> newData = [];
 
-                new_Data = (List<dynamic>)input;
+                newData = (List<dynamic>)input;
 
-                new_Data[index][key] = entry;
+                newData[index][key] = entry;
 
-                return new_Data;
-
+                return newData;
             }
         }
 
@@ -347,40 +365,47 @@ namespace CloudLiquid
             if (index == -1)
             {
                 var data = input;
+
                 if (data == null)
+                {
                     return null;
+                }
 
-                if (key == "" || key == null)
+                if (string.IsNullOrEmpty(key))
+                {
                     return Hash.FromDictionary(data);
+                }
 
+                Hash newData = [];
 
-                Hash new_Data = new Hash();
+                newData = Hash.FromDictionary(data);
 
-                new_Data = Hash.FromDictionary(data);
+                newData[key] = entry;
 
-                new_Data[key] = entry;
-                return new_Data;
+                return newData;
             }
             else
             {
 
                 if (input == null)
+                {
                     return null;
+                }
 
                 var data = input[index];
 
-
-                if (key == "" || key == null)
+                if (string.IsNullOrEmpty(key))
+                {
                     return Hash.FromDictionary(input);
+                }
 
-                List<dynamic> new_Data = new List<dynamic>();
+                List<dynamic> newData = [];
 
-                new_Data = (List<dynamic>)input;
+                newData = (List<dynamic>)input;
 
-                new_Data[index][key] = entry;
+                newData[index][key] = entry;
 
-                return new_Data;
-
+                return newData;
             }
         }
 
@@ -395,26 +420,46 @@ namespace CloudLiquid
             for (int i = 0; i < input.Length; i++)
             {
                 if (input[i] != null)
+                {
                     return input[i];
+                }
             }
             return null;
         }
-        
-        public static dynamic decodeBase64(Context context, string encodedString)
+
+        public static dynamic DecodeBase64(Context context, string encodedString)
         {
             byte[] data = Convert.FromBase64String(encodedString);
             string decodedString = Encoding.UTF8.GetString(data);
             return decodedString;
         }
 
-        //https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-8.0 for locale and Format usage
         public static string FormatDateTime(Context context, object timestamp, string format = "yyyy-MM-ddTHH:mm:ss.fffffffK", string locale = "en-us")
         {
-            if(timestamp == null)
+            if (timestamp == null)
+            {
                 return null;
-            DateTime newdate = new DateTime();
-            newdate = DateTime.Parse(timestamp.ToString());
-            return newdate.ToString(format,new CultureInfo(locale));
+            }
+
+            DateTime newDate = new();
+            newDate = DateTime.Parse(timestamp.ToString());
+            return newDate.ToString(format, new CultureInfo(locale));
         }
+
+        #endregion
+
+    #region Private Methods
+
+    private static JsonSerializerSettings jsonSettings = new JsonSerializerSettings
+    {
+        StringEscapeHandling = StringEscapeHandling.Default
+    };
+
+    private static JsonSerializerSettings jsonNoHtmlSettings = new JsonSerializerSettings
+    {
+        StringEscapeHandling = StringEscapeHandling.EscapeHtml
+    };
+
+    #endregion
     }
 }
