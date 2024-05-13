@@ -1,6 +1,6 @@
 ﻿using CloudLiquid.ContentFactory;
 using DotLiquid;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace CloudLiquid.Tags
 {
@@ -13,8 +13,13 @@ namespace CloudLiquid.Tags
             using TextWriter textWriter = new StringWriter(result.FormatProvider);
             base.Render(context, textWriter);
             string contents = textWriter.ToString();
-            var requestJson = JsonConvert.DeserializeObject<IDictionary<string, object>>(contents, new DictionaryConverter());
-            context.Scopes.Last()[this.To] = Hash.FromDictionary(requestJson);
+            var requestJson = JsonSerializer.Deserialize<Dictionary<string, dynamic>>(contents,  new JsonSerializerOptions
+            {
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                AllowTrailingCommas = true,
+                Converters = {new DictionaryStringObjectJsonConverter()}
+            });
+            context.Scopes.Last()[this.To] = requestJson;
         }
 
         #endregion

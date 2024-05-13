@@ -1,10 +1,15 @@
 using CloudLiquid.ContentFactory;
 using DotLiquid;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+//using Newtonsoft.Json;
+//using Newtonsoft.Json.Linq;
+using System.Text.Json;
 using System.Globalization;
 using System.Text;
 using System.Xml;
+using System.Runtime.Serialization.Json;
+using System.Xml.Linq;
+using System.Text.Json.Serialization;
+using System.Text.Json.Nodes;
 
 namespace CloudLiquid.Filters
 {
@@ -36,51 +41,26 @@ namespace CloudLiquid.Filters
             return Double.Parse(input);
         }
 
-        public static string Json(Context context, dynamic input)
+        public static string Json(Context context, object input,string settings=null)
         {
-            return JsonConvert.SerializeObject(input, jsonSettings);
+            string newJ = JsonSerializer.Serialize(input,jsonSettings);
+            return settings == "nobrackets" ? newJ.Substring(1,newJ.Length -2): newJ ;
         }
 
         public static string Xml(Context context, dynamic input)
         {
-            string jsonString = JsonConvert.SerializeObject(input, jsonSettings);
-            XmlDocument doc = JsonConvert.DeserializeXmlNode(jsonString);
-            var XmlString = doc.OuterXml;
+            string jsonString = JsonSerializer.Serialize(input, jsonSettings);
+            var doc = XDocument.Load(JsonReaderWriterFactory.CreateJsonReader(
+            Encoding.ASCII.GetBytes(jsonString), new XmlDictionaryReaderQuotas()));
+            var XmlString = doc.ToString();
             return XmlString;
         }
-
-        public static string Json_nohtml(Context context, dynamic input)
-        {
-            return JsonConvert.SerializeObject(input, jsonNoHtmlSettings);
-        }
-
-        //example: "Approval_Stage": {{content.table.Approval_Stage | look_up: content.input.Approval_Stage }}
-        // Search for the Object (secondObject) in the input JSON (data)
-        public static object LookUp(Context context, dynamic data, string secondObject)
-        {
-            try
-            {
-                if (data[secondObject] != null)
-                {
-                    return data[secondObject];
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         public static bool LiquidContains(Context context, object data, string Obj)
         {
-            if (data is Hash || data is Dictionary<string, object>)
+            if (data is Hash || data is Dictionary<string, dynamic>)
             {
                 Hash ndata;
-                if (data is Dictionary<string, object> dictionary)
+                if (data is Dictionary<string, dynamic> dictionary)
                 {
                     ndata = Hash.FromDictionary(dictionary);
                 }
@@ -105,7 +85,7 @@ namespace CloudLiquid.Filters
                     else
                     {
                         Hash ndata;
-                        if (l is Dictionary<string, object> dictionary)
+                        if (l is Dictionary<string, dynamic> dictionary)
                         {
                             ndata = Hash.FromDictionary(dictionary);
                         }
@@ -137,27 +117,15 @@ namespace CloudLiquid.Filters
 
         public static string DataType(Context context, object data)
         {
-            if (data is Hash || data is Dictionary<string, object>)
+            switch(data)
             {
-                return "Hash";
+                case Hash hash: return "Hash";
+                case Dictionary<string,dynamic> dic: return "Hash";
+                case string str: return "String";
+                case int num: return "Integer";
+                case bool b: return "Boolean";
+                default: return null;
             }
-            else if (data is List<dynamic>)
-            {
-                return "List";
-            }
-            else if (data is String)
-            {
-                return "String";
-            }
-            else if (data is int)
-            {
-                return "Integer";
-            }
-            else if (data is bool)
-            {
-                return "Boolean";
-            }
-            return "null";
         }
 
         public static int Int(Context context, object data)
@@ -170,42 +138,29 @@ namespace CloudLiquid.Filters
         }
         public static Boolean IsLoop(Context context, Object data)
         {
-            return (data is List<Object>);
+            return data is List<dynamic>;
         }
 
-        public static Hash ClearNulls(Context context, dynamic data)
+        public static Dictionary<string,dynamic> ClearNulls(Context context, dynamic data)
         {
-            if (data == null)
-            {
-                return [];
-            }
+            if (data == null) return [];
+            if (data is IDictionary<string,dynamic>)
+            return (Dictionary<string, dynamic>)DictionaryFactory.RemoveEmptyChildren((IDictionary<string, dynamic>)data);
 
-            var result = JsonConvert.SerializeObject(data,
-                                                    new JsonSerializerSettings()
-                                                    {
-                                                        NullValueHandling = NullValueHandling.Ignore
-                                                    });
-
-            JToken jvar = JToken.Parse(result);
-
-            var nresult = Convert.ToString(JsonContentReader.RemoveEmptyChildren(jvar));
-
-            var requestJson = JsonConvert.DeserializeObject<IDictionary<string, object>>(nresult, new DictionaryConverter());
-
-            return Hash.FromDictionary(requestJson);
+            return [];
         }
 
-        public static Hash CreateHash(Context context, string key = null)
+        public static Dictionary<string,dynamic> CreateHash(Context context, string key = null)
         {
 
-            var transformInput = new Dictionary<string, object>();
+            var transformInput = new Dictionary<string, dynamic>();
 
             if (key != null)
             {
                 transformInput.Add(key, null);
             }
 
-            return Hash.FromDictionary(transformInput);
+            return transformInput;
         }
 
         public static List<dynamic> CreateList(Context context, dynamic type = null)
@@ -232,11 +187,7 @@ namespace CloudLiquid.Filters
 
         public static List<dynamic> RemoveFromList(Context context, List<dynamic> data, dynamic key)
         {
-            if (data.Contains(key))
-            {
-                data.Remove(key);
-            }
-
+            data.Remove(key);
             return data;
         }
         public static List<dynamic> GetListFromHash(Context context, dynamic data, string key)
@@ -272,7 +223,7 @@ namespace CloudLiquid.Filters
 
                 if (string.IsNullOrEmpty(key))
                 {
-                    return Hash.FromDictionary(data);
+                    return data;
                 }
 
                 Hash newData = [];
@@ -373,12 +324,12 @@ namespace CloudLiquid.Filters
 
                 if (string.IsNullOrEmpty(key))
                 {
-                    return Hash.FromDictionary(data);
+                    return data;
                 }
 
                 Hash newData = [];
 
-                newData = Hash.FromDictionary(data);
+                newData = data;
 
                 newData[key] = entry;
 
@@ -396,7 +347,7 @@ namespace CloudLiquid.Filters
 
                 if (string.IsNullOrEmpty(key))
                 {
-                    return Hash.FromDictionary(input);
+                    return input;
                 }
 
                 List<dynamic> newData = [];
@@ -408,13 +359,6 @@ namespace CloudLiquid.Filters
                 return newData;
             }
         }
-
-        public static string JsonCurObject(Context context, dynamic input)
-        {
-            string newJ = JsonConvert.SerializeObject(input, jsonSettings);
-            return newJ.Substring(1, newJ.Length - 2);
-        }
-
         public static dynamic Coalesce(Context context, params dynamic[] input)
         {
             for (int i = 0; i < input.Length; i++)
@@ -450,14 +394,18 @@ namespace CloudLiquid.Filters
 
     #region Private Methods
 
-    private static JsonSerializerSettings jsonSettings = new JsonSerializerSettings
-    {
-        StringEscapeHandling = StringEscapeHandling.Default
+    private static JsonSerializerOptions jsonSettings = new JsonSerializerOptions{
+        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        WriteIndented = true,
+        AllowTrailingCommas = true,
+        Converters = {new DictionaryStringObjectJsonConverter()}
     };
 
-    private static JsonSerializerSettings jsonNoHtmlSettings = new JsonSerializerSettings
-    {
-        StringEscapeHandling = StringEscapeHandling.EscapeHtml
+    private static JsonSerializerOptions jsonnohtmlSettings = new JsonSerializerOptions{
+        Encoder = System.Text.Encodings.Web.JavaScriptEncoder.Default,
+        WriteIndented = true,
+        AllowTrailingCommas = true,
+        Converters = {new DictionaryStringObjectJsonConverter()}
     };
 
     #endregion

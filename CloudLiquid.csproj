@@ -13,7 +13,8 @@
 		<PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.19.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="CloudLiquid.ContentFactory" Version="1.0.3" />
+    <!-- <PackageReference Include="CloudLiquid.ContentFactory" Version="1.0.4" /> -->
+    <!-- <ProjectReference Include="..\ContentFactory\ContentFactory.csproj" /> -->
     <None Include="README.md" Pack="true" PackagePath="\" />
 </ItemGroup>
 <PropertyGroup>

@@ -2,6 +2,7 @@
 using DotLiquid;
 using Newtonsoft.Json;
 using System.Xml.Linq;
+using System.Text.Json;
 
 namespace CloudLiquid.Tags
 {
@@ -18,8 +19,13 @@ namespace CloudLiquid.Tags
             var xDoc = new XDocument(xmlDocumentWithoutNs);
             var json = JsonConvert.SerializeXNode(xDoc).Replace("\"@", "\"_");
             // Convert the XML converted JSON to an object tree of primitive types
-            var requestJson = JsonConvert.DeserializeObject<IDictionary<string, object>>(json, new DictionaryConverter());
-            context.Scopes.Last()[this.To] = Hash.FromDictionary(requestJson);
+            var requestJson = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string,dynamic>>(json,new JsonSerializerOptions{
+                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                    WriteIndented = true,
+                    AllowTrailingCommas = true,
+                    Converters = {new DictionaryStringObjectJsonConverter()}
+                });
+            context.Scopes.Last()[this.To] = requestJson;
         }
 
         #endregion
