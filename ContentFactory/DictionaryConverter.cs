@@ -10,10 +10,10 @@ namespace CloudLiquid.ContentFactory
     {
         public override bool CanConvert(Type typeToConvert)
         {
-            return typeToConvert == typeof(IDictionary<string, dynamic>);
+            return typeToConvert == typeof(Dictionary<string, dynamic>);
         }
 
-        public override IDictionary<string, dynamic> Read(
+        public override Dictionary<string, dynamic> Read(
             ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType != JsonTokenType.StartObject)

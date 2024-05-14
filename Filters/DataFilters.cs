@@ -41,7 +41,7 @@ namespace CloudLiquid.Filters
             return Double.Parse(input);
         }
 
-        public static string Json(Context context, object input,string settings=null)
+        public static string Json(Context context, dynamic input,string settings=null)
         {
             string newJ = JsonSerializer.Serialize(input,jsonSettings);
             return settings == "nobrackets" ? newJ.Substring(1,newJ.Length -2): newJ ;
