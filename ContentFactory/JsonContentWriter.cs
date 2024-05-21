@@ -20,16 +20,7 @@ namespace CloudLiquid.ContentFactory
 
         public StringContent CreateResponse(string output)
         {
-            JsonSerializerOptions jsonSerializerSettings = new JsonSerializerOptions{
-                    Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    WriteIndented = true,
-                    Converters = {new DictionaryStringObjectJsonConverter()}
-                };
-
-            var jsonObject = JsonSerializer.Deserialize<Dictionary<string, object>>(output,jsonSerializerSettings);
-            var jsonString = JsonSerializer.Serialize(jsonObject,jsonSerializerSettings);
-
-            return new StringContent(jsonString, Encoding.UTF8, _contentType);
+            return new StringContent(output, Encoding.UTF8, _contentType);
         }
     }
 }
