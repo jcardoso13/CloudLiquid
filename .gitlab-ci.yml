@@ -3,13 +3,15 @@ stages:
 #  - test
 #  - package
 
-variables:
-  DOTNET_VERSION: "6.0"
+image: mcr.microsoft.com/dotnet/sdk:latest
+
+#variables:
+#  DOTNET_VERSION: "6.0"
 
 # The Build stage
 build:
   stage: build
-  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
+#  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
