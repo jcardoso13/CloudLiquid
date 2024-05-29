@@ -3,10 +3,13 @@ stages:
 #  - test
 #  - package
 
-image: mcr.microsoft.com/dotnet/sdk:latest
-
 #variables:
 #  DOTNET_VERSION: "6.0"
+
+
+default:
+  image: mcr.microsoft.com/dotnet/sdk:latest
+
 
 # The Build stage
 build:
