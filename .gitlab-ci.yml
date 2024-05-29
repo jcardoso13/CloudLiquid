@@ -1,6 +1,6 @@
 stages:
   - build
-#  - test
+  - test
 #  - package
 
 #variables:
@@ -26,20 +26,20 @@ build:
     expire_in: 1 week
 
 # The Test stage
-#test:
-#  stage: test
+test:
+  stage: test
 #  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
-#  script:
-#    - echo "Running tests..."
-#    - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
-#  dependencies:
-#    - build
-#  artifacts:
-#    reports:
-#      junit: TestResults/*.trx
-#    paths:
-#      - TestResults/
-#    expire_in: 1 week
+  script:
+    - echo "Running tests..."
+    - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
+  dependencies:
+    - build
+  artifacts:
+    reports:
+      junit: TestResults/*.trx
+    paths:
+      - TestResults/
+    expire_in: 1 week
 
 # The Package stage
 #package:
