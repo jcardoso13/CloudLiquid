@@ -4,8 +4,6 @@ stages:
   - analysis
   - package
 
-#variables:
-#  DOTNET_VERSION: "6.0"
 
 default:
   image: mcr.microsoft.com/dotnet/sdk:latest
@@ -14,7 +12,6 @@ default:
 # The Build stage
 build:
   stage: build
-#  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
@@ -29,7 +26,6 @@ build:
 # The Test stage
 test:
   stage: test
-#  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
     - echo "Running tests..."
     - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
@@ -61,7 +57,6 @@ code-analysis:
 # The Package stage
 package:
   stage: package
-#  image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
   script:
     - echo "Packing the project..."
     - dotnet pack --configuration Release --output ./nupkg
