@@ -67,15 +67,74 @@ namespace CloudLiquid.Tests
             Assert.Throws<ArgumentNullException>(() => DataFilters.Parsedouble(null, input));
         }
         [Fact]
-        public void TestJson() // fazer para int bool, lista, dicionario/JsonObjects,testar settings nobrackets e testar decimais
+        public void TestJson_Dictionary() // fazer para int, bool, lista, dicionario/JsonObjects,testar settings nobrackets e testar decimais
         {
             var data = new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
             var result = DataFilters.Json(null, data);
             Assert.Equal("{\r\n  \"key1\": \"value1\",\r\n  \"key2\": \"value2\"\r\n}", result);
         }
+        [Fact]
+        public void TestJson_WithoutBrackets() 
+        {
+            var data = new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
+            var result = DataFilters.Json(null, data, "nobrackets");
+            Assert.Equal("\r\n  \"key1\": \"value1\",\r\n  \"key2\": \"value2\"\r\n", result);
+        }
+        [Fact]
+        public void TestJson_Int()
+        {
+            var input = 123;
+            string result = DataFilters.Json(null, input);
+
+            Assert.Equal("123", result);
+        }
+        [Fact]
+        public void TestJson_Bool()
+        {
+            var input = true;
+            string result = DataFilters.Json(null, input);
+
+            Assert.Equal("true", result);
+        }
+        [Fact]
+        public void TestJson_List()
+        {
+            var input = new List<int> { 1, 2, 3 };
+            string result = DataFilters.Json(null, input);
+
+            Assert.Equal("[\r\n  1,\r\n  2,\r\n  3\r\n]", result);
+        }
+        [Fact]
+        public void TestJson()
+        {
+            var input = new { Name = "Maria", Age = 25 };
+            string result = DataFilters.Json(null, input);
+
+            Assert.Equal("{\r\n  \"Name\": \"Maria\",\r\n  \"Age\": 25\r\n}", result);
+        }
+        [Fact]
+        public void TestJson_Decimal()
+        {
+            var input = 123.45;
+            string result = DataFilters.Json(null, input);
+
+            Assert.Equal("123.45", result);
+        }
+        [Fact]
+        public void TestJson_DictionaryAndList()
+        {
+            var data = new Dictionary<string, dynamic>
+        {
+            { "key1", new List<dynamic> { 1, 2, 3 } },
+            { "key2", new List<dynamic> { "a", "b", "c" } }
+        };
+            string result = DataFilters.Json(null, data);
+
+            Assert.Equal("{\r\n  \"key1\": [\r\n    1,\r\n    2,\r\n    3\r\n  ],\r\n  \"key2\": [\r\n    \"a\",\r\n    \"b\",\r\n    \"c\"\r\n  ]\r\n}", result);
+        }
 
         [Fact]
-        public void TestXml() 
+        public void TestXml() // fazer para int bool, lista, dicionario/JsonObjects,testar settings nobrackets e testar decimais
         { 
             var input=new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
            
@@ -364,9 +423,10 @@ namespace CloudLiquid.Tests
         {
             var data = new List<dynamic>() { "item1", "item2" };
             dynamic insert = null;
-            //bool nullInsert = true;
+            bool nullinsert = true;
+            bool unique = true;
 
-            var result = DataFilters.AddToList(null, data, insert, unique: false, nullInsert: true);
+            var result = DataFilters.AddToList(null, data, insert, unique, nullinsert);
 
             Assert.Equal(3, result.Count);
             Assert.Contains(insert, result);
