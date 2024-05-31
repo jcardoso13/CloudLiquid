@@ -17,8 +17,9 @@ namespace CloudLiquid.Filters
     public static class DataFilters
     {
         public static string Padleft(Context context, string input, int totalWidth, string padChar = " ")
-        {
-            return input.PadLeft(totalWidth, padChar[0]);
+        { 
+            return input?.PadLeft(totalWidth, padChar[0]);
+            
         }
 
         public static dynamic Secret(Context context, string input)
@@ -28,7 +29,8 @@ namespace CloudLiquid.Filters
 
         public static string Padright(Context context, string input, int totalWidth, string padChar = " ")
         {
-            return input.PadRight(totalWidth, padChar[0]);
+            return input?.PadRight(totalWidth, padChar[0]);
+           
         }
 
         public static string Nullifnull(Context context, string input)
@@ -41,7 +43,7 @@ namespace CloudLiquid.Filters
             return Double.Parse(input);
         }
 
-        public static string Json(Context context, dynamic input,string settings=null)
+        public static string Json(Context context, dynamic input,string settings=null) 
         {
             string newJ = JsonSerializer.Serialize(input,jsonSettings);
             return settings == "nobrackets" ? newJ.Substring(1,newJ.Length -2): newJ ;
@@ -124,6 +126,7 @@ namespace CloudLiquid.Filters
                 case string str: return "String";
                 case int num: return "Integer";
                 case bool b: return "Boolean";
+                case double d: return "Double"; 
                 default: return null;
             }
         }
@@ -170,18 +173,14 @@ namespace CloudLiquid.Filters
         }
         public static List<dynamic> AddToList(Context context, List<dynamic> data, dynamic insert, bool unique = false, bool nullInsert = false)
         {
-            if (insert != null || nullInsert == true)
+
+            if (nullInsert || insert != null)
             {
-                if (unique && !data.Contains(insert))
-                {
-                    data.Add(insert);
-                }
-                else
+                if (unique==false || (unique && !data.Contains(insert)))
                 {
                     data.Add(insert);
                 }
             }
-
             return data;
         }
 
@@ -206,7 +205,7 @@ namespace CloudLiquid.Filters
         }
 
         public static string Log(Context context, dynamic data)
-        {
+        { 
             Console.WriteLine(data);
             return null;
         }
@@ -264,7 +263,7 @@ namespace CloudLiquid.Filters
 
             }
         }
-        public static dynamic AddProperty(Context context, dynamic input, string key, dynamic entry, int index = -1)
+        public static dynamic AddProperty(Context context, dynamic input, string key, dynamic entry, int index = -1) //mudar addproperty para dar erro quando já existe
         {
             if (index == -1)
             {
@@ -329,7 +328,7 @@ namespace CloudLiquid.Filters
 
                 Hash newData = [];
 
-                newData = data;
+                newData = Hash.FromDictionary(data);
 
                 newData[key] = entry;
 
