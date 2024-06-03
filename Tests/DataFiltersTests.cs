@@ -1,10 +1,12 @@
-﻿using CloudLiquid.Filters;
+﻿using Azure;
+using CloudLiquid.Filters;
 using DotLiquid;
 using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Cache;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -105,7 +107,7 @@ namespace CloudLiquid.Tests
             Assert.Equal("[\r\n  1,\r\n  2,\r\n  3\r\n]", result);
         }
         [Fact]
-        public void TestJson()
+        public void TestJson_Object()
         {
             var input = new { Name = "Maria", Age = 25 };
             string result = DataFilters.Json(null, input);
@@ -134,7 +136,7 @@ namespace CloudLiquid.Tests
         }
 
         [Fact]
-        public void TestXml() // fazer para int bool, lista, dicionario/JsonObjects,testar settings nobrackets e testar decimais
+        public void TestXml_Dictionary() // fazer para int bool, lista, dicionario/JsonObjects e testar decimais
         { 
             var input=new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
            
@@ -144,12 +146,65 @@ namespace CloudLiquid.Tests
 
         }
         [Fact]
+        public void TestXml_Int()
+        {
+            var input = 123;
+            string result = DataFilters.Xml(null, input);
+
+            Assert.Equal("<root type=\"number\">123</root>", result);
+        }
+        [Fact]
+        public void TestXml_Bool()
+        {
+            var input = true;
+            string result = DataFilters.Xml(null, input);
+
+            Assert.Equal("<root type=\"boolean\">true</root>", result);
+        }
+        [Fact]
+        public void TestXml_List()
+        {
+            var input = new List<int> { 1, 2, 3 };
+            string result = DataFilters.Xml(null, input);
+
+            Assert.Equal("<root type=\"array\">\r\n  <item type=\"number\">1</item>\r\n  <item type=\"number\">2</item>\r\n  <item type=\"number\">3</item>\r\n</root>", result);
+        }
+        [Fact]
+        public void TestXml_Object()
+        {
+            var input = new { Name = "Maria", Age = 25 };
+            string result = DataFilters.Xml(null, input);
+
+            Assert.Equal("<root type=\"object\">\r\n  <Name type=\"string\">Maria</Name>\r\n  <Age type=\"number\">25</Age>\r\n</root>", result);
+        }
+        [Fact]
+        public void TestXml_Decimal()
+        {
+            var input = 123.45;
+            string result = DataFilters.Xml(null, input);
+
+            Assert.Equal("<root type=\"number\">123.45</root>", result);
+        }
+        [Fact]
+        public void TestXml_DictionaryAndList()
+        {
+            var data = new Dictionary<string, dynamic>
+        {
+            { "key1", new List<dynamic> { 1, 2, 3 } },
+            { "key2", new List<dynamic> { "a", "b", "c" } }
+        };
+            string result = DataFilters.Xml(null, data);
+
+            Assert.Equal("<root type=\"object\">\r\n  <key1 type=\"array\">\r\n    <item type=\"number\">1</item>\r\n    <item type=\"number\">2</item>\r\n    <item type=\"number\">3</item>\r\n  </key1>\r\n  <key2 type=\"array\">\r\n    <item type=\"string\">a</item>\r\n    <item type=\"string\">b</item>\r\n    <item type=\"string\">c</item>\r\n  </key2>\r\n</root>", result);
+        }
+
+        [Fact]
         public void TestSecret() // when running Functions or in Bash, the runner can set variables 
         {
             Environment.SetEnvironmentVariable("key1", "value1");
             
             Assert.Equal("value1",Environment.GetEnvironmentVariable("key1"));
-        }// TODO
+        }
 
         [Fact]
         public void TestLiquidContains_DictionaryContainKey()
