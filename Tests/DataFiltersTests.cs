@@ -690,7 +690,7 @@ namespace CloudLiquid.Tests
         }
 
         [Fact]
-        public void TestAddProperty_UpdateProperty()
+        public void TestAddProperty_UpdateProperty() //dá erro como esperado
         {
             var input = new Dictionary<string, object> { { "existingKey", "existingValue" } };
             string key = "existingKey";
@@ -718,7 +718,7 @@ namespace CloudLiquid.Tests
             Assert.Equal(input, result);
         }
         [Fact]
-        public void TestSetProperty()
+        public void TestSetProperty_UpdateProperty()
         {
             dynamic input = new Dictionary<string, object> { { "existingKey", "existingValue" } };
             string key = "existingKey";
@@ -728,7 +728,32 @@ namespace CloudLiquid.Tests
 
             Assert.Equal("newValue", result[key]);
             Assert.Equal(1, result.Count);
+        }
+        [Fact]
+        public void TestSetProperty_NewProperty() // o setproperty pode adicionar?
+        {
+            dynamic input = new Dictionary<string, object> { { "existingKey", "existingValue" } };
+            string key = "newKey";
+            dynamic entry = "newValue";
 
+            var result = DataFilters.SetProperty(null, input, key, entry);
+
+            Assert.Equal("newValue", result[key]);
+            Assert.Equal(2, result.Count);
+        }
+        [Fact]
+        public void TestSetProperty_UpdateWithIndex()
+        {
+            dynamic input = new List<dynamic>{
+                new Dictionary<string, object> { { "existingKey1", "existingValue1" } },
+                new Dictionary<string, object> { { "existingKey2", "existingValue2" } }};
+            string key = "existingKey2";
+            dynamic entry = "newValue";
+            int index = 1;
+
+            var result = DataFilters.SetProperty(null, input, key, entry, index);
+
+            Assert.Equal("newValue", result[index][key]);
         }
 
         [Fact]
@@ -748,11 +773,9 @@ namespace CloudLiquid.Tests
 
             var result = DataFilters.Coalesce(null, input);
             Assert.Equal("test1", result);
-
         }
-
         [Fact]
-        public void TestCoalesce_AllNonNull()
+        public void TestCoalesce()
         {
             dynamic[] input = { "test1", "test2", "test3" };
 

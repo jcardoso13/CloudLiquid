@@ -18,8 +18,7 @@ namespace CloudLiquid.Filters
     {
         public static string Padleft(Context context, string input, int totalWidth, string padChar = " ")
         { 
-            return input?.PadLeft(totalWidth, padChar[0]);
-            
+            return input?.PadLeft(totalWidth, padChar[0]);    
         }
 
         public static dynamic Secret(Context context, string input)
@@ -29,8 +28,7 @@ namespace CloudLiquid.Filters
 
         public static string Padright(Context context, string input, int totalWidth, string padChar = " ")
         {
-            return input?.PadRight(totalWidth, padChar[0]);
-           
+            return input?.PadRight(totalWidth, padChar[0]);  
         }
 
         public static string Nullifnull(Context context, string input)
@@ -155,7 +153,6 @@ namespace CloudLiquid.Filters
 
         public static Dictionary<string,dynamic> CreateHash(Context context, string key = null)
         {
-
             var transformInput = new Dictionary<string, dynamic>();
 
             if (key != null)
@@ -173,7 +170,6 @@ namespace CloudLiquid.Filters
         }
         public static List<dynamic> AddToList(Context context, List<dynamic> data, dynamic insert, bool unique = false, bool nullInsert = false)
         {
-
             if (nullInsert || insert != null)
             {
                 if (unique==false || (unique && !data.Contains(insert)))
@@ -260,7 +256,6 @@ namespace CloudLiquid.Filters
                 }
 
                 return newData;
-
             }
         }
         public static dynamic AddProperty(Context context, dynamic input, string key, dynamic entry, int index = -1) //mudar addproperty para dar erro quando já existe
@@ -277,14 +272,15 @@ namespace CloudLiquid.Filters
                 {
                     return Hash.FromDictionary(data);
                 }
-
+                
                 Hash newData = [];
-
                 newData = Hash.FromDictionary(data);
 
-                newData[key] = entry;
-
-                return Hash.FromDictionary(newData);
+                if (!newData.ContainsKey(key))
+                {
+                    newData[key] = entry;
+                }
+                    return Hash.FromDictionary(newData);
             }
             else
             {
@@ -303,8 +299,10 @@ namespace CloudLiquid.Filters
                 List<dynamic> newData = [];
 
                 newData = (List<dynamic>)input;
-
-                newData[index][key] = entry;
+                if (!(newData[index].ContainsKey(key)))
+                {
+                    newData[index][key] = entry;
+                }
 
                 return newData;
             }
