@@ -1,7 +1,5 @@
 using CloudLiquid.ContentFactory;
 using DotLiquid;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -14,26 +12,54 @@ namespace CloudLiquid.Filters
     #region Public Methods
     public static class DataFilters
     {
+        /// <summary>Padlefts the specified context.</summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input.</param>
+        /// <param name="totalWidth">The total width.</param>
+        /// <param name="padChar">The pad character.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public static string Padleft(Context context, string input, int totalWidth, string padChar = " ")
         { 
             return input?.PadLeft(totalWidth, padChar[0]);    
         }
-
+        
         public static dynamic Secret(Context context, string input)
         {
             return Environment.GetEnvironmentVariable(input);
         }
 
+        /// <summary>Padrights the specified context.</summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input.</param>
+        /// <param name="totalWidth">The total width.</param>
+        /// <param name="padChar">The pad character.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public static string Padright(Context context, string input, int totalWidth, string padChar = " ")
         {
             return input?.PadRight(totalWidth, padChar[0]);  
         }
 
+        /// <summary>Nullifnulls the specified context.</summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public static string Nullifnull(Context context, string input)
         {
             return string.IsNullOrEmpty(input) ? "null" : input;
         }
 
+        /// <summary>Parsedoubles the specified context.</summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        ///   <br />
+        /// </returns>
         public static double Parsedouble(Context context, string input)
         {
             return Double.Parse(input);
