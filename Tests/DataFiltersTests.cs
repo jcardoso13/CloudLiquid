@@ -1,14 +1,8 @@
-﻿using Azure;
-using CloudLiquid.Filters;
+﻿using CloudLiquid.Filters;
 using DotLiquid;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Net.Cache;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using Xunit;
 
 namespace CloudLiquid.Tests

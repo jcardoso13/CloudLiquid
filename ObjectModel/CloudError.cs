@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.IO;
 using System.Net;
 
 namespace CloudLiquid.ObjectModel

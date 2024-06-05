@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Tests\Tags\**" />
+    <EmbeddedResource Remove="Tests\Tags\**" />
+    <None Remove="Tests\Tags\**" />
+  </ItemGroup>
   <ItemGroup>
 		<PackageReference Include="DotLiquid" Version="2.2.656" />
 		<PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="5.0.1" />
@@ -23,9 +29,6 @@
     <!-- <ProjectReference Include="..\ContentFactory\ContentFactory.csproj" /> -->
     <None Include="README.md" Pack="true" PackagePath="\" />
 </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\Tags\" />
-  </ItemGroup>
 <PropertyGroup>
     <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
