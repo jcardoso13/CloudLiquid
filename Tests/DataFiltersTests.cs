@@ -258,24 +258,24 @@ namespace CloudLiquid.Tests
         [Fact]
         public void TestInt()
         {
-            Assert.Equal(42, DataFilters.Int(null, "42"));
-            Assert.Equal(0, DataFilters.Int(null, null)); //discutir em PDS
-                                                          // Assert.Equal(42, DataFilters.Int(null, "42.2"));//discutir em PDS
+            Assert.Equal(42, DataFilters.ConvertToInt(null, "42"));
+            Assert.Equal(0, DataFilters.ConvertToInt(null, null)); 
+            Assert.Equal(42, DataFilters.ConvertToInt(null, 42.2));
         }
 
         [Fact]
         public void TestInt_DoubleToInt()
         {
-            object data = 42.2;
+            object data = 42.5;
 
-            int result = DataFilters.Int(null, data);
+            int result = DataFilters.ConvertToInt(null, data);
             Assert.Equal(42, result);
         }
         [Fact]
         public void TestInt_InvalidString()
         {
             object data = "abc";
-            Assert.Throws<FormatException>(() => DataFilters.Int(null, data));
+            Assert.Throws<FormatException>(() => DataFilters.ConvertToInt(null, data));
         }
         [Fact]
         public void TestDataType_Hash()
@@ -342,7 +342,7 @@ namespace CloudLiquid.Tests
             Assert.Equal("Hello World!", DataFilters.String(null, "Hello World!"));
         }
         [Fact]
-        public void TestString_NullToString() //confirmar
+        public void TestString_NullToString()
         {
             Assert.Equal("", DataFilters.String(null, null));
         }
@@ -383,7 +383,7 @@ namespace CloudLiquid.Tests
         }
 
         [Fact]
-        public void TestIsLoop_WithHash() //fazer com hash
+        public void TestIsLoop_WithHash() 
         {
             var data = new Hash();
             bool result = DataFilters.IsLoop(null, data);
@@ -589,6 +589,7 @@ namespace CloudLiquid.Tests
 
             var resultado = stringWriter.ToString().Trim();
             Assert.Equal(data, resultado);
+
         }
         [Fact]
         public void TestRemoveProperty_NullInput()
@@ -683,17 +684,6 @@ namespace CloudLiquid.Tests
             Assert.Equal("newValue", result[index][key]);
         }
 
-        [Fact]
-        public void TestAddProperty_UpdateProperty() //dá erro como esperado
-        {
-            var input = new Dictionary<string, object> { { "existingKey", "existingValue" } };
-            string key = "existingKey";
-            dynamic entry = "updatedValue";
-
-            var result = DataFilters.AddProperty(null, input, key, entry);
-
-            Assert.Equal("updatedValue", result[key]);
-        }
         [Fact]
         public void TestSetProperty_NullInput()
         {

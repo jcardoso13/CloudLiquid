@@ -127,7 +127,7 @@ namespace CloudLiquid.Filters
             }
         }
 
-        public static int Int(Context context, object data)
+        public static int ConvertToInt(Context context, object data)
         {
             return Convert.ToInt32(data);
         }
