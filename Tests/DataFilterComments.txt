@@ -1,0 +1,197 @@
+using CloudLiquid.ContentFactory;
+using DotLiquid;
+using System.Globalization;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Text.Json;
+using System.Xml;
+using System.Xml.Linq;
+
+namespace CloudLiquid.Filters
+{
+    #region Public Methods
+    public static class DataFilters
+    {
+        /// <summary>
+        /// Pads the left side of the input string with the specified character.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input string.</param>
+        /// <param name="totalWidth">The number of characters in the resulting string.</param>
+        /// <param name="padChar">The padding character.</param>
+        /// <returns>The padded string.</returns>
+        public static string Padleft(Context context, string input, int totalWidth, string padChar = " ")
+        { 
+            return input?.PadLeft(totalWidth, padChar[0]);    
+        }
+
+        /// <summary>
+        /// Retrieves the value of an environment variable.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The name of the environment variable.</param>
+        /// <returns>The value of the environment variable.</returns>
+        public static dynamic Secret(Context context, string input)
+        {
+            return Environment.GetEnvironmentVariable(input);
+        }
+
+        /// <summary>
+        /// Pads the right side of the input string with the specified character.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input string.</param>
+        /// <param name="totalWidth">The number of characters in the resulting string.</param>
+        /// <param name="padChar">The padding character.</param>
+        /// <returns>The padded string.</returns>
+        public static string Padright(Context context, string input, int totalWidth, string padChar = " ")
+        {
+            return input?.PadRight(totalWidth, padChar[0]);  
+        }
+
+        /// <summary>
+        /// Returns "null" if the input string is null or empty, otherwise returns the input string.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input string.</param>
+        /// <returns>"null" if the input string is null or empty, otherwise the input string.</returns>
+        public static string Nullifnull(Context context, string input)
+        {
+            return string.IsNullOrEmpty(input) ? "null" : input;
+        }
+
+        /// <summary>
+        /// Parses the input string to a double.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input string.</param>
+        /// <returns>The parsed double.</returns>
+        public static double Parsedouble(Context context, string input)
+        {
+            return Double.Parse(input);
+        }
+
+        /// <summary>
+        /// Converts the input to a JSON string.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input object.</param>
+        /// <param name="settings">The settings for the JSON serialization.</param>
+        /// <returns>The JSON string.</returns>
+        public static string Json(Context context, dynamic input,string settings=null) 
+        {
+            string newJ = JsonSerializer.Serialize(input,jsonSettings);
+            return settings == "nobrackets" ? newJ.Substring(1,newJ.Length -2): newJ ;
+        }
+
+        /// <summary>
+        /// Converts the input to an XML string.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="input">The input object.</param>
+        /// <returns>The XML string.</returns>
+        public static string Xml(Context context, dynamic input)
+        {
+            string jsonString = JsonSerializer.Serialize(input, jsonSettings);
+            var doc = XDocument.Load(JsonReaderWriterFactory.CreateJsonReader(
+            Encoding.ASCII.GetBytes(jsonString), new XmlDictionaryReaderQuotas()));
+            var XmlString = doc.ToString();
+            return XmlString;
+        }
+
+        /// <summary>
+        /// Checks if the data contains the specified object.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="data">The data to check.</param>
+        /// <param name="Obj">The object to look for.</param>
+        /// <returns>True if the data contains the object, false otherwise.</returns>
+        public static bool LiquidContains(Context context, object data, string Obj)
+        {
+            if (data is Hash || data is Dictionary<string, dynamic>)
+            {
+                Hash ndata;
+                if (data is Dictionary<string, dynamic> dictionary)
+                {
+                    ndata = Hash.FromDictionary(dictionary);
+                }
+                else
+                {
+                    ndata = (Hash)data;
+                }
+
+                return ndata.Contains(Obj);
+            }
+            else if (data is List<dynamic> ldata)
+            {
+                foreach (var l in ldata)
+                {
+                    if (l is String)
+                    {
+                        if (l.CompareTo(Obj) == 0)
+                        {
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                        Hash ndata;
+                        if (l is Dictionary<string, dynamic> dictionary)
+                        {
+                            ndata = Hash.FromDictionary(dictionary);
+                        }
+                        else
+                        {
+                            ndata = (Hash)data;
+                        }
+
+                        Hash outp = Hash.FromDictionary(ndata);
+
+                        if (outp.Contains(Obj))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            else if (data is string ndata)
+            {
+                return ndata.Contains(Obj);
+            }
+            else
+            {
+                return false;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Returns the data type of the input data.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="data">The data to check.</param>
+        /// <returns>The data type of the input data.</returns>
+        public static string DataType(Context context, object data)
+        {
+            switch(data)
+            {
+                case Hash hash: return "Hash";
+                case Dictionary<string,dynamic> dic: return "Hash";
+                case string str: return "String";
+                case int num: return "Integer";
+                case bool b: return "Boolean";
+                case double d: return "Double"; 
+                default: return null;
+            }
+        }
+
+        /// <summary>
+        /// Converts the input data to an integer.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="data">The data to convert.</param>
+        /// <returns>The converted integer.</returns>
+        public static int ConvertToInt(Context context, object data)
+        {
+            return Convert.ToInt32(data);
