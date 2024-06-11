@@ -1,78 +1,24 @@
-stages:
-  - build
-  - test
-  - analysis
-  - package
 
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
 
-default:
-  image: mcr.microsoft.com/dotnet/sdk:latest
+include:
+  - local: '/.gitlab-ci-ci.yml'
+  - local: '/.gitlab-ci-cd.yml'
 
-
-# The Build stage
-build:
-  stage: build
+wait_for_ci:
+  stage: .post
   script:
-    - echo "Restoring dependencies..."
-    - dotnet restore
-    - echo "Building the project..."
-    - dotnet build --configuration Release --no-restore
-  artifacts:
-    paths:
-      - bin/Release/
-    expire_in: 1 week
-
-
-# The Test stage
-test:
-  stage: test
-  script:
-    - echo "Running tests..."
-    - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
-  dependencies:
-    - build
-  artifacts:
-    reports:
-      junit: TestResults/*.trx
-    paths:
-      - TestResults/
-    expire_in: 1 week
-
-
-# Code Analysis stage
-code-analysis:
-  stage: analysis
-  image: sonarsource/sonar-scanner-cli:latest
-  script:
-    - sonar-scanner -Dsonar.projectKey=$SONAR_PROJECT_KEY
-                    -Dsonar.sources=.
-                    -Dsonar.host.url=$SONAR_HOST_URL
-                    -Dsonar.login=$SONAR_LOGIN
-  dependencies:
-    - build
-  only:
-    - main
-
-
-# The Package stage
-package:
-  stage: package
-  script:
-    - echo "Packing the project..."
-    - dotnet pack --configuration Release --output ./nupkg
-  artifacts:
-    paths:
-      - nupkg/
-    expire_in: 1 week
+    - echo "Waiting for CI to complete..."
+  when: on_success
+  needs: ["build", "test", "analysis", "package"]
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
 
 
 
-# The Publish stage (commented out for future use)
-# publish:
-#   stage: publish
-#   image: mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}
-#   script:
-#     - echo "Publishing the package to NuGet.org..."
-#     - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
-#   only:
-#     - main
+
