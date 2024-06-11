@@ -1,4 +1,3 @@
-
 workflow:
   rules:
     - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
@@ -10,14 +9,14 @@ include:
   - local: '/.gitlab-ci-ci.yml'
   - local: '/.gitlab-ci-cd.yml'
 
-wait_for_ci:
-  stage: .post
-  script:
-    - echo "Waiting for CI to complete..."
-  when: on_success
-  needs: ["build", "test", "analysis", "package"]
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
+#wait_for_ci:
+#  stage: .post
+#  script:
+#    - echo "Waiting for CI to complete..."
+#  when: on_success
+#  needs: ["build", "test", "analysis", "package"]
+#  rules:
+#    - if: '$CI_COMMIT_BRANCH == "main"'
 
 
 
