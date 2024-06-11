@@ -2,7 +2,7 @@
 stages:
   - build
   - test
-  - analysis
+  - code-analysis
   - package
 
 
@@ -42,7 +42,7 @@ test:
 
 # Code Analysis stage
 code-analysis:
-  stage: analysis
+  stage: code-analysis
   image: sonarsource/sonar-scanner-cli:latest
   script:
     - sonar-scanner -Dsonar.projectKey=$SONAR_PROJECT_KEY
@@ -63,7 +63,7 @@ package:
     - dotnet pack --configuration Release --output ./nupkg
   dependencies:
     - build
-    - analysis
+    - code-analysis
   when: manual
   artifacts:
     paths:
