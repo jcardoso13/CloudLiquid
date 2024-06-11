@@ -63,7 +63,7 @@ package:
     - dotnet pack --configuration Release --output ./nupkg
   dependencies:
     - build
-    - code-analysis
+    - analysis
   when: manual
   artifacts:
     paths:
