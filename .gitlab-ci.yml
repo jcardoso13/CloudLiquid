@@ -1,3 +1,11 @@
+
+stages:
+  - build
+  - test
+  - analysis
+  - package
+  - publish
+
 #workflow:
 #  rules:
 #    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
