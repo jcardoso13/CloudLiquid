@@ -62,6 +62,7 @@ package:
     - echo "Packing the project..."
     - dotnet pack --configuration Release --output ./nupkg
     - pwd
+    - ls
   dependencies:
     - build
     - analysis
