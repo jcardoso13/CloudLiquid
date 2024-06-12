@@ -1,10 +1,10 @@
 
-stages:
-  - build
-  - test
-  - analysis
-  - package
-  - publish
+#stages:
+#  - build
+#  - test
+#  - analysis
+#  - package
+#  - publish
 
 #workflow:
 #  rules:
@@ -13,9 +13,9 @@ stages:
 #    - if: '$CI_COMMIT_BRANCH == "main"'
 #      when: always
 
-include:
-  - local: '/.gitlab-ci-ci.yml'
-  - local: '/.gitlab-ci-cd.yml'
+#include:
+#  - local: '/.gitlab-ci-ci.yml'
+#  - local: '/.gitlab-ci-cd.yml'
 
 #wait_for_ci:
 #  stage: .post
@@ -27,5 +27,78 @@ include:
 #    - if: '$CI_COMMIT_BRANCH == "main"'
 
 
+
+stages:
+  - build
+  - test
+  - analysis
+  - package
+
+
+default:
+  image: mcr.microsoft.com/dotnet/sdk:latest
+
+
+# The Build stage
+build:
+  stage: build
+  script:
+    - echo "Restoring dependencies..."
+    - dotnet restore
+    - echo "Building the project..."
+    - dotnet build --configuration Release --no-restore
+  artifacts:
+    paths:
+      - bin/Release/
+    expire_in: 1 week
+
+
+# The Test stage
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
+  dependencies:
+    - build
+  artifacts:
+    reports:
+      junit: TestResults/*.trx
+    paths:
+      - TestResults/
+    expire_in: 1 week
+
+
+# Code Analysis stage
+analysis:
+  stage: analysis
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    - sonar-scanner -Dsonar.projectKey=$SONAR_PROJECT_KEY
+                    -Dsonar.sources=.
+                    -Dsonar.host.url=$SONAR_HOST_URL
+                    -Dsonar.login=$SONAR_LOGIN
+  allow_failure: false
+  dependencies:
+    - build
+  only:
+    - main
+
+
+# The Package stage
+package:
+  stage: package
+  script:
+    - echo "Packing the project..."
+    - dotnet pack --configuration Release --output $./nupkg
+    - ls -la ./nupkg
+  dependencies:
+    - build
+    - analysis
+ # when: manual
+  artifacts:
+    paths:
+      - nupkg/
+    expire_in: 1 week
 
 
