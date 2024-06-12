@@ -22,7 +22,7 @@ include:
 #  script:
 #    - echo "Waiting for CI to complete..."
 #  when: on_success
-#  needs: ["build", "test", "analysis", "package"]
+#  needs: ["build", "test", "code-analysis", "package"]
 #  rules:
 #    - if: '$CI_COMMIT_BRANCH == "main"'
 
