@@ -40,7 +40,7 @@ test:
 
 
 # Code Analysis stage
-code-analysis:
+analysis:
   stage: analysis
   image: sonarsource/sonar-scanner-cli:latest
   script:
