@@ -48,6 +48,7 @@ code-analysis:
                     -Dsonar.sources=.
                     -Dsonar.host.url=$SONAR_HOST_URL
                     -Dsonar.login=$SONAR_LOGIN
+  allow_failure: false
   dependencies:
     - build
   only:
@@ -60,6 +61,8 @@ package:
   script:
     - echo "Packing the project..."
     - dotnet pack --configuration Release --output ./nupkg
+    - echo "List contents of nupkg directory:"
+    - ls -la ./nupkg
   dependencies:
     - build
     - code-analysis
