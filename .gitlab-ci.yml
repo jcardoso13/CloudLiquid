@@ -65,7 +65,7 @@ test:
     reports:
       junit: TestResults/*.trx
     paths:
-      - TestResults/
+      - ${CI_PROJECT_DIR}/TestResults/
     expire_in: 1 week
 
 
