@@ -61,8 +61,6 @@ package:
   script:
     - echo "Packing the project..."
     - dotnet pack --configuration Release --output ./nupkg
-    - echo "List contents of nupkg directory:"
-    - ls -la ./nupkg
   dependencies:
     - build
     - code-analysis
