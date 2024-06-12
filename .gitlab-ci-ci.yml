@@ -64,7 +64,7 @@ package:
   dependencies:
     - build
     - code-analysis
-  when: manual
+ # when: manual
   artifacts:
     paths:
       - nupkg/
