@@ -28,7 +28,7 @@ test:
   stage: test
   script:
     - echo "Running tests..."
-    - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
+    - dotnet test --configuration Release --logger:trx --results-directory ${CI_PROJECT_DIR}/TestResults --no-build --verbosity normal
   dependencies:
     - build
   artifacts:
@@ -60,9 +60,8 @@ package:
   stage: package
   script:
     - echo "Packing the project..."
-    - dotnet pack --configuration Release --output ./nupkg
-    - pwd
-    - ls
+    - dotnet pack --configuration Release --output ${CI_PROJECT_DIR}/nupkg
+    - ls -la ${CI_PROJECT_DIR}/nupkg
   dependencies:
     - build
     - analysis
