@@ -2,7 +2,7 @@
 stages:
   - build
   - test
-  - code-analysis
+  - analysis
   - package
   - publish
 
@@ -22,7 +22,7 @@ include:
 #  script:
 #    - echo "Waiting for CI to complete..."
 #  when: on_success
-#  needs: ["build", "test", "code-analysis", "package"]
+#  needs: ["build", "test", "analysis", "package"]
 #  rules:
 #    - if: '$CI_COMMIT_BRANCH == "main"'
 
