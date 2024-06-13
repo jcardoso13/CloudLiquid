@@ -419,7 +419,7 @@ namespace CloudLiquid.Filters
         /// <param name="index">The optional index of the object within a list. Default value is -1.</param>
         /// <returns> If the input object is null, returns null or if the key is null or empty, returns the input object.
         /// If index is -1 returns a object with the property value set.
-        /// If index is not -1 returns a  list with the property value set to the object at the specified index.</returns>
+        /// If index is not -1 returns a list with the property value set to the object at the specified index.</returns>
         public static dynamic SetProperty(Context context, dynamic input, string key, dynamic entry, int index = -1)
         {
             if (index == -1)

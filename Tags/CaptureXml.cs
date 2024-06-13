@@ -9,7 +9,12 @@ namespace CloudLiquid.Tags
     public class CaptureXML : BaseCloudLiquidTag
     {
         #region Public Methods
-
+        /// <summary>
+        /// Renders the tag, capturing its content, parsing it as XML, and converting it to JSON.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="result">The text writer to render to.</param>
+        /// <exception>Thrown when the captured content cannot be parsed as JSON.</exception>
         public override void Render(Context context, TextWriter result)
         {
             using TextWriter textWriter = new StringWriter(result.FormatProvider);
@@ -27,7 +32,6 @@ namespace CloudLiquid.Tags
                 });
             context.Scopes.Last()[this.To] = requestJson;
         }
-
         #endregion
     }
 }

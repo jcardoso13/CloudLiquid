@@ -24,13 +24,26 @@ namespace CloudLiquid.Tags
 
         public AzureTag() : base() { }
 
+        /// <summary>
+        /// Initializes a new instance with the specified logger.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
         public AzureTag(ILogger logger) : base(logger) { }
 
+        /// <summary>
+        /// Initializes a new instance with the specified BlobContainerClient.
+        /// </summary>
+        /// <param name="blobContainerClient">The BlobContainerClient.</param>
         public AzureTag(BlobContainerClient blobContainerClient) : base()
         {
             this.InitializeBlobContainerClient(blobContainerClient);
         }
 
+        ///<summary>
+        /// Initializes a new instance with the specified logger and BlobContainerClient.
+        /// </summary>
+        /// <param name="logger">The logger.</param>
+        /// <param name="blobContainerClient">The BlobContainerClient.</param>
         public AzureTag(ILogger logger, BlobContainerClient blobContainerClient) : base(logger) 
         { 
             this.InitializeBlobContainerClient(blobContainerClient);
@@ -39,12 +52,22 @@ namespace CloudLiquid.Tags
         #endregion
 
         #region Public Methods
-
+        /// <summary>
+        /// Initializes the BlobContainerClient.
+        /// </summary>
+        /// <param name="blobContainerClient">The BlobContainerClient.</param>
         public void InitializeBlobContainerClient(BlobContainerClient blobContainerClient) 
         { 
             this.blobContainerClient = blobContainerClient; 
         }
 
+        /// <summary>
+        /// Initializes the tag with the specified tagName, markup, and tokens.
+        /// </summary>
+        /// <param name="tagName">The name of the tag.</param>
+        /// <param name="markup">The markup for the tag.</param>
+        /// <param name="tokens">The list of tokens.</param>
+        /// <exception>Thrown when the markup syntax is incorrect.</exception>
         public override void Initialize(string tagName, string markup, List<string> tokens)
         {
             Match syntaxMatch = Syntax.Match(markup);
@@ -70,6 +93,12 @@ namespace CloudLiquid.Tags
             base.Initialize(tagName, markup, tokens);
         }
 
+        /// <summary>
+        /// Renders the tag to the specified result using the provided context.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="result">The result to render to.</param>
+        /// <exception>Thrown when the template, variable, file system, or logger is null.</exception>
         public override void Render(Context context, TextWriter result)
         {
             if (this.templateName == null || blobContainerClient == null || this.Logger == null || attributes == null)

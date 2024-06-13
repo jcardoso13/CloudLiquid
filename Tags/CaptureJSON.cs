@@ -7,7 +7,12 @@ namespace CloudLiquid.Tags
     public class CaptureJSON : BaseCloudLiquidTag
     {
         #region Public Methods
-
+        /// <summary>
+        /// Renders the tag, capturing its content and parse it as JSON.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="result">The text writer to render to.</param>
+        /// <exception>Thrown when the captured content cannot be parsed as JSON.</exception>
         public override void Render(Context context, TextWriter result)
         {
             using TextWriter textWriter = new StringWriter(result.FormatProvider);

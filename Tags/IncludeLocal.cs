@@ -18,7 +18,13 @@ namespace CloudLiquid.Tags
         #endregion
 
         #region Public Methods
-
+        /// <summary>
+        /// Initializes the tag with the specified name, markup, and tokens.
+        /// </summary>
+        /// <param name="tagName">The name of the tag.</param>
+        /// <param name="markup">The markup for the tag.</param>
+        /// <param name="tokens">The tokens in the template.</param>
+        /// <exception>Thrown when the markup syntax is invalid.</exception>
         public override void Initialize(string tagName, string markup, List<string> tokens)
         {
             Match syntaxMatch = Syntax.Match(markup);
@@ -42,7 +48,12 @@ namespace CloudLiquid.Tags
 
             base.Initialize(tagName, markup, tokens);
         }
-
+        /// <summary>
+        /// Renders the tag, including the specified local template.
+        /// </summary>
+        /// <param name="context">The context.</param>
+        /// <param name="result">The text writer to render to.</param>
+        /// <exception>Thrown when the template or attributes are null.</exception>
         public override void Render(Context context, TextWriter result)
         {
             if (templateName == null || attributes == null)

@@ -20,9 +20,15 @@ namespace CloudLiquid
         #endregion
 
         #region Constructors
-
+        /// <summary>
+        /// Initializes a new instance of the BaseCloudLiquidTag/> class.
+        /// </summary>
         public BaseCloudLiquidTag() { }
 
+        /// <summary>
+        /// Initializes a new instance of the BaseCloudLiquidTag class with the specified logger.
+        /// </summary>
+        /// <param name="logger">The logger instance.</param>
         public BaseCloudLiquidTag(ILogger logger) 
         { 
             this.InitializeLogger(logger); 
@@ -31,7 +37,9 @@ namespace CloudLiquid
         #endregion
 
         #region Protected Properties
-
+        /// <summary>
+        /// Gets the logger instance.
+        /// </summary>
         protected ILogger Logger 
         { 
             get 
@@ -48,9 +56,19 @@ namespace CloudLiquid
         #endregion
 
         #region Public Methods
-
+        /// <summary>
+        /// Initializes the logger instance.
+        /// </summary>
+        /// <param name="logger">The logger instance.</param>
         public void InitializeLogger(ILogger logger) { this.logger = logger; }
 
+        /// <summary>
+        /// Initializes the tag with the specified tagName, markup, and tokens.
+        /// </summary>
+        /// <param name="tagName">The name of the tag.</param>
+        /// <param name="markup">The markup for the tag.</param>
+        /// <param name="tokens">The list of tokens.</param>
+        /// <exception>Thrown when the markup syntax is incorrect.</exception>
         public override void Initialize(string tagName, string markup, List<string> tokens)
         {
             Match syntaxMatch = VariableSegmentRegex.Match(markup);
