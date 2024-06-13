@@ -1,33 +1,3 @@
-
-#stages:
-#  - build
-#  - test
-#  - analysis
-#  - package
-#  - publish
-
-#workflow:
-#  rules:
-#    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
-#      when: never
-#    - if: '$CI_COMMIT_BRANCH == "main"'
-#      when: always
-
-#include:
-#  - local: '/.gitlab-ci-ci.yml'
-#  - local: '/.gitlab-ci-cd.yml'
-
-#wait_for_ci:
-#  stage: .post
-#  script:
-#    - echo "Waiting for CI to complete..."
-#  when: on_success
-#  needs: ["build", "test", "analysis", "package"]
-#  rules:
-#    - if: '$CI_COMMIT_BRANCH == "main"'
-
-
-
 stages:
   - build
   - test
@@ -58,7 +28,7 @@ test:
   stage: test
   script:
     - echo "Running tests..."
-    - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
+    - dotnet test --configuration Release --logger:trx --results-directory /TestResults --no-build --verbosity normal
   dependencies:
     - build
   artifacts:
@@ -91,6 +61,7 @@ package:
   script:
     - echo "Packing the project..."
     - dotnet pack --configuration Release --output ./nupkg
+    - ls -la ./nupkg
   dependencies:
     - build
     - analysis

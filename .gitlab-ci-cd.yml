@@ -1,0 +1,14 @@
+
+stages:
+  - publish
+
+# The Publish stage (commented out for future use)
+publish:
+  stage: publish
+  image: mcr.microsoft.com/dotnet/sdk:latest
+  script:
+    - echo "Publishing the package to NuGet.org..."
+    - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+  when: manual
+  only:
+    - main
