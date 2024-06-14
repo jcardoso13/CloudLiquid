@@ -56,9 +56,9 @@ build:
 test:
   stage: test
   script:
-    - ls -la bin/Release/
     - echo "Running tests..."
-    - dotnet test --no-build --configuration Release --logger:trx --verbosity normal --output ./bin/Release/net8.0
+    - dotnet test --no-build --configuration Release --logger:trx --verbosity normal
+    - ls -la
   dependencies:
     - build
   artifacts:
