@@ -49,12 +49,14 @@ build:
     paths:
       - bin/Release/
     expire_in: 1 week
+    when: on_success
 
 
 # The Test stage
 test:
   stage: test
   script:
+    - ls -la bin/Release/
     - echo "Running tests..."
     - dotnet test --configuration Release --logger:trx --verbosity normal --no-build
   dependencies:
