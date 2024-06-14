@@ -56,7 +56,7 @@ test:
   stage: test
   script:
     - echo "Running tests..."
-    - dotnet test --configuration Release --logger:trx
+    - dotnet test --configuration Release --logger:trx --verbosity normal
   dependencies:
     - build
   artifacts:
