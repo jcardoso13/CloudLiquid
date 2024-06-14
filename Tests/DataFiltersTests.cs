@@ -1,4 +1,4 @@
-﻿using CloudLiquid.Filters;
+using CloudLiquid.Filters;
 using DotLiquid;
 using System;
 using System.Collections.Generic;
@@ -106,7 +106,7 @@ namespace CloudLiquid.Tests
             var input = new { Name = "Maria", Age = 25 };
             string result = DataFilters.Json(null, input);
 
-            Assert.Equal("{\r\n  \"Name\": \"Maria\",\r\n  \"Age\": 25\r\n}", result);
+            Assert.Equal("{\n  \"Name\": \"Maria\",\n  \"Age\": 25\n}", result);
         }
         [Fact]
         public void TestJson_Decimal()
