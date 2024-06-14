@@ -32,9 +32,11 @@ stages:
   - analysis
   - package
 
+variables:
+  DOTNET_VERSION: "8.0.x"
 
 default:
-  image: mcr.microsoft.com/dotnet/sdk:8.0
+  image: mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION
 
 
 # The Build stage
@@ -53,21 +55,34 @@ build:
 
 
 # The Test stage
+#test:
+#  stage: test
+#  script:
+#    - echo "Running tests..."
+#    - dotnet test --configuration Release --logger "trx;LogFileName=$TEST_RESULTS_DIR/test_results.trx" --verbosity normal --results-directory TestResults
+#    - echo "test stage completed"
+#  dependencies:
+#    - build
+#  artifacts:
+#    reports:
+#      junit: TestResults/*.trx
+#    paths:
+#      - TestResults/
+#    expire_in: 1 week
+
 test:
   stage: test
   script:
-    - echo "Running tests..."
-    - dotnet test --configuration Release --logger:trx --verbosity normal --results-directory TestResults
-    - ls -la
-    - echo "test stage completed"
+    - dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage/
+    - reportgenerator "-reports:./coverage/coverage.opencover.xml" "-targetdir:coverage-report" 
+    - ls -la coverage-report  
   dependencies:
     - build
   artifacts:
-    reports:
-      junit: TestResults/*.trx
     paths:
-      - TestResults/
-    expire_in: 1 week
+      - coverage-report/
+  coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
+
 
 
 # Code Analysis stage
@@ -80,7 +95,6 @@ analysis:
                     -Dsonar.host.url=$SONAR_HOST_URL
                     -Dsonar.login=$SONAR_LOGIN
   allow_failure: false
-  when: manual
   dependencies:
     - build
   only:
@@ -92,10 +106,10 @@ package:
   stage: package
   script:
     - echo "Packing the project..."
-    - dotnet pack --configuration Release --output ./nupkg
+    - dotnet pack --configuration Release --output nupkg
   dependencies:
-    - build
     - analysis
+    - build
   when: manual
   artifacts:
     paths:
