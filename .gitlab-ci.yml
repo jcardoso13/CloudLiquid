@@ -55,6 +55,7 @@ build:
 test:
   stage: test
   script:
+    - cd "$CI_PROJECT_DIR"
     - echo "Running tests..."
     - dotnet test --configuration Release --logger:trx --results-directory TestResults --no-build --verbosity normal
   dependencies:
