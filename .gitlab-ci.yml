@@ -34,7 +34,7 @@ stages:
 
 
 default:
-  image: mcr.microsoft.com/dotnet/sdk:latest
+  image: mcr.microsoft.com/dotnet/sdk:8.0
 
 
 # The Build stage
@@ -57,8 +57,9 @@ test:
   stage: test
   script:
     - echo "Running tests..."
-    - dotnet test --no-build --configuration Release --logger:trx --verbosity normal
+    - dotnet test --configuration Release --logger:trx --verbosity normal --results-directory TestResults
     - ls -la
+    - echo "test stage completed"
   dependencies:
     - build
   artifacts:
@@ -79,6 +80,7 @@ analysis:
                     -Dsonar.host.url=$SONAR_HOST_URL
                     -Dsonar.login=$SONAR_LOGIN
   allow_failure: false
+  when: manual
   dependencies:
     - build
   only:
@@ -94,7 +96,7 @@ package:
   dependencies:
     - build
     - analysis
- # when: manual
+  when: manual
   artifacts:
     paths:
       - nupkg/
