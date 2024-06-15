@@ -33,7 +33,7 @@ stages:
   - package
 
 variables:
-  DOTNET_VERSION: "8.0.x"
+  DOTNET_VERSION: latest
 
 default:
   image: mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION
