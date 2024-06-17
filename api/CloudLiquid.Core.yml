@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.Core
+  commentId: N:CloudLiquid.Core
+  id: CloudLiquid.Core
+  children:
+  - CloudLiquid.Core.LiquidProcessor
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid.Core
+  nameWithType: CloudLiquid.Core
+  fullName: CloudLiquid.Core
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.Core.LiquidProcessor
+  commentId: T:CloudLiquid.Core.LiquidProcessor
+  href: CloudLiquid.Core.LiquidProcessor.html
+  name: LiquidProcessor
+  nameWithType: LiquidProcessor
+  fullName: CloudLiquid.Core.LiquidProcessor

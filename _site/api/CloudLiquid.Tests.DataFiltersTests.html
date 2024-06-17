@@ -1,0 +1,2513 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class DataFiltersTests | CloudLiquid </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class DataFiltersTests | CloudLiquid ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="CloudLiquid">
+            CloudLiquid
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="CloudLiquid.Tests.DataFiltersTests">
+
+
+
+  <h1 id="CloudLiquid_Tests_DataFiltersTests" data-uid="CloudLiquid.Tests.DataFiltersTests" class="text-break">
+Class DataFiltersTests  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="CloudLiquid.html">CloudLiquid</a>.<a class="xref" href="CloudLiquid.Tests.html">Tests</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>CloudLiquid.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class DataFiltersTests</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">DataFiltersTests</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_DecodeBase64_InvalidString_" data-uid="CloudLiquid.Tests.DataFiltersTests.DecodeBase64_InvalidString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_DecodeBase64_InvalidString" data-uid="CloudLiquid.Tests.DataFiltersTests.DecodeBase64_InvalidString">
+  DecodeBase64_InvalidString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void DecodeBase64_InvalidString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_EmptyKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_EmptyKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_EmptyKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_EmptyKey">
+  TestAddProperty_EmptyKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddProperty_EmptyKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_IndexSpecified_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_IndexSpecified*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_IndexSpecified" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_IndexSpecified">
+  TestAddProperty_IndexSpecified()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddProperty_IndexSpecified()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_NewProperty_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_NewProperty*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_NewProperty" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_NewProperty">
+  TestAddProperty_NewProperty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddProperty_NewProperty()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_NullInput_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_NullInput*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddProperty_NullInput" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddProperty_NullInput">
+  TestAddProperty_NullInput()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddProperty_NullInput()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_NullInsertAndNullInsertFalse_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_NullInsertAndNullInsertFalse*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_NullInsertAndNullInsertFalse" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_NullInsertAndNullInsertFalse">
+  TestAddToList_NullInsertAndNullInsertFalse()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddToList_NullInsertAndNullInsertFalse()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_NullInsertAndNullInsertTrue_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_NullInsertAndNullInsertTrue*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_NullInsertAndNullInsertTrue" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_NullInsertAndNullInsertTrue">
+  TestAddToList_NullInsertAndNullInsertTrue()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddToList_NullInsertAndNullInsertTrue()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_UniqueFalseAndInsert_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_UniqueFalseAndInsert*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_UniqueFalseAndInsert" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_UniqueFalseAndInsert">
+  TestAddToList_UniqueFalseAndInsert()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddToList_UniqueFalseAndInsert()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_UniqueTrueAndInsert_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_UniqueTrueAndInsert*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_UniqueTrueAndInsert" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_UniqueTrueAndInsert">
+  TestAddToList_UniqueTrueAndInsert()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddToList_UniqueTrueAndInsert()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_UniqueTrueAndInsertAlreadyInList_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_UniqueTrueAndInsertAlreadyInList*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestAddToList_UniqueTrueAndInsertAlreadyInList" data-uid="CloudLiquid.Tests.DataFiltersTests.TestAddToList_UniqueTrueAndInsertAlreadyInList">
+  TestAddToList_UniqueTrueAndInsertAlreadyInList()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestAddToList_UniqueTrueAndInsertAlreadyInList()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestClearNulls_DictionaryContainNulls_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestClearNulls_DictionaryContainNulls*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestClearNulls_DictionaryContainNulls" data-uid="CloudLiquid.Tests.DataFiltersTests.TestClearNulls_DictionaryContainNulls">
+  TestClearNulls_DictionaryContainNulls()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestClearNulls_DictionaryContainNulls()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestClearNulls_NoDictionary_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestClearNulls_NoDictionary*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestClearNulls_NoDictionary" data-uid="CloudLiquid.Tests.DataFiltersTests.TestClearNulls_NoDictionary">
+  TestClearNulls_NoDictionary()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestClearNulls_NoDictionary()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestClearNulls_NullData_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestClearNulls_NullData*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestClearNulls_NullData" data-uid="CloudLiquid.Tests.DataFiltersTests.TestClearNulls_NullData">
+  TestClearNulls_NullData()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestClearNulls_NullData()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCoalesce_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCoalesce*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCoalesce" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCoalesce">
+  TestCoalesce()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCoalesce()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCoalesce_AllNull_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCoalesce_AllNull*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCoalesce_AllNull" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCoalesce_AllNull">
+  TestCoalesce_AllNull()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCoalesce_AllNull()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCoalesce_FirstNull_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCoalesce_FirstNull*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCoalesce_FirstNull" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCoalesce_FirstNull">
+  TestCoalesce_FirstNull()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCoalesce_FirstNull()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCreateHash_WithKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateHash_WithKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCreateHash_WithKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateHash_WithKey">
+  TestCreateHash_WithKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCreateHash_WithKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCreateHash_WithNullKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateHash_WithNullKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCreateHash_WithNullKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateHash_WithNullKey">
+  TestCreateHash_WithNullKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCreateHash_WithNullKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCreateHash_WithoutKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateHash_WithoutKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCreateHash_WithoutKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateHash_WithoutKey">
+  TestCreateHash_WithoutKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCreateHash_WithoutKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCreateList_WithType_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateList_WithType*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCreateList_WithType" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateList_WithType">
+  TestCreateList_WithType()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCreateList_WithType()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestCreateList_WithoutType_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateList_WithoutType*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestCreateList_WithoutType" data-uid="CloudLiquid.Tests.DataFiltersTests.TestCreateList_WithoutType">
+  TestCreateList_WithoutType()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestCreateList_WithoutType()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Boolean_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Boolean*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Boolean" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Boolean">
+  TestDataType_Boolean()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDataType_Boolean()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Dictionary_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Dictionary*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Dictionary" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Dictionary">
+  TestDataType_Dictionary()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDataType_Dictionary()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Hash_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Hash*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Hash" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Hash">
+  TestDataType_Hash()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDataType_Hash()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Integer_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Integer*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDataType_Integer" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_Integer">
+  TestDataType_Integer()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDataType_Integer()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDataType_ReturnNull_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_ReturnNull*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDataType_ReturnNull" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_ReturnNull">
+  TestDataType_ReturnNull()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDataType_ReturnNull()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDataType_String_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_String*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDataType_String" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDataType_String">
+  TestDataType_String()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDataType_String()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDecodeBase64_String_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDecodeBase64_String*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDecodeBase64_String" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDecodeBase64_String">
+  TestDecodeBase64_String()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDecodeBase64_String()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestDouble_NullInputThrowsArgumentNullException_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestDouble_NullInputThrowsArgumentNullException" data-uid="CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException">
+  TestDouble_NullInputThrowsArgumentNullException()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestDouble_NullInputThrowsArgumentNullException()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_DefaultFormat_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_DefaultFormat*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_DefaultFormat" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_DefaultFormat">
+  TestFormatDateTime_DefaultFormat()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestFormatDateTime_DefaultFormat()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_NullTimestamp_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_NullTimestamp*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_NullTimestamp" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_NullTimestamp">
+  TestFormatDateTime_NullTimestamp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestFormatDateTime_NullTimestamp()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_ThrowsExceptionForInvalidTimestamp_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_ThrowsExceptionForInvalidTimestamp*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_ThrowsExceptionForInvalidTimestamp" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_ThrowsExceptionForInvalidTimestamp">
+  TestFormatDateTime_ThrowsExceptionForInvalidTimestamp()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestFormatDateTime_ThrowsExceptionForInvalidTimestamp()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_WithFormat_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_WithFormat*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestFormatDateTime_WithFormat" data-uid="CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_WithFormat">
+  TestFormatDateTime_WithFormat()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestFormatDateTime_WithFormat()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestGetListFromHash_DataIsNull_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestGetListFromHash_DataIsNull*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestGetListFromHash_DataIsNull" data-uid="CloudLiquid.Tests.DataFiltersTests.TestGetListFromHash_DataIsNull">
+  TestGetListFromHash_DataIsNull()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestGetListFromHash_DataIsNull()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestGetListFromHash_KeyExistInHash_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestGetListFromHash_KeyExistInHash*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestGetListFromHash_KeyExistInHash" data-uid="CloudLiquid.Tests.DataFiltersTests.TestGetListFromHash_KeyExistInHash">
+  TestGetListFromHash_KeyExistInHash()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestGetListFromHash_KeyExistInHash()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestInt_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestInt*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestInt" data-uid="CloudLiquid.Tests.DataFiltersTests.TestInt">
+  TestInt()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestInt()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestInt_DoubleToInt_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestInt_DoubleToInt*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestInt_DoubleToInt" data-uid="CloudLiquid.Tests.DataFiltersTests.TestInt_DoubleToInt">
+  TestInt_DoubleToInt()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestInt_DoubleToInt()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestInt_InvalidString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestInt_InvalidString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestInt_InvalidString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestInt_InvalidString">
+  TestInt_InvalidString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestInt_InvalidString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_ListDynamic_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_ListDynamic*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_ListDynamic" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_ListDynamic">
+  TestIsLoop_ListDynamic()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestIsLoop_ListDynamic()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_ListInt_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_ListInt*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_ListInt" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_ListInt">
+  TestIsLoop_ListInt()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestIsLoop_ListInt()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_WithHash_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_WithHash*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_WithHash" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_WithHash">
+  TestIsLoop_WithHash()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestIsLoop_WithHash()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_WithNull_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_WithNull*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_WithNull" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_WithNull">
+  TestIsLoop_WithNull()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestIsLoop_WithNull()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_WithString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_WithString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestIsLoop_WithString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestIsLoop_WithString">
+  TestIsLoop_WithString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestIsLoop_WithString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_Bool_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Bool*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_Bool" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Bool">
+  TestJson_Bool()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_Bool()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_Decimal_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Decimal*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_Decimal" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Decimal">
+  TestJson_Decimal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_Decimal()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_Dictionary_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Dictionary*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_Dictionary" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Dictionary">
+  TestJson_Dictionary()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_Dictionary()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_DictionaryAndList_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_DictionaryAndList*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_DictionaryAndList" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_DictionaryAndList">
+  TestJson_DictionaryAndList()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_DictionaryAndList()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_Int_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Int*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_Int" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Int">
+  TestJson_Int()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_Int()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_List_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_List*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_List" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_List">
+  TestJson_List()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_List()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_Object_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Object*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_Object" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_Object">
+  TestJson_Object()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_Object()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestJson_WithoutBrackets_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_WithoutBrackets*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestJson_WithoutBrackets" data-uid="CloudLiquid.Tests.DataFiltersTests.TestJson_WithoutBrackets">
+  TestJson_WithoutBrackets()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestJson_WithoutBrackets()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DictionaryContainKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DictionaryContainKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey">
+  TestLiquidContains_DictionaryContainKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestLiquidContains_DictionaryContainKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DictionaryDoesNotContainKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DictionaryDoesNotContainKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey">
+  TestLiquidContains_DictionaryDoesNotContainKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestLiquidContains_DictionaryDoesNotContainKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_ListContainString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_ListContainString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString">
+  TestLiquidContains_ListContainString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestLiquidContains_ListContainString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_ListDoesNotContainString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_ListDoesNotContainString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString">
+  TestLiquidContains_ListDoesNotContainString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestLiquidContains_ListDoesNotContainString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_String_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_String" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String">
+  TestLiquidContains_String()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestLiquidContains_String()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestLog_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLog*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestLog" data-uid="CloudLiquid.Tests.DataFiltersTests.TestLog">
+  TestLog()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestLog()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestNullifnull_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestNullifnull*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestNullifnull" data-uid="CloudLiquid.Tests.DataFiltersTests.TestNullifnull">
+  TestNullifnull()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestNullifnull()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestPadleft_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestPadleft*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestPadleft_System_String_System_Int32_System_String_System_String_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestPadleft(System.String,System.Int32,System.String,System.String)">
+  TestPadleft(string, int, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[] { &quot;test&quot;, 10, &quot;*&quot;, &quot;******test&quot; })]
+[InlineData(new object[] { &quot;test&quot;, 4, &quot;*&quot;, &quot;test&quot; })]
+[InlineData(new object[] { &quot;test&quot;, 2, &quot;*&quot;, &quot;test&quot; })]
+[InlineData(new object[] { &quot;&quot;, 5, &quot;*&quot;, &quot;*****&quot; })]
+[InlineData(new object[] { null, 5, &quot;*&quot;, null })]
+public void TestPadleft(string input, int totalWidth, string padChar, string expected)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>totalWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>padChar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>expected</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestPadright_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestPadright*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestPadright_System_String_System_Int32_System_String_System_String_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestPadright(System.String,System.Int32,System.String,System.String)">
+  TestPadright(string, int, string, string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[] { &quot;test&quot;, 10, &quot;*&quot;, &quot;test******&quot; })]
+[InlineData(new object[] { &quot;test&quot;, 4, &quot;*&quot;, &quot;test&quot; })]
+[InlineData(new object[] { &quot;test&quot;, 2, &quot;*&quot;, &quot;test&quot; })]
+[InlineData(new object[] { &quot;&quot;, 5, &quot;*&quot;, &quot;*****&quot; })]
+[InlineData(new object[] { null, 5, &quot;*&quot;, null })]
+public void TestPadright(string input, int totalWidth, string padChar, string expected)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>totalWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>padChar</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>expected</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestParseDouble_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestParseDouble*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestParseDouble" data-uid="CloudLiquid.Tests.DataFiltersTests.TestParseDouble">
+  TestParseDouble()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestParseDouble()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestParseDouble_InvalidFormat_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestParseDouble_InvalidFormat_System_String_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat(System.String)">
+  TestParseDouble_InvalidFormat(string)
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Theory]
+[InlineData(new object[] { &quot;test&quot; })]
+[InlineData(new object[] { &quot;&quot; })]
+public void TestParseDouble_InvalidFormat(string input)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestRemoveFromList_ElementDoesNotExist_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementDoesNotExist*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestRemoveFromList_ElementDoesNotExist" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementDoesNotExist">
+  TestRemoveFromList_ElementDoesNotExist()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestRemoveFromList_ElementDoesNotExist()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestRemoveFromList_ElementExist_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementExist*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestRemoveFromList_ElementExist" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementExist">
+  TestRemoveFromList_ElementExist()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestRemoveFromList_ElementExist()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_EmptyKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_EmptyKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_EmptyKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_EmptyKey">
+  TestRemoveProperty_EmptyKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestRemoveProperty_EmptyKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_IndexSpecified_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_IndexSpecified*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_IndexSpecified" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_IndexSpecified">
+  TestRemoveProperty_IndexSpecified()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestRemoveProperty_IndexSpecified()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_NullInput_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_NullInput*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_NullInput" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_NullInput">
+  TestRemoveProperty_NullInput()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestRemoveProperty_NullInput()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_RemovesPropertyIfExists_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_RemovesPropertyIfExists*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestRemoveProperty_RemovesPropertyIfExists" data-uid="CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_RemovesPropertyIfExists">
+  TestRemoveProperty_RemovesPropertyIfExists()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestRemoveProperty_RemovesPropertyIfExists()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestSecret_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSecret*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestSecret" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSecret">
+  TestSecret()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestSecret()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_EmptyKey_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_EmptyKey*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_EmptyKey" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_EmptyKey">
+  TestSetProperty_EmptyKey()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestSetProperty_EmptyKey()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_NewProperty_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_NewProperty*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_NewProperty" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_NewProperty">
+  TestSetProperty_NewProperty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestSetProperty_NewProperty()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_NullInput_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_NullInput*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_NullInput" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_NullInput">
+  TestSetProperty_NullInput()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestSetProperty_NullInput()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_UpdateProperty_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_UpdateProperty*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_UpdateProperty" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_UpdateProperty">
+  TestSetProperty_UpdateProperty()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestSetProperty_UpdateProperty()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_UpdateWithIndex_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_UpdateWithIndex*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestSetProperty_UpdateWithIndex" data-uid="CloudLiquid.Tests.DataFiltersTests.TestSetProperty_UpdateWithIndex">
+  TestSetProperty_UpdateWithIndex()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestSetProperty_UpdateWithIndex()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestString_BooleanToString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_BooleanToString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestString_BooleanToString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_BooleanToString">
+  TestString_BooleanToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestString_BooleanToString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestString_IntegerToString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_IntegerToString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestString_IntegerToString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_IntegerToString">
+  TestString_IntegerToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestString_IntegerToString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestString_NullToString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_NullToString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestString_NullToString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_NullToString">
+  TestString_NullToString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestString_NullToString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestString_WithString_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_WithString*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestString_WithString" data-uid="CloudLiquid.Tests.DataFiltersTests.TestString_WithString">
+  TestString_WithString()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestString_WithString()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_Bool_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Bool*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_Bool" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Bool">
+  TestXml_Bool()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_Bool()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_Decimal_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Decimal*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_Decimal" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Decimal">
+  TestXml_Decimal()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_Decimal()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_Dictionary_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Dictionary*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_Dictionary" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Dictionary">
+  TestXml_Dictionary()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_Dictionary()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_DictionaryAndList_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_DictionaryAndList*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_DictionaryAndList" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_DictionaryAndList">
+  TestXml_DictionaryAndList()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_DictionaryAndList()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_Int_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Int*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_Int" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Int">
+  TestXml_Int()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_Int()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_List_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_List*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_List" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_List">
+  TestXml_List()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_List()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="CloudLiquid_Tests_DataFiltersTests_TestXml_Object_" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Object*"></a>
+
+  <h3 id="CloudLiquid_Tests_DataFiltersTests_TestXml_Object" data-uid="CloudLiquid.Tests.DataFiltersTests.TestXml_Object">
+  TestXml_Object()
+  
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Fact]
+public void TestXml_Object()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

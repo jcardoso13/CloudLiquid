@@ -1,0 +1,155 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.ContentFactory.IContentWriter
+  commentId: T:CloudLiquid.ContentFactory.IContentWriter
+  id: IContentWriter
+  parent: CloudLiquid.ContentFactory
+  children:
+  - CloudLiquid.ContentFactory.IContentWriter.CreateResponse(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IContentWriter
+  nameWithType: IContentWriter
+  fullName: CloudLiquid.ContentFactory.IContentWriter
+  type: Interface
+  source:
+    remote:
+      path: ContentFactory/IContentWriter.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: IContentWriter
+    path: ContentFactory/IContentWriter.cs
+    startLine: 9
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: public interface IContentWriter
+    content.vb: Public Interface IContentWriter
+- uid: CloudLiquid.ContentFactory.IContentWriter.CreateResponse(System.String)
+  commentId: M:CloudLiquid.ContentFactory.IContentWriter.CreateResponse(System.String)
+  id: CreateResponse(System.String)
+  parent: CloudLiquid.ContentFactory.IContentWriter
+  langs:
+  - csharp
+  - vb
+  name: CreateResponse(string)
+  nameWithType: IContentWriter.CreateResponse(string)
+  fullName: CloudLiquid.ContentFactory.IContentWriter.CreateResponse(string)
+  type: Method
+  source:
+    remote:
+      path: ContentFactory/IContentWriter.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: CreateResponse
+    path: ContentFactory/IContentWriter.cs
+    startLine: 11
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: StringContent CreateResponse(string output)
+    parameters:
+    - id: output
+      type: System.String
+    return:
+      type: System.Net.Http.StringContent
+    content.vb: Function CreateResponse(output As String) As StringContent
+  overload: CloudLiquid.ContentFactory.IContentWriter.CreateResponse*
+  nameWithType.vb: IContentWriter.CreateResponse(String)
+  fullName.vb: CloudLiquid.ContentFactory.IContentWriter.CreateResponse(String)
+  name.vb: CreateResponse(String)
+references:
+- uid: CloudLiquid.ContentFactory
+  commentId: N:CloudLiquid.ContentFactory
+  href: CloudLiquid.html
+  name: CloudLiquid.ContentFactory
+  nameWithType: CloudLiquid.ContentFactory
+  fullName: CloudLiquid.ContentFactory
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+- uid: CloudLiquid.ContentFactory.IContentWriter.CreateResponse*
+  commentId: Overload:CloudLiquid.ContentFactory.IContentWriter.CreateResponse
+  href: CloudLiquid.ContentFactory.IContentWriter.html#CloudLiquid_ContentFactory_IContentWriter_CreateResponse_System_String_
+  name: CreateResponse
+  nameWithType: IContentWriter.CreateResponse
+  fullName: CloudLiquid.ContentFactory.IContentWriter.CreateResponse
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Net.Http.StringContent
+  commentId: T:System.Net.Http.StringContent
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.stringcontent
+  name: StringContent
+  nameWithType: StringContent
+  fullName: System.Net.Http.StringContent
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http

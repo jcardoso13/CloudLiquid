@@ -1,0 +1,131 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.ContentFactory
+  commentId: N:CloudLiquid.ContentFactory
+  id: CloudLiquid.ContentFactory
+  children:
+  - CloudLiquid.ContentFactory.BasicContentWriter
+  - CloudLiquid.ContentFactory.ContentFactory
+  - CloudLiquid.ContentFactory.Csv2ContentReader
+  - CloudLiquid.ContentFactory.CsvContentReader
+  - CloudLiquid.ContentFactory.DictionaryFactory
+  - CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter
+  - CloudLiquid.ContentFactory.IContentReader
+  - CloudLiquid.ContentFactory.IContentWriter
+  - CloudLiquid.ContentFactory.JsonContentReader
+  - CloudLiquid.ContentFactory.JsonContentWriter
+  - CloudLiquid.ContentFactory.TSVContentReader
+  - CloudLiquid.ContentFactory.XmlContentReader
+  - CloudLiquid.ContentFactory.XmlContentWriter
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid.ContentFactory
+  nameWithType: CloudLiquid.ContentFactory
+  fullName: CloudLiquid.ContentFactory
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.ContentFactory.BasicContentWriter
+  commentId: T:CloudLiquid.ContentFactory.BasicContentWriter
+  href: CloudLiquid.ContentFactory.BasicContentWriter.html
+  name: BasicContentWriter
+  nameWithType: BasicContentWriter
+  fullName: CloudLiquid.ContentFactory.BasicContentWriter
+- uid: CloudLiquid.ContentFactory.ContentFactory
+  commentId: T:CloudLiquid.ContentFactory.ContentFactory
+  href: CloudLiquid.ContentFactory.ContentFactory.html
+  name: ContentFactory
+  nameWithType: ContentFactory
+  fullName: CloudLiquid.ContentFactory.ContentFactory
+- uid: CloudLiquid.ContentFactory.Csv2ContentReader
+  commentId: T:CloudLiquid.ContentFactory.Csv2ContentReader
+  href: CloudLiquid.ContentFactory.Csv2ContentReader.html
+  name: Csv2ContentReader
+  nameWithType: Csv2ContentReader
+  fullName: CloudLiquid.ContentFactory.Csv2ContentReader
+- uid: CloudLiquid.ContentFactory.CsvContentReader
+  commentId: T:CloudLiquid.ContentFactory.CsvContentReader
+  href: CloudLiquid.ContentFactory.CsvContentReader.html
+  name: CsvContentReader
+  nameWithType: CsvContentReader
+  fullName: CloudLiquid.ContentFactory.CsvContentReader
+- uid: CloudLiquid.ContentFactory.TSVContentReader
+  commentId: T:CloudLiquid.ContentFactory.TSVContentReader
+  href: CloudLiquid.ContentFactory.TSVContentReader.html
+  name: TSVContentReader
+  nameWithType: TSVContentReader
+  fullName: CloudLiquid.ContentFactory.TSVContentReader
+- uid: CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter
+  commentId: T:CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter
+  href: CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter.html
+  name: DictionaryStringObjectJsonConverter
+  nameWithType: DictionaryStringObjectJsonConverter
+  fullName: CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter
+- uid: CloudLiquid.ContentFactory.DictionaryFactory
+  commentId: T:CloudLiquid.ContentFactory.DictionaryFactory
+  href: CloudLiquid.ContentFactory.DictionaryFactory.html
+  name: DictionaryFactory
+  nameWithType: DictionaryFactory
+  fullName: CloudLiquid.ContentFactory.DictionaryFactory
+- uid: CloudLiquid.ContentFactory.IContentReader
+  commentId: T:CloudLiquid.ContentFactory.IContentReader
+  parent: CloudLiquid.ContentFactory
+  href: CloudLiquid.ContentFactory.IContentReader.html
+  name: IContentReader
+  nameWithType: IContentReader
+  fullName: CloudLiquid.ContentFactory.IContentReader
+- uid: CloudLiquid.ContentFactory.IContentWriter
+  commentId: T:CloudLiquid.ContentFactory.IContentWriter
+  parent: CloudLiquid.ContentFactory
+  href: CloudLiquid.ContentFactory.IContentWriter.html
+  name: IContentWriter
+  nameWithType: IContentWriter
+  fullName: CloudLiquid.ContentFactory.IContentWriter
+- uid: CloudLiquid.ContentFactory.JsonContentReader
+  commentId: T:CloudLiquid.ContentFactory.JsonContentReader
+  href: CloudLiquid.ContentFactory.JsonContentReader.html
+  name: JsonContentReader
+  nameWithType: JsonContentReader
+  fullName: CloudLiquid.ContentFactory.JsonContentReader
+- uid: CloudLiquid.ContentFactory.JsonContentWriter
+  commentId: T:CloudLiquid.ContentFactory.JsonContentWriter
+  href: CloudLiquid.ContentFactory.JsonContentWriter.html
+  name: JsonContentWriter
+  nameWithType: JsonContentWriter
+  fullName: CloudLiquid.ContentFactory.JsonContentWriter
+- uid: CloudLiquid.ContentFactory.XmlContentReader
+  commentId: T:CloudLiquid.ContentFactory.XmlContentReader
+  href: CloudLiquid.ContentFactory.XmlContentReader.html
+  name: XmlContentReader
+  nameWithType: XmlContentReader
+  fullName: CloudLiquid.ContentFactory.XmlContentReader
+- uid: CloudLiquid.ContentFactory.XmlContentWriter
+  commentId: T:CloudLiquid.ContentFactory.XmlContentWriter
+  href: CloudLiquid.ContentFactory.XmlContentWriter.html
+  name: XmlContentWriter
+  nameWithType: XmlContentWriter
+  fullName: CloudLiquid.ContentFactory.XmlContentWriter
+- uid: CloudLiquid.ContentFactory
+  commentId: N:CloudLiquid.ContentFactory
+  href: CloudLiquid.html
+  name: CloudLiquid.ContentFactory
+  nameWithType: CloudLiquid.ContentFactory
+  fullName: CloudLiquid.ContentFactory
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html

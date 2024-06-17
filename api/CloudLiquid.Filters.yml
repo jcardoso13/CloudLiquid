@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.Filters
+  commentId: N:CloudLiquid.Filters
+  id: CloudLiquid.Filters
+  children:
+  - CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid.Filters
+  nameWithType: CloudLiquid.Filters
+  fullName: CloudLiquid.Filters
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.Filters.DataFilters
+  commentId: T:CloudLiquid.Filters.DataFilters
+  href: CloudLiquid.Filters.DataFilters.html
+  name: DataFilters
+  nameWithType: DataFilters
+  fullName: CloudLiquid.Filters.DataFilters

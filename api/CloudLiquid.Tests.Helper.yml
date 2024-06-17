@@ -1,0 +1,705 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.Tests.Helper
+  commentId: T:CloudLiquid.Tests.Helper
+  id: Helper
+  parent: CloudLiquid.Tests
+  children:
+  - CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.Hash,DotLiquid.SyntaxCompatibility)
+  - CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.Hash,System.Collections.Generic.IEnumerable{System.Type},DotLiquid.SyntaxCompatibility)
+  - CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.NamingConventions.INamingConvention)
+  - CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.SyntaxCompatibility)
+  - CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,System.Object,DotLiquid.NamingConventions.INamingConvention,DotLiquid.SyntaxCompatibility)
+  - CloudLiquid.Tests.Helper.LockTemplateStaticVars(DotLiquid.NamingConventions.INamingConvention,System.Action)
+  langs:
+  - csharp
+  - vb
+  name: Helper
+  nameWithType: Helper
+  fullName: CloudLiquid.Tests.Helper
+  type: Class
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Helper
+    path: Tests/Helper.cs
+    startLine: 8
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public class Helper
+    content.vb: Public Class Helper
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CloudLiquid.Tests.Helper.LockTemplateStaticVars(DotLiquid.NamingConventions.INamingConvention,System.Action)
+  commentId: M:CloudLiquid.Tests.Helper.LockTemplateStaticVars(DotLiquid.NamingConventions.INamingConvention,System.Action)
+  id: LockTemplateStaticVars(DotLiquid.NamingConventions.INamingConvention,System.Action)
+  parent: CloudLiquid.Tests.Helper
+  langs:
+  - csharp
+  - vb
+  name: LockTemplateStaticVars(INamingConvention, Action)
+  nameWithType: Helper.LockTemplateStaticVars(INamingConvention, Action)
+  fullName: CloudLiquid.Tests.Helper.LockTemplateStaticVars(DotLiquid.NamingConventions.INamingConvention, System.Action)
+  type: Method
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: LockTemplateStaticVars
+    path: Tests/Helper.cs
+    startLine: 12
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public static void LockTemplateStaticVars(INamingConvention namingConvention, Action test)
+    parameters:
+    - id: namingConvention
+      type: DotLiquid.NamingConventions.INamingConvention
+    - id: test
+      type: System.Action
+    content.vb: Public Shared Sub LockTemplateStaticVars(namingConvention As INamingConvention, test As Action)
+  overload: CloudLiquid.Tests.Helper.LockTemplateStaticVars*
+- uid: CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,System.Object,DotLiquid.NamingConventions.INamingConvention,DotLiquid.SyntaxCompatibility)
+  commentId: M:CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,System.Object,DotLiquid.NamingConventions.INamingConvention,DotLiquid.SyntaxCompatibility)
+  id: AssertTemplateResult(System.String,System.String,System.Object,DotLiquid.NamingConventions.INamingConvention,DotLiquid.SyntaxCompatibility)
+  parent: CloudLiquid.Tests.Helper
+  langs:
+  - csharp
+  - vb
+  name: AssertTemplateResult(string, string, object, INamingConvention, SyntaxCompatibility)
+  nameWithType: Helper.AssertTemplateResult(string, string, object, INamingConvention, SyntaxCompatibility)
+  fullName: CloudLiquid.Tests.Helper.AssertTemplateResult(string, string, object, DotLiquid.NamingConventions.INamingConvention, DotLiquid.SyntaxCompatibility)
+  type: Method
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AssertTemplateResult
+    path: Tests/Helper.cs
+    startLine: 38
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public static void AssertTemplateResult(string expected, string template, object anonymousObject, INamingConvention namingConvention, SyntaxCompatibility syntax = SyntaxCompatibility.DotLiquid20)
+    parameters:
+    - id: expected
+      type: System.String
+    - id: template
+      type: System.String
+    - id: anonymousObject
+      type: System.Object
+    - id: namingConvention
+      type: DotLiquid.NamingConventions.INamingConvention
+    - id: syntax
+      type: DotLiquid.SyntaxCompatibility
+    content.vb: Public Shared Sub AssertTemplateResult(expected As String, template As String, anonymousObject As Object, namingConvention As INamingConvention, syntax As SyntaxCompatibility = SyntaxCompatibility.DotLiquid20)
+  overload: CloudLiquid.Tests.Helper.AssertTemplateResult*
+  nameWithType.vb: Helper.AssertTemplateResult(String, String, Object, INamingConvention, SyntaxCompatibility)
+  fullName.vb: CloudLiquid.Tests.Helper.AssertTemplateResult(String, String, Object, DotLiquid.NamingConventions.INamingConvention, DotLiquid.SyntaxCompatibility)
+  name.vb: AssertTemplateResult(String, String, Object, INamingConvention, SyntaxCompatibility)
+- uid: CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.NamingConventions.INamingConvention)
+  commentId: M:CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.NamingConventions.INamingConvention)
+  id: AssertTemplateResult(System.String,System.String,DotLiquid.NamingConventions.INamingConvention)
+  parent: CloudLiquid.Tests.Helper
+  langs:
+  - csharp
+  - vb
+  name: AssertTemplateResult(string, string, INamingConvention)
+  nameWithType: Helper.AssertTemplateResult(string, string, INamingConvention)
+  fullName: CloudLiquid.Tests.Helper.AssertTemplateResult(string, string, DotLiquid.NamingConventions.INamingConvention)
+  type: Method
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AssertTemplateResult
+    path: Tests/Helper.cs
+    startLine: 52
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public static void AssertTemplateResult(string expected, string template, INamingConvention namingConvention)
+    parameters:
+    - id: expected
+      type: System.String
+    - id: template
+      type: System.String
+    - id: namingConvention
+      type: DotLiquid.NamingConventions.INamingConvention
+    content.vb: Public Shared Sub AssertTemplateResult(expected As String, template As String, namingConvention As INamingConvention)
+  overload: CloudLiquid.Tests.Helper.AssertTemplateResult*
+  nameWithType.vb: Helper.AssertTemplateResult(String, String, INamingConvention)
+  fullName.vb: CloudLiquid.Tests.Helper.AssertTemplateResult(String, String, DotLiquid.NamingConventions.INamingConvention)
+  name.vb: AssertTemplateResult(String, String, INamingConvention)
+- uid: CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.Hash,System.Collections.Generic.IEnumerable{System.Type},DotLiquid.SyntaxCompatibility)
+  commentId: M:CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.Hash,System.Collections.Generic.IEnumerable{System.Type},DotLiquid.SyntaxCompatibility)
+  id: AssertTemplateResult(System.String,System.String,DotLiquid.Hash,System.Collections.Generic.IEnumerable{System.Type},DotLiquid.SyntaxCompatibility)
+  parent: CloudLiquid.Tests.Helper
+  langs:
+  - csharp
+  - vb
+  name: AssertTemplateResult(string, string, Hash, IEnumerable<Type>, SyntaxCompatibility)
+  nameWithType: Helper.AssertTemplateResult(string, string, Hash, IEnumerable<Type>, SyntaxCompatibility)
+  fullName: CloudLiquid.Tests.Helper.AssertTemplateResult(string, string, DotLiquid.Hash, System.Collections.Generic.IEnumerable<System.Type>, DotLiquid.SyntaxCompatibility)
+  type: Method
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AssertTemplateResult
+    path: Tests/Helper.cs
+    startLine: 57
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public static void AssertTemplateResult(string expected, string template, Hash localVariables, IEnumerable<Type> localFilters, SyntaxCompatibility syntax = SyntaxCompatibility.DotLiquid20)
+    parameters:
+    - id: expected
+      type: System.String
+    - id: template
+      type: System.String
+    - id: localVariables
+      type: DotLiquid.Hash
+    - id: localFilters
+      type: System.Collections.Generic.IEnumerable{System.Type}
+    - id: syntax
+      type: DotLiquid.SyntaxCompatibility
+    content.vb: Public Shared Sub AssertTemplateResult(expected As String, template As String, localVariables As Hash, localFilters As IEnumerable(Of Type), syntax As SyntaxCompatibility = SyntaxCompatibility.DotLiquid20)
+  overload: CloudLiquid.Tests.Helper.AssertTemplateResult*
+  nameWithType.vb: Helper.AssertTemplateResult(String, String, Hash, IEnumerable(Of Type), SyntaxCompatibility)
+  fullName.vb: CloudLiquid.Tests.Helper.AssertTemplateResult(String, String, DotLiquid.Hash, System.Collections.Generic.IEnumerable(Of System.Type), DotLiquid.SyntaxCompatibility)
+  name.vb: AssertTemplateResult(String, String, Hash, IEnumerable(Of Type), SyntaxCompatibility)
+- uid: CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.Hash,DotLiquid.SyntaxCompatibility)
+  commentId: M:CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.Hash,DotLiquid.SyntaxCompatibility)
+  id: AssertTemplateResult(System.String,System.String,DotLiquid.Hash,DotLiquid.SyntaxCompatibility)
+  parent: CloudLiquid.Tests.Helper
+  langs:
+  - csharp
+  - vb
+  name: AssertTemplateResult(string, string, Hash, SyntaxCompatibility)
+  nameWithType: Helper.AssertTemplateResult(string, string, Hash, SyntaxCompatibility)
+  fullName: CloudLiquid.Tests.Helper.AssertTemplateResult(string, string, DotLiquid.Hash, DotLiquid.SyntaxCompatibility)
+  type: Method
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AssertTemplateResult
+    path: Tests/Helper.cs
+    startLine: 68
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public static void AssertTemplateResult(string expected, string template, Hash localVariables, SyntaxCompatibility syntax = SyntaxCompatibility.DotLiquid20)
+    parameters:
+    - id: expected
+      type: System.String
+    - id: template
+      type: System.String
+    - id: localVariables
+      type: DotLiquid.Hash
+    - id: syntax
+      type: DotLiquid.SyntaxCompatibility
+    content.vb: Public Shared Sub AssertTemplateResult(expected As String, template As String, localVariables As Hash, syntax As SyntaxCompatibility = SyntaxCompatibility.DotLiquid20)
+  overload: CloudLiquid.Tests.Helper.AssertTemplateResult*
+  nameWithType.vb: Helper.AssertTemplateResult(String, String, Hash, SyntaxCompatibility)
+  fullName.vb: CloudLiquid.Tests.Helper.AssertTemplateResult(String, String, DotLiquid.Hash, DotLiquid.SyntaxCompatibility)
+  name.vb: AssertTemplateResult(String, String, Hash, SyntaxCompatibility)
+- uid: CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.SyntaxCompatibility)
+  commentId: M:CloudLiquid.Tests.Helper.AssertTemplateResult(System.String,System.String,DotLiquid.SyntaxCompatibility)
+  id: AssertTemplateResult(System.String,System.String,DotLiquid.SyntaxCompatibility)
+  parent: CloudLiquid.Tests.Helper
+  langs:
+  - csharp
+  - vb
+  name: AssertTemplateResult(string, string, SyntaxCompatibility)
+  nameWithType: Helper.AssertTemplateResult(string, string, SyntaxCompatibility)
+  fullName: CloudLiquid.Tests.Helper.AssertTemplateResult(string, string, DotLiquid.SyntaxCompatibility)
+  type: Method
+  source:
+    remote:
+      path: Tests/Helper.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AssertTemplateResult
+    path: Tests/Helper.cs
+    startLine: 73
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: public static void AssertTemplateResult(string expected, string template, SyntaxCompatibility syntax = SyntaxCompatibility.DotLiquid20)
+    parameters:
+    - id: expected
+      type: System.String
+    - id: template
+      type: System.String
+    - id: syntax
+      type: DotLiquid.SyntaxCompatibility
+    content.vb: Public Shared Sub AssertTemplateResult(expected As String, template As String, syntax As SyntaxCompatibility = SyntaxCompatibility.DotLiquid20)
+  overload: CloudLiquid.Tests.Helper.AssertTemplateResult*
+  nameWithType.vb: Helper.AssertTemplateResult(String, String, SyntaxCompatibility)
+  fullName.vb: CloudLiquid.Tests.Helper.AssertTemplateResult(String, String, DotLiquid.SyntaxCompatibility)
+  name.vb: AssertTemplateResult(String, String, SyntaxCompatibility)
+references:
+- uid: CloudLiquid.Tests
+  commentId: N:CloudLiquid.Tests
+  href: CloudLiquid.html
+  name: CloudLiquid.Tests
+  nameWithType: CloudLiquid.Tests
+  fullName: CloudLiquid.Tests
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.Tests
+    name: Tests
+    href: CloudLiquid.Tests.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.Tests
+    name: Tests
+    href: CloudLiquid.Tests.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudLiquid.Tests.Helper.LockTemplateStaticVars*
+  commentId: Overload:CloudLiquid.Tests.Helper.LockTemplateStaticVars
+  href: CloudLiquid.Tests.Helper.html#CloudLiquid_Tests_Helper_LockTemplateStaticVars_DotLiquid_NamingConventions_INamingConvention_System_Action_
+  name: LockTemplateStaticVars
+  nameWithType: Helper.LockTemplateStaticVars
+  fullName: CloudLiquid.Tests.Helper.LockTemplateStaticVars
+- uid: DotLiquid.NamingConventions.INamingConvention
+  commentId: T:DotLiquid.NamingConventions.INamingConvention
+  parent: DotLiquid.NamingConventions
+  isExternal: true
+  name: INamingConvention
+  nameWithType: INamingConvention
+  fullName: DotLiquid.NamingConventions.INamingConvention
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: DotLiquid.NamingConventions
+  commentId: N:DotLiquid.NamingConventions
+  isExternal: true
+  name: DotLiquid.NamingConventions
+  nameWithType: DotLiquid.NamingConventions
+  fullName: DotLiquid.NamingConventions
+  spec.csharp:
+  - uid: DotLiquid
+    name: DotLiquid
+    isExternal: true
+  - name: .
+  - uid: DotLiquid.NamingConventions
+    name: NamingConventions
+    isExternal: true
+  spec.vb:
+  - uid: DotLiquid
+    name: DotLiquid
+    isExternal: true
+  - name: .
+  - uid: DotLiquid.NamingConventions
+    name: NamingConventions
+    isExternal: true
+- uid: CloudLiquid.Tests.Helper.AssertTemplateResult*
+  commentId: Overload:CloudLiquid.Tests.Helper.AssertTemplateResult
+  href: CloudLiquid.Tests.Helper.html#CloudLiquid_Tests_Helper_AssertTemplateResult_System_String_System_String_System_Object_DotLiquid_NamingConventions_INamingConvention_DotLiquid_SyntaxCompatibility_
+  name: AssertTemplateResult
+  nameWithType: Helper.AssertTemplateResult
+  fullName: CloudLiquid.Tests.Helper.AssertTemplateResult
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DotLiquid.SyntaxCompatibility
+  commentId: T:DotLiquid.SyntaxCompatibility
+  parent: DotLiquid
+  isExternal: true
+  name: SyntaxCompatibility
+  nameWithType: SyntaxCompatibility
+  fullName: DotLiquid.SyntaxCompatibility
+- uid: DotLiquid
+  commentId: N:DotLiquid
+  isExternal: true
+  name: DotLiquid
+  nameWithType: DotLiquid
+  fullName: DotLiquid
+- uid: DotLiquid.Hash
+  commentId: T:DotLiquid.Hash
+  parent: DotLiquid
+  isExternal: true
+  name: Hash
+  nameWithType: Hash
+  fullName: DotLiquid.Hash
+- uid: System.Collections.Generic.IEnumerable{System.Type}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Type}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: System.Collections.Generic.IEnumerable<System.Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

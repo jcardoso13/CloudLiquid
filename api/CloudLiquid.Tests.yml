@@ -1,0 +1,127 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.Tests
+  commentId: N:CloudLiquid.Tests
+  id: CloudLiquid.Tests
+  children:
+  - CloudLiquid.Tests.AzureTagTests
+  - CloudLiquid.Tests.CaptureJsonTests
+  - CloudLiquid.Tests.CaptureXmlTests
+  - CloudLiquid.Tests.DataFiltersTests
+  - CloudLiquid.Tests.Helper
+  - CloudLiquid.Tests.Helper.DataObject
+  - CloudLiquid.Tests.Helper.DataObjectDrop
+  - CloudLiquid.Tests.Helper.DataObjectRegistered
+  - CloudLiquid.Tests.IncludeLocalTests
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid.Tests
+  nameWithType: CloudLiquid.Tests
+  fullName: CloudLiquid.Tests
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.Tests.AzureTagTests
+  commentId: T:CloudLiquid.Tests.AzureTagTests
+  href: CloudLiquid.Tests.AzureTagTests.html
+  name: AzureTagTests
+  nameWithType: AzureTagTests
+  fullName: CloudLiquid.Tests.AzureTagTests
+- uid: CloudLiquid.Tests.CaptureJsonTests
+  commentId: T:CloudLiquid.Tests.CaptureJsonTests
+  href: CloudLiquid.Tests.CaptureJsonTests.html
+  name: CaptureJsonTests
+  nameWithType: CaptureJsonTests
+  fullName: CloudLiquid.Tests.CaptureJsonTests
+- uid: CloudLiquid.Tests.CaptureXmlTests
+  commentId: T:CloudLiquid.Tests.CaptureXmlTests
+  href: CloudLiquid.Tests.CaptureXmlTests.html
+  name: CaptureXmlTests
+  nameWithType: CaptureXmlTests
+  fullName: CloudLiquid.Tests.CaptureXmlTests
+- uid: CloudLiquid.Tests.DataFiltersTests
+  commentId: T:CloudLiquid.Tests.DataFiltersTests
+  href: CloudLiquid.Tests.DataFiltersTests.html
+  name: DataFiltersTests
+  nameWithType: DataFiltersTests
+  fullName: CloudLiquid.Tests.DataFiltersTests
+- uid: CloudLiquid.Tests.Helper
+  commentId: T:CloudLiquid.Tests.Helper
+  href: CloudLiquid.Tests.Helper.html
+  name: Helper
+  nameWithType: Helper
+  fullName: CloudLiquid.Tests.Helper
+- uid: CloudLiquid.Tests.Helper.DataObject
+  commentId: T:CloudLiquid.Tests.Helper.DataObject
+  href: CloudLiquid.Tests.Helper.html
+  name: Helper.DataObject
+  nameWithType: Helper.DataObject
+  fullName: CloudLiquid.Tests.Helper.DataObject
+  spec.csharp:
+  - uid: CloudLiquid.Tests.Helper
+    name: Helper
+    href: CloudLiquid.Tests.Helper.html
+  - name: .
+  - uid: CloudLiquid.Tests.Helper.DataObject
+    name: DataObject
+    href: CloudLiquid.Tests.Helper.DataObject.html
+  spec.vb:
+  - uid: CloudLiquid.Tests.Helper
+    name: Helper
+    href: CloudLiquid.Tests.Helper.html
+  - name: .
+  - uid: CloudLiquid.Tests.Helper.DataObject
+    name: DataObject
+    href: CloudLiquid.Tests.Helper.DataObject.html
+- uid: CloudLiquid.Tests.Helper.DataObjectRegistered
+  commentId: T:CloudLiquid.Tests.Helper.DataObjectRegistered
+  href: CloudLiquid.Tests.Helper.html
+  name: Helper.DataObjectRegistered
+  nameWithType: Helper.DataObjectRegistered
+  fullName: CloudLiquid.Tests.Helper.DataObjectRegistered
+  spec.csharp:
+  - uid: CloudLiquid.Tests.Helper
+    name: Helper
+    href: CloudLiquid.Tests.Helper.html
+  - name: .
+  - uid: CloudLiquid.Tests.Helper.DataObjectRegistered
+    name: DataObjectRegistered
+    href: CloudLiquid.Tests.Helper.DataObjectRegistered.html
+  spec.vb:
+  - uid: CloudLiquid.Tests.Helper
+    name: Helper
+    href: CloudLiquid.Tests.Helper.html
+  - name: .
+  - uid: CloudLiquid.Tests.Helper.DataObjectRegistered
+    name: DataObjectRegistered
+    href: CloudLiquid.Tests.Helper.DataObjectRegistered.html
+- uid: CloudLiquid.Tests.Helper.DataObjectDrop
+  commentId: T:CloudLiquid.Tests.Helper.DataObjectDrop
+  href: CloudLiquid.Tests.Helper.html
+  name: Helper.DataObjectDrop
+  nameWithType: Helper.DataObjectDrop
+  fullName: CloudLiquid.Tests.Helper.DataObjectDrop
+  spec.csharp:
+  - uid: CloudLiquid.Tests.Helper
+    name: Helper
+    href: CloudLiquid.Tests.Helper.html
+  - name: .
+  - uid: CloudLiquid.Tests.Helper.DataObjectDrop
+    name: DataObjectDrop
+    href: CloudLiquid.Tests.Helper.DataObjectDrop.html
+  spec.vb:
+  - uid: CloudLiquid.Tests.Helper
+    name: Helper
+    href: CloudLiquid.Tests.Helper.html
+  - name: .
+  - uid: CloudLiquid.Tests.Helper.DataObjectDrop
+    name: DataObjectDrop
+    href: CloudLiquid.Tests.Helper.DataObjectDrop.html
+- uid: CloudLiquid.Tests.IncludeLocalTests
+  commentId: T:CloudLiquid.Tests.IncludeLocalTests
+  href: CloudLiquid.Tests.IncludeLocalTests.html
+  name: IncludeLocalTests
+  nameWithType: IncludeLocalTests
+  fullName: CloudLiquid.Tests.IncludeLocalTests

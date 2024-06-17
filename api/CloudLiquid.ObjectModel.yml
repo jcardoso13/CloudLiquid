@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.ObjectModel
+  commentId: N:CloudLiquid.ObjectModel
+  id: CloudLiquid.ObjectModel
+  children:
+  - CloudLiquid.ObjectModel.CloudError
+  - CloudLiquid.ObjectModel.RunResult
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid.ObjectModel
+  nameWithType: CloudLiquid.ObjectModel
+  fullName: CloudLiquid.ObjectModel
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.ObjectModel.CloudError
+  commentId: T:CloudLiquid.ObjectModel.CloudError
+  href: CloudLiquid.ObjectModel.CloudError.html
+  name: CloudError
+  nameWithType: CloudError
+  fullName: CloudLiquid.ObjectModel.CloudError
+- uid: CloudLiquid.ObjectModel.RunResult
+  commentId: T:CloudLiquid.ObjectModel.RunResult
+  parent: CloudLiquid.ObjectModel
+  href: CloudLiquid.ObjectModel.RunResult.html
+  name: RunResult
+  nameWithType: RunResult
+  fullName: CloudLiquid.ObjectModel.RunResult
+- uid: CloudLiquid.ObjectModel
+  commentId: N:CloudLiquid.ObjectModel
+  href: CloudLiquid.html
+  name: CloudLiquid.ObjectModel
+  nameWithType: CloudLiquid.ObjectModel
+  fullName: CloudLiquid.ObjectModel
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ObjectModel
+    name: ObjectModel
+    href: CloudLiquid.ObjectModel.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ObjectModel
+    name: ObjectModel
+    href: CloudLiquid.ObjectModel.html

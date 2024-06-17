@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid
+  commentId: N:CloudLiquid
+  id: CloudLiquid
+  children:
+  - CloudLiquid.BaseCloudLiquidTag
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid
+  nameWithType: CloudLiquid
+  fullName: CloudLiquid
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.BaseCloudLiquidTag
+  commentId: T:CloudLiquid.BaseCloudLiquidTag
+  parent: CloudLiquid
+  href: CloudLiquid.BaseCloudLiquidTag.html
+  name: BaseCloudLiquidTag
+  nameWithType: BaseCloudLiquidTag
+  fullName: CloudLiquid.BaseCloudLiquidTag
+- uid: CloudLiquid
+  commentId: N:CloudLiquid
+  href: CloudLiquid.html
+  name: CloudLiquid
+  nameWithType: CloudLiquid
+  fullName: CloudLiquid

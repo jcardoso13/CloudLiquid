@@ -1,0 +1,304 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.ContentFactory.IContentReader
+  commentId: T:CloudLiquid.ContentFactory.IContentReader
+  id: IContentReader
+  parent: CloudLiquid.ContentFactory
+  children:
+  - CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  - CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IContentReader
+  nameWithType: IContentReader
+  fullName: CloudLiquid.ContentFactory.IContentReader
+  type: Interface
+  source:
+    remote:
+      path: ContentFactory/IContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: IContentReader
+    path: ContentFactory/IContentReader.cs
+    startLine: 10
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: public interface IContentReader
+    content.vb: Public Interface IContentReader
+- uid: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  commentId: M:CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  id: ParseRequestAsync(System.Net.Http.HttpContent)
+  parent: CloudLiquid.ContentFactory.IContentReader
+  langs:
+  - csharp
+  - vb
+  name: ParseRequestAsync(HttpContent)
+  nameWithType: IContentReader.ParseRequestAsync(HttpContent)
+  fullName: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  type: Method
+  source:
+    remote:
+      path: ContentFactory/IContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: ParseRequestAsync
+    path: ContentFactory/IContentReader.cs
+    startLine: 12
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: Task<Hash> ParseRequestAsync(HttpContent content)
+    parameters:
+    - id: content
+      type: System.Net.Http.HttpContent
+    return:
+      type: System.Threading.Tasks.Task{DotLiquid.Hash}
+    content.vb: Function ParseRequestAsync(content As HttpContent) As Task(Of Hash)
+  overload: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync*
+- uid: CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+  commentId: M:CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+  id: ParseString(System.String)
+  parent: CloudLiquid.ContentFactory.IContentReader
+  langs:
+  - csharp
+  - vb
+  name: ParseString(string)
+  nameWithType: IContentReader.ParseString(string)
+  fullName: CloudLiquid.ContentFactory.IContentReader.ParseString(string)
+  type: Method
+  source:
+    remote:
+      path: ContentFactory/IContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: ParseString
+    path: ContentFactory/IContentReader.cs
+    startLine: 13
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: Hash ParseString(string content)
+    parameters:
+    - id: content
+      type: System.String
+    return:
+      type: DotLiquid.Hash
+    content.vb: Function ParseString(content As String) As Hash
+  overload: CloudLiquid.ContentFactory.IContentReader.ParseString*
+  nameWithType.vb: IContentReader.ParseString(String)
+  fullName.vb: CloudLiquid.ContentFactory.IContentReader.ParseString(String)
+  name.vb: ParseString(String)
+references:
+- uid: CloudLiquid.ContentFactory
+  commentId: N:CloudLiquid.ContentFactory
+  href: CloudLiquid.html
+  name: CloudLiquid.ContentFactory
+  nameWithType: CloudLiquid.ContentFactory
+  fullName: CloudLiquid.ContentFactory
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+- uid: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync*
+  commentId: Overload:CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync
+  href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseRequestAsync_System_Net_Http_HttpContent_
+  name: ParseRequestAsync
+  nameWithType: IContentReader.ParseRequestAsync
+  fullName: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync
+- uid: System.Net.Http.HttpContent
+  commentId: T:System.Net.Http.HttpContent
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpcontent
+  name: HttpContent
+  nameWithType: HttpContent
+  fullName: System.Net.Http.HttpContent
+- uid: System.Threading.Tasks.Task{DotLiquid.Hash}
+  commentId: T:System.Threading.Tasks.Task{DotLiquid.Hash}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Hash>
+  nameWithType: Task<Hash>
+  fullName: System.Threading.Tasks.Task<DotLiquid.Hash>
+  nameWithType.vb: Task(Of Hash)
+  fullName.vb: System.Threading.Tasks.Task(Of DotLiquid.Hash)
+  name.vb: Task(Of Hash)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: DotLiquid.Hash
+    name: Hash
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DotLiquid.Hash
+    name: Hash
+    isExternal: true
+  - name: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: CloudLiquid.ContentFactory.IContentReader.ParseString*
+  commentId: Overload:CloudLiquid.ContentFactory.IContentReader.ParseString
+  href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseString_System_String_
+  name: ParseString
+  nameWithType: IContentReader.ParseString
+  fullName: CloudLiquid.ContentFactory.IContentReader.ParseString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DotLiquid.Hash
+  commentId: T:DotLiquid.Hash
+  parent: DotLiquid
+  isExternal: true
+  name: Hash
+  nameWithType: Hash
+  fullName: DotLiquid.Hash
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: DotLiquid
+  commentId: N:DotLiquid
+  isExternal: true
+  name: DotLiquid
+  nameWithType: DotLiquid
+  fullName: DotLiquid

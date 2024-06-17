@@ -1,0 +1,740 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.ContentFactory.XmlContentReader
+  commentId: T:CloudLiquid.ContentFactory.XmlContentReader
+  id: XmlContentReader
+  parent: CloudLiquid.ContentFactory
+  children:
+  - CloudLiquid.ContentFactory.XmlContentReader.#ctor
+  - CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  - CloudLiquid.ContentFactory.XmlContentReader.ParseString(System.String)
+  - CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces(System.Xml.Linq.XElement)
+  langs:
+  - csharp
+  - vb
+  name: XmlContentReader
+  nameWithType: XmlContentReader
+  fullName: CloudLiquid.ContentFactory.XmlContentReader
+  type: Class
+  source:
+    remote:
+      path: ContentFactory/XmlContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: XmlContentReader
+    path: ContentFactory/XmlContentReader.cs
+    startLine: 13
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: 'public class XmlContentReader : IContentReader'
+    content.vb: Public Class XmlContentReader Implements IContentReader
+  inheritance:
+  - System.Object
+  implements:
+  - CloudLiquid.ContentFactory.IContentReader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CloudLiquid.ContentFactory.XmlContentReader.#ctor
+  commentId: M:CloudLiquid.ContentFactory.XmlContentReader.#ctor
+  id: '#ctor'
+  parent: CloudLiquid.ContentFactory.XmlContentReader
+  langs:
+  - csharp
+  - vb
+  name: XmlContentReader()
+  nameWithType: XmlContentReader.XmlContentReader()
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.XmlContentReader()
+  type: Constructor
+  source:
+    remote:
+      path: ContentFactory/XmlContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: .ctor
+    path: ContentFactory/XmlContentReader.cs
+    startLine: 15
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: public XmlContentReader()
+    content.vb: Public Sub New()
+  overload: CloudLiquid.ContentFactory.XmlContentReader.#ctor*
+  nameWithType.vb: XmlContentReader.New()
+  fullName.vb: CloudLiquid.ContentFactory.XmlContentReader.New()
+  name.vb: New()
+- uid: CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces(System.Xml.Linq.XElement)
+  commentId: M:CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces(System.Xml.Linq.XElement)
+  id: RemoveAllNamespaces(System.Xml.Linq.XElement)
+  parent: CloudLiquid.ContentFactory.XmlContentReader
+  langs:
+  - csharp
+  - vb
+  name: RemoveAllNamespaces(XElement)
+  nameWithType: XmlContentReader.RemoveAllNamespaces(XElement)
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces(System.Xml.Linq.XElement)
+  type: Method
+  source:
+    remote:
+      path: ContentFactory/XmlContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: RemoveAllNamespaces
+    path: ContentFactory/XmlContentReader.cs
+    startLine: 19
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  syntax:
+    content: public static XElement RemoveAllNamespaces(XElement e)
+    parameters:
+    - id: e
+      type: System.Xml.Linq.XElement
+    return:
+      type: System.Xml.Linq.XElement
+    content.vb: Public Shared Function RemoveAllNamespaces(e As XElement) As XElement
+  overload: CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces*
+- uid: CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  commentId: M:CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  id: ParseRequestAsync(System.Net.Http.HttpContent)
+  parent: CloudLiquid.ContentFactory.XmlContentReader
+  langs:
+  - csharp
+  - vb
+  name: ParseRequestAsync(HttpContent)
+  nameWithType: XmlContentReader.ParseRequestAsync(HttpContent)
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  type: Method
+  source:
+    remote:
+      path: ContentFactory/XmlContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: ParseRequestAsync
+    path: ContentFactory/XmlContentReader.cs
+    startLine: 29
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  example: []
+  syntax:
+    content: public Task<Hash> ParseRequestAsync(HttpContent content)
+    parameters:
+    - id: content
+      type: System.Net.Http.HttpContent
+    return:
+      type: System.Threading.Tasks.Task{DotLiquid.Hash}
+    content.vb: Public Function ParseRequestAsync(content As HttpContent) As Task(Of Hash)
+  overload: CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync*
+  implements:
+  - CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+- uid: CloudLiquid.ContentFactory.XmlContentReader.ParseString(System.String)
+  commentId: M:CloudLiquid.ContentFactory.XmlContentReader.ParseString(System.String)
+  id: ParseString(System.String)
+  parent: CloudLiquid.ContentFactory.XmlContentReader
+  langs:
+  - csharp
+  - vb
+  name: ParseString(string)
+  nameWithType: XmlContentReader.ParseString(string)
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.ParseString(string)
+  type: Method
+  source:
+    remote:
+      path: ContentFactory/XmlContentReader.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: ParseString
+    path: ContentFactory/XmlContentReader.cs
+    startLine: 51
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.ContentFactory
+  example: []
+  syntax:
+    content: public Hash ParseString(string content)
+    parameters:
+    - id: content
+      type: System.String
+    return:
+      type: DotLiquid.Hash
+    content.vb: Public Function ParseString(content As String) As Hash
+  overload: CloudLiquid.ContentFactory.XmlContentReader.ParseString*
+  implements:
+  - CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+  nameWithType.vb: XmlContentReader.ParseString(String)
+  fullName.vb: CloudLiquid.ContentFactory.XmlContentReader.ParseString(String)
+  name.vb: ParseString(String)
+references:
+- uid: CloudLiquid.ContentFactory
+  commentId: N:CloudLiquid.ContentFactory
+  href: CloudLiquid.html
+  name: CloudLiquid.ContentFactory
+  nameWithType: CloudLiquid.ContentFactory
+  fullName: CloudLiquid.ContentFactory
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.ContentFactory
+    name: ContentFactory
+    href: CloudLiquid.ContentFactory.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CloudLiquid.ContentFactory.IContentReader
+  commentId: T:CloudLiquid.ContentFactory.IContentReader
+  parent: CloudLiquid.ContentFactory
+  href: CloudLiquid.ContentFactory.IContentReader.html
+  name: IContentReader
+  nameWithType: IContentReader
+  fullName: CloudLiquid.ContentFactory.IContentReader
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudLiquid.ContentFactory.XmlContentReader.#ctor*
+  commentId: Overload:CloudLiquid.ContentFactory.XmlContentReader.#ctor
+  href: CloudLiquid.ContentFactory.XmlContentReader.html#CloudLiquid_ContentFactory_XmlContentReader__ctor
+  name: XmlContentReader
+  nameWithType: XmlContentReader.XmlContentReader
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.XmlContentReader
+  nameWithType.vb: XmlContentReader.New
+  fullName.vb: CloudLiquid.ContentFactory.XmlContentReader.New
+  name.vb: New
+- uid: CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces*
+  commentId: Overload:CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces
+  href: CloudLiquid.ContentFactory.XmlContentReader.html#CloudLiquid_ContentFactory_XmlContentReader_RemoveAllNamespaces_System_Xml_Linq_XElement_
+  name: RemoveAllNamespaces
+  nameWithType: XmlContentReader.RemoveAllNamespaces
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.RemoveAllNamespaces
+- uid: System.Xml.Linq.XElement
+  commentId: T:System.Xml.Linq.XElement
+  parent: System.Xml.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.xml.linq.xelement
+  name: XElement
+  nameWithType: XElement
+  fullName: System.Xml.Linq.XElement
+- uid: System.Xml.Linq
+  commentId: N:System.Xml.Linq
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Xml.Linq
+  nameWithType: System.Xml.Linq
+  fullName: System.Xml.Linq
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Xml
+    name: Xml
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml
+  - name: .
+  - uid: System.Xml.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml.linq
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Xml
+    name: Xml
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml
+  - name: .
+  - uid: System.Xml.Linq
+    name: Linq
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.xml.linq
+- uid: CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync*
+  commentId: Overload:CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync
+  href: CloudLiquid.ContentFactory.XmlContentReader.html#CloudLiquid_ContentFactory_XmlContentReader_ParseRequestAsync_System_Net_Http_HttpContent_
+  name: ParseRequestAsync
+  nameWithType: XmlContentReader.ParseRequestAsync
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.ParseRequestAsync
+- uid: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  commentId: M:CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  parent: CloudLiquid.ContentFactory.IContentReader
+  isExternal: true
+  href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseRequestAsync_System_Net_Http_HttpContent_
+  name: ParseRequestAsync(HttpContent)
+  nameWithType: IContentReader.ParseRequestAsync(HttpContent)
+  fullName: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+  spec.csharp:
+  - uid: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+    name: ParseRequestAsync
+    href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseRequestAsync_System_Net_Http_HttpContent_
+  - name: (
+  - uid: System.Net.Http.HttpContent
+    name: HttpContent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpcontent
+  - name: )
+  spec.vb:
+  - uid: CloudLiquid.ContentFactory.IContentReader.ParseRequestAsync(System.Net.Http.HttpContent)
+    name: ParseRequestAsync
+    href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseRequestAsync_System_Net_Http_HttpContent_
+  - name: (
+  - uid: System.Net.Http.HttpContent
+    name: HttpContent
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http.httpcontent
+  - name: )
+- uid: System.Net.Http.HttpContent
+  commentId: T:System.Net.Http.HttpContent
+  parent: System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.net.http.httpcontent
+  name: HttpContent
+  nameWithType: HttpContent
+  fullName: System.Net.Http.HttpContent
+- uid: System.Threading.Tasks.Task{DotLiquid.Hash}
+  commentId: T:System.Threading.Tasks.Task{DotLiquid.Hash}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<Hash>
+  nameWithType: Task<Hash>
+  fullName: System.Threading.Tasks.Task<DotLiquid.Hash>
+  nameWithType.vb: Task(Of Hash)
+  fullName.vb: System.Threading.Tasks.Task(Of DotLiquid.Hash)
+  name.vb: Task(Of Hash)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: DotLiquid.Hash
+    name: Hash
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: DotLiquid.Hash
+    name: Hash
+    isExternal: true
+  - name: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Net
+    name: Net
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net
+  - name: .
+  - uid: System.Net.Http
+    name: Http
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.net.http
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: CloudLiquid.ContentFactory.XmlContentReader.ParseString*
+  commentId: Overload:CloudLiquid.ContentFactory.XmlContentReader.ParseString
+  href: CloudLiquid.ContentFactory.XmlContentReader.html#CloudLiquid_ContentFactory_XmlContentReader_ParseString_System_String_
+  name: ParseString
+  nameWithType: XmlContentReader.ParseString
+  fullName: CloudLiquid.ContentFactory.XmlContentReader.ParseString
+- uid: CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+  commentId: M:CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+  parent: CloudLiquid.ContentFactory.IContentReader
+  isExternal: true
+  href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseString_System_String_
+  name: ParseString(string)
+  nameWithType: IContentReader.ParseString(string)
+  fullName: CloudLiquid.ContentFactory.IContentReader.ParseString(string)
+  nameWithType.vb: IContentReader.ParseString(String)
+  fullName.vb: CloudLiquid.ContentFactory.IContentReader.ParseString(String)
+  name.vb: ParseString(String)
+  spec.csharp:
+  - uid: CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+    name: ParseString
+    href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseString_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: CloudLiquid.ContentFactory.IContentReader.ParseString(System.String)
+    name: ParseString
+    href: CloudLiquid.ContentFactory.IContentReader.html#CloudLiquid_ContentFactory_IContentReader_ParseString_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: DotLiquid.Hash
+  commentId: T:DotLiquid.Hash
+  parent: DotLiquid
+  isExternal: true
+  name: Hash
+  nameWithType: Hash
+  fullName: DotLiquid.Hash
+- uid: DotLiquid
+  commentId: N:DotLiquid
+  isExternal: true
+  name: DotLiquid
+  nameWithType: DotLiquid
+  fullName: DotLiquid

@@ -1,0 +1,1835 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.Filters.DataFilters
+  commentId: T:CloudLiquid.Filters.DataFilters
+  id: DataFilters
+  parent: CloudLiquid.Filters
+  children:
+  - CloudLiquid.Filters.DataFilters.AddProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  - CloudLiquid.Filters.DataFilters.AddToList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object,System.Boolean,System.Boolean)
+  - CloudLiquid.Filters.DataFilters.ClearNulls(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.Coalesce(DotLiquid.Context,System.Object[])
+  - CloudLiquid.Filters.DataFilters.ConvertToInt(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.CreateHash(DotLiquid.Context,System.String)
+  - CloudLiquid.Filters.DataFilters.CreateList(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.DataType(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.DecodeBase64(DotLiquid.Context,System.String)
+  - CloudLiquid.Filters.DataFilters.FormatDateTime(DotLiquid.Context,System.Object,System.String,System.String)
+  - CloudLiquid.Filters.DataFilters.GetListFromHash(DotLiquid.Context,System.Object,System.String)
+  - CloudLiquid.Filters.DataFilters.IsLoop(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.Json(DotLiquid.Context,System.Object,System.String)
+  - CloudLiquid.Filters.DataFilters.LiquidContains(DotLiquid.Context,System.Object,System.String)
+  - CloudLiquid.Filters.DataFilters.Log(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.Nullifnull(DotLiquid.Context,System.String)
+  - CloudLiquid.Filters.DataFilters.Padleft(DotLiquid.Context,System.String,System.Int32,System.String)
+  - CloudLiquid.Filters.DataFilters.Padright(DotLiquid.Context,System.String,System.Int32,System.String)
+  - CloudLiquid.Filters.DataFilters.Parsedouble(DotLiquid.Context,System.String)
+  - CloudLiquid.Filters.DataFilters.RemoveFromList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object)
+  - CloudLiquid.Filters.DataFilters.RemoveProperty(DotLiquid.Context,System.Object,System.String,System.Int32)
+  - CloudLiquid.Filters.DataFilters.Secret(DotLiquid.Context,System.String)
+  - CloudLiquid.Filters.DataFilters.SetProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  - CloudLiquid.Filters.DataFilters.String(DotLiquid.Context,System.Object)
+  - CloudLiquid.Filters.DataFilters.Xml(DotLiquid.Context,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: DataFilters
+  nameWithType: DataFilters
+  fullName: CloudLiquid.Filters.DataFilters
+  type: Class
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: DataFilters
+    path: Filters/DataFilters.cs
+    startLine: 12
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  syntax:
+    content: public static class DataFilters
+    content.vb: Public Module DataFilters
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: CloudLiquid.Filters.DataFilters.Padleft(DotLiquid.Context,System.String,System.Int32,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.Padleft(DotLiquid.Context,System.String,System.Int32,System.String)
+  id: Padleft(DotLiquid.Context,System.String,System.Int32,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Padleft(Context, string, int, string)
+  nameWithType: DataFilters.Padleft(Context, string, int, string)
+  fullName: CloudLiquid.Filters.DataFilters.Padleft(DotLiquid.Context, string, int, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Padleft
+    path: Filters/DataFilters.cs
+    startLine: 20
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Pads the left side of the input string with the specified character.
+  example: []
+  syntax:
+    content: public static string Padleft(Context context, string input, int totalWidth, string padChar = " ")
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: System.String
+      description: The input.
+    - id: totalWidth
+      type: System.Int32
+      description: The number of characters in the resulting string.
+    - id: padChar
+      type: System.String
+      description: The pad character.
+    return:
+      type: System.String
+      description: The input string padded on the left to the specified total width.
+    content.vb: Public Shared Function Padleft(context As Context, input As String, totalWidth As Integer, padChar As String = " ") As String
+  overload: CloudLiquid.Filters.DataFilters.Padleft*
+  nameWithType.vb: DataFilters.Padleft(Context, String, Integer, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Padleft(DotLiquid.Context, String, Integer, String)
+  name.vb: Padleft(Context, String, Integer, String)
+- uid: CloudLiquid.Filters.DataFilters.Secret(DotLiquid.Context,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.Secret(DotLiquid.Context,System.String)
+  id: Secret(DotLiquid.Context,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Secret(Context, string)
+  nameWithType: DataFilters.Secret(Context, string)
+  fullName: CloudLiquid.Filters.DataFilters.Secret(DotLiquid.Context, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Secret
+    path: Filters/DataFilters.cs
+    startLine: 29
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Retrieves the value of an environment variable.
+  example: []
+  syntax:
+    content: public static dynamic Secret(Context context, string input)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: System.String
+      description: The input.
+    return:
+      type: dynamic
+      description: The value of the specified environment variable
+    content.vb: Public Shared Function Secret(context As Context, input As String) As Object
+  overload: CloudLiquid.Filters.DataFilters.Secret*
+  nameWithType.vb: DataFilters.Secret(Context, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Secret(DotLiquid.Context, String)
+  name.vb: Secret(Context, String)
+- uid: CloudLiquid.Filters.DataFilters.Padright(DotLiquid.Context,System.String,System.Int32,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.Padright(DotLiquid.Context,System.String,System.Int32,System.String)
+  id: Padright(DotLiquid.Context,System.String,System.Int32,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Padright(Context, string, int, string)
+  nameWithType: DataFilters.Padright(Context, string, int, string)
+  fullName: CloudLiquid.Filters.DataFilters.Padright(DotLiquid.Context, string, int, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Padright
+    path: Filters/DataFilters.cs
+    startLine: 40
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Pads the input string on the right with the specified padding character until the total width is reached
+  example: []
+  syntax:
+    content: public static string Padright(Context context, string input, int totalWidth, string padChar = " ")
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: System.String
+      description: The input.
+    - id: totalWidth
+      type: System.Int32
+      description: The number of characters in the resulting string.
+    - id: padChar
+      type: System.String
+      description: The pad character.
+    return:
+      type: System.String
+      description: The input string padded on the right to the specified total width.
+    content.vb: Public Shared Function Padright(context As Context, input As String, totalWidth As Integer, padChar As String = " ") As String
+  overload: CloudLiquid.Filters.DataFilters.Padright*
+  nameWithType.vb: DataFilters.Padright(Context, String, Integer, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Padright(DotLiquid.Context, String, Integer, String)
+  name.vb: Padright(Context, String, Integer, String)
+- uid: CloudLiquid.Filters.DataFilters.Nullifnull(DotLiquid.Context,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.Nullifnull(DotLiquid.Context,System.String)
+  id: Nullifnull(DotLiquid.Context,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Nullifnull(Context, string)
+  nameWithType: DataFilters.Nullifnull(Context, string)
+  fullName: CloudLiquid.Filters.DataFilters.Nullifnull(DotLiquid.Context, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Nullifnull
+    path: Filters/DataFilters.cs
+    startLine: 49
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Returns the input string or "null" if the input is null or empty.
+  example: []
+  syntax:
+    content: public static string Nullifnull(Context context, string input)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: System.String
+      description: The input.
+    return:
+      type: System.String
+      description: "\"null\" if the input string is null or empty, otherwise the input string."
+    content.vb: Public Shared Function Nullifnull(context As Context, input As String) As String
+  overload: CloudLiquid.Filters.DataFilters.Nullifnull*
+  nameWithType.vb: DataFilters.Nullifnull(Context, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Nullifnull(DotLiquid.Context, String)
+  name.vb: Nullifnull(Context, String)
+- uid: CloudLiquid.Filters.DataFilters.Parsedouble(DotLiquid.Context,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.Parsedouble(DotLiquid.Context,System.String)
+  id: Parsedouble(DotLiquid.Context,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Parsedouble(Context, string)
+  nameWithType: DataFilters.Parsedouble(Context, string)
+  fullName: CloudLiquid.Filters.DataFilters.Parsedouble(DotLiquid.Context, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Parsedouble
+    path: Filters/DataFilters.cs
+    startLine: 58
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Parses the input string to a double.
+  example: []
+  syntax:
+    content: public static double Parsedouble(Context context, string input)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: System.String
+      description: The input.
+    return:
+      type: System.Double
+      description: The parsed double value.
+    content.vb: Public Shared Function Parsedouble(context As Context, input As String) As Double
+  overload: CloudLiquid.Filters.DataFilters.Parsedouble*
+  nameWithType.vb: DataFilters.Parsedouble(Context, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Parsedouble(DotLiquid.Context, String)
+  name.vb: Parsedouble(Context, String)
+- uid: CloudLiquid.Filters.DataFilters.Json(DotLiquid.Context,System.Object,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.Json(DotLiquid.Context,System.Object,System.String)
+  id: Json(DotLiquid.Context,System.Object,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Json(Context, dynamic, string)
+  nameWithType: DataFilters.Json(Context, dynamic, string)
+  fullName: CloudLiquid.Filters.DataFilters.Json(DotLiquid.Context, dynamic, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Json
+    path: Filters/DataFilters.cs
+    startLine: 68
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Converts the input to a JSON string.
+  example: []
+  syntax:
+    content: public static string Json(Context context, dynamic input, string settings = null)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: dynamic
+      description: The input.
+    - id: settings
+      type: System.String
+      description: Optional settings. If "nobrackets", the outer brackets are removed from the resulting JSON string.
+    return:
+      type: System.String
+      description: The JSON string.
+    content.vb: Public Shared Function Json(context As Context, input As Object, settings As String = Nothing) As String
+  overload: CloudLiquid.Filters.DataFilters.Json*
+  nameWithType.vb: DataFilters.Json(Context, Object, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Json(DotLiquid.Context, Object, String)
+  name.vb: Json(Context, Object, String)
+- uid: CloudLiquid.Filters.DataFilters.Xml(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.Xml(DotLiquid.Context,System.Object)
+  id: Xml(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Xml(Context, dynamic)
+  nameWithType: DataFilters.Xml(Context, dynamic)
+  fullName: CloudLiquid.Filters.DataFilters.Xml(DotLiquid.Context, dynamic)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Xml
+    path: Filters/DataFilters.cs
+    startLine: 78
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Converts the input object to an XML string.
+  example: []
+  syntax:
+    content: public static string Xml(Context context, dynamic input)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: dynamic
+      description: The input.
+    return:
+      type: System.String
+      description: The XML string.
+    content.vb: Public Shared Function Xml(context As Context, input As Object) As String
+  overload: CloudLiquid.Filters.DataFilters.Xml*
+  nameWithType.vb: DataFilters.Xml(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Xml(DotLiquid.Context, Object)
+  name.vb: Xml(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.LiquidContains(DotLiquid.Context,System.Object,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.LiquidContains(DotLiquid.Context,System.Object,System.String)
+  id: LiquidContains(DotLiquid.Context,System.Object,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: LiquidContains(Context, object, string)
+  nameWithType: DataFilters.LiquidContains(Context, object, string)
+  fullName: CloudLiquid.Filters.DataFilters.LiquidContains(DotLiquid.Context, object, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: LiquidContains
+    path: Filters/DataFilters.cs
+    startLine: 91
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Checks if the data contains the specified object.
+  example: []
+  syntax:
+    content: public static bool LiquidContains(Context context, object data, string Obj)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Object
+      description: The data.
+    - id: Obj
+      type: System.String
+      description: The object.
+    return:
+      type: System.Boolean
+      description: True if the data contains the object, false otherwise.
+    content.vb: Public Shared Function LiquidContains(context As Context, data As Object, Obj As String) As Boolean
+  overload: CloudLiquid.Filters.DataFilters.LiquidContains*
+  nameWithType.vb: DataFilters.LiquidContains(Context, Object, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.LiquidContains(DotLiquid.Context, Object, String)
+  name.vb: LiquidContains(Context, Object, String)
+- uid: CloudLiquid.Filters.DataFilters.DataType(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.DataType(DotLiquid.Context,System.Object)
+  id: DataType(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: DataType(Context, object)
+  nameWithType: DataFilters.DataType(Context, object)
+  fullName: CloudLiquid.Filters.DataFilters.DataType(DotLiquid.Context, object)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: DataType
+    path: Filters/DataFilters.cs
+    startLine: 155
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Returns the data type of the input data.
+  example: []
+  syntax:
+    content: public static string DataType(Context context, object data)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Object
+      description: The data to check.
+    return:
+      type: System.String
+      description: Determines the data type of the specified object and returns its type as a string.
+    content.vb: Public Shared Function DataType(context As Context, data As Object) As String
+  overload: CloudLiquid.Filters.DataFilters.DataType*
+  nameWithType.vb: DataFilters.DataType(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.DataType(DotLiquid.Context, Object)
+  name.vb: DataType(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.ConvertToInt(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.ConvertToInt(DotLiquid.Context,System.Object)
+  id: ConvertToInt(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: ConvertToInt(Context, object)
+  nameWithType: DataFilters.ConvertToInt(Context, object)
+  fullName: CloudLiquid.Filters.DataFilters.ConvertToInt(DotLiquid.Context, object)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: ConvertToInt
+    path: Filters/DataFilters.cs
+    startLine: 173
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Converts the input data to an integer.
+  example: []
+  syntax:
+    content: public static int ConvertToInt(Context context, object data)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Object
+      description: The data to convert.
+    return:
+      type: System.Int32
+      description: The converted integer.
+    content.vb: Public Shared Function ConvertToInt(context As Context, data As Object) As Integer
+  overload: CloudLiquid.Filters.DataFilters.ConvertToInt*
+  nameWithType.vb: DataFilters.ConvertToInt(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.ConvertToInt(DotLiquid.Context, Object)
+  name.vb: ConvertToInt(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.String(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.String(DotLiquid.Context,System.Object)
+  id: String(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: String(Context, object)
+  nameWithType: DataFilters.String(Context, object)
+  fullName: CloudLiquid.Filters.DataFilters.String(DotLiquid.Context, object)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: String
+    path: Filters/DataFilters.cs
+    startLine: 181
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Converts the specified object to a string.
+  example: []
+  syntax:
+    content: public static string String(Context context, object data)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Object
+      description: The data to be converted to a string.
+    return:
+      type: System.String
+      description: The string representation of the specified object.
+    content.vb: Public Shared Function [String](context As Context, data As Object) As String
+  overload: CloudLiquid.Filters.DataFilters.String*
+  nameWithType.vb: DataFilters.String(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.String(DotLiquid.Context, Object)
+  name.vb: String(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.IsLoop(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.IsLoop(DotLiquid.Context,System.Object)
+  id: IsLoop(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: IsLoop(Context, object)
+  nameWithType: DataFilters.IsLoop(Context, object)
+  fullName: CloudLiquid.Filters.DataFilters.IsLoop(DotLiquid.Context, object)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: IsLoop
+    path: Filters/DataFilters.cs
+    startLine: 189
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Determines whether the specified object is a list.
+  example: []
+  syntax:
+    content: public static bool IsLoop(Context context, object data)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Object
+      description: The data to be checked.
+    return:
+      type: System.Boolean
+      description: True if the specified context is loop, false otherwise.
+    content.vb: Public Shared Function IsLoop(context As Context, data As Object) As Boolean
+  overload: CloudLiquid.Filters.DataFilters.IsLoop*
+  nameWithType.vb: DataFilters.IsLoop(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.IsLoop(DotLiquid.Context, Object)
+  name.vb: IsLoop(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.ClearNulls(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.ClearNulls(DotLiquid.Context,System.Object)
+  id: ClearNulls(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: ClearNulls(Context, dynamic)
+  nameWithType: DataFilters.ClearNulls(Context, dynamic)
+  fullName: CloudLiquid.Filters.DataFilters.ClearNulls(DotLiquid.Context, dynamic)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: ClearNulls
+    path: Filters/DataFilters.cs
+    startLine: 199
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Removes null or empty entries from the specified dictionary.
+  example: []
+  syntax:
+    content: public static Dictionary<string, dynamic> ClearNulls(Context context, dynamic data)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: dynamic
+      description: The dictionary to be processed.
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: >-
+        A new dictionary with null or empty entries removed if the input is a dictionary; 
+            otherwise, returns an empty dictionary if the input is null or not a dictionary.
+    content.vb: Public Shared Function ClearNulls(context As Context, data As Object) As Dictionary(Of String, Object)
+  overload: CloudLiquid.Filters.DataFilters.ClearNulls*
+  nameWithType.vb: DataFilters.ClearNulls(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.ClearNulls(DotLiquid.Context, Object)
+  name.vb: ClearNulls(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.CreateHash(DotLiquid.Context,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.CreateHash(DotLiquid.Context,System.String)
+  id: CreateHash(DotLiquid.Context,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: CreateHash(Context, string)
+  nameWithType: DataFilters.CreateHash(Context, string)
+  fullName: CloudLiquid.Filters.DataFilters.CreateHash(DotLiquid.Context, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: CreateHash
+    path: Filters/DataFilters.cs
+    startLine: 213
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Creates a new hash and optionally adds a specified key with a null value.
+  example: []
+  syntax:
+    content: public static Dictionary<string, dynamic> CreateHash(Context context, string key = null)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: key
+      type: System.String
+      description: An optional key to be added to the dictionary with a null value.
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: >-
+        A new dictionary with the specified key and null value if the key is provided; 
+            otherwise, an empty dictionary.
+    content.vb: Public Shared Function CreateHash(context As Context, key As String = Nothing) As Dictionary(Of String, Object)
+  overload: CloudLiquid.Filters.DataFilters.CreateHash*
+  nameWithType.vb: DataFilters.CreateHash(Context, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.CreateHash(DotLiquid.Context, String)
+  name.vb: CreateHash(Context, String)
+- uid: CloudLiquid.Filters.DataFilters.CreateList(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.CreateList(DotLiquid.Context,System.Object)
+  id: CreateList(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: CreateList(Context, dynamic)
+  nameWithType: DataFilters.CreateList(Context, dynamic)
+  fullName: CloudLiquid.Filters.DataFilters.CreateList(DotLiquid.Context, dynamic)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: CreateList
+    path: Filters/DataFilters.cs
+    startLine: 229
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Creates a new list with an optional type specification.
+  example: []
+  syntax:
+    content: public static List<dynamic> CreateList(Context context, dynamic type = null)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: type
+      type: dynamic
+      description: An optional parameter specifying the type of elements in the list.
+    return:
+      type: System.Collections.Generic.List{System.Object}
+      description: A new empty list of dynamic elements.
+    content.vb: Public Shared Function CreateList(context As Context, type As Object = Nothing) As List(Of Object)
+  overload: CloudLiquid.Filters.DataFilters.CreateList*
+  nameWithType.vb: DataFilters.CreateList(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.CreateList(DotLiquid.Context, Object)
+  name.vb: CreateList(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.AddToList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object,System.Boolean,System.Boolean)
+  commentId: M:CloudLiquid.Filters.DataFilters.AddToList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object,System.Boolean,System.Boolean)
+  id: AddToList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object,System.Boolean,System.Boolean)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: AddToList(Context, List<dynamic>, dynamic, bool, bool)
+  nameWithType: DataFilters.AddToList(Context, List<dynamic>, dynamic, bool, bool)
+  fullName: CloudLiquid.Filters.DataFilters.AddToList(DotLiquid.Context, System.Collections.Generic.List<dynamic>, dynamic, bool, bool)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AddToList
+    path: Filters/DataFilters.cs
+    startLine: 241
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Adds an item to the specified list with options for unique and null insertion.
+  example: []
+  syntax:
+    content: public static List<dynamic> AddToList(Context context, List<dynamic> data, dynamic insert, bool unique = false, bool nullInsert = false)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Collections.Generic.List{System.Object}
+      description: The list to which the item will be added.
+    - id: insert
+      type: dynamic
+      description: TThe item to be added to the list.
+    - id: unique
+      type: System.Boolean
+      description: A boolean indicating whether the item should only be added if it is not already in the list.
+    - id: nullInsert
+      type: System.Boolean
+      description: A boolean indicating whether null values are allow to be inserted.
+    return:
+      type: System.Collections.Generic.List{System.Object}
+      description: The updated list with the item added if conditions are met.
+    content.vb: Public Shared Function AddToList(context As Context, data As List(Of Object), insert As Object, unique As Boolean = False, nullInsert As Boolean = False) As List(Of Object)
+  overload: CloudLiquid.Filters.DataFilters.AddToList*
+  nameWithType.vb: DataFilters.AddToList(Context, List(Of Object), Object, Boolean, Boolean)
+  fullName.vb: CloudLiquid.Filters.DataFilters.AddToList(DotLiquid.Context, System.Collections.Generic.List(Of Object), Object, Boolean, Boolean)
+  name.vb: AddToList(Context, List(Of Object), Object, Boolean, Boolean)
+- uid: CloudLiquid.Filters.DataFilters.RemoveFromList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.RemoveFromList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object)
+  id: RemoveFromList(DotLiquid.Context,System.Collections.Generic.List{System.Object},System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: RemoveFromList(Context, List<dynamic>, dynamic)
+  nameWithType: DataFilters.RemoveFromList(Context, List<dynamic>, dynamic)
+  fullName: CloudLiquid.Filters.DataFilters.RemoveFromList(DotLiquid.Context, System.Collections.Generic.List<dynamic>, dynamic)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: RemoveFromList
+    path: Filters/DataFilters.cs
+    startLine: 258
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Removes the specified item from the list.
+  example: []
+  syntax:
+    content: public static List<dynamic> RemoveFromList(Context context, List<dynamic> data, dynamic key)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: System.Collections.Generic.List{System.Object}
+      description: The list from which the item will be removed.
+    - id: key
+      type: dynamic
+      description: The item to be removed from the list.
+    return:
+      type: System.Collections.Generic.List{System.Object}
+      description: The updated list with the item removed.
+    content.vb: Public Shared Function RemoveFromList(context As Context, data As List(Of Object), key As Object) As List(Of Object)
+  overload: CloudLiquid.Filters.DataFilters.RemoveFromList*
+  nameWithType.vb: DataFilters.RemoveFromList(Context, List(Of Object), Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.RemoveFromList(DotLiquid.Context, System.Collections.Generic.List(Of Object), Object)
+  name.vb: RemoveFromList(Context, List(Of Object), Object)
+- uid: CloudLiquid.Filters.DataFilters.GetListFromHash(DotLiquid.Context,System.Object,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.GetListFromHash(DotLiquid.Context,System.Object,System.String)
+  id: GetListFromHash(DotLiquid.Context,System.Object,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: GetListFromHash(Context, dynamic, string)
+  nameWithType: DataFilters.GetListFromHash(Context, dynamic, string)
+  fullName: CloudLiquid.Filters.DataFilters.GetListFromHash(DotLiquid.Context, dynamic, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: GetListFromHash
+    path: Filters/DataFilters.cs
+    startLine: 269
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Retrieves a list from a hash based on the specified key.
+  example: []
+  syntax:
+    content: public static List<dynamic> GetListFromHash(Context context, dynamic data, string key)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: dynamic
+      description: The hash from which the list will be retrieved.
+    - id: key
+      type: System.String
+      description: The key used to access the list within the hash.
+    return:
+      type: System.Collections.Generic.List{System.Object}
+      description: >-
+        The list associated with the specified key in the hash or null 
+           if the data parameter is null.
+    content.vb: Public Shared Function GetListFromHash(context As Context, data As Object, key As String) As List(Of Object)
+  overload: CloudLiquid.Filters.DataFilters.GetListFromHash*
+  nameWithType.vb: DataFilters.GetListFromHash(Context, Object, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.GetListFromHash(DotLiquid.Context, Object, String)
+  name.vb: GetListFromHash(Context, Object, String)
+- uid: CloudLiquid.Filters.DataFilters.Log(DotLiquid.Context,System.Object)
+  commentId: M:CloudLiquid.Filters.DataFilters.Log(DotLiquid.Context,System.Object)
+  id: Log(DotLiquid.Context,System.Object)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Log(Context, dynamic)
+  nameWithType: DataFilters.Log(Context, dynamic)
+  fullName: CloudLiquid.Filters.DataFilters.Log(DotLiquid.Context, dynamic)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Log
+    path: Filters/DataFilters.cs
+    startLine: 288
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Writes the specified data to the console as a log entry.
+  example: []
+  syntax:
+    content: public static string Log(Context context, dynamic data)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: data
+      type: dynamic
+      description: The data to be logged.
+    return:
+      type: System.String
+      description: Always returns null.
+    content.vb: Public Shared Function Log(context As Context, data As Object) As String
+  overload: CloudLiquid.Filters.DataFilters.Log*
+  nameWithType.vb: DataFilters.Log(Context, Object)
+  fullName.vb: CloudLiquid.Filters.DataFilters.Log(DotLiquid.Context, Object)
+  name.vb: Log(Context, Object)
+- uid: CloudLiquid.Filters.DataFilters.RemoveProperty(DotLiquid.Context,System.Object,System.String,System.Int32)
+  commentId: M:CloudLiquid.Filters.DataFilters.RemoveProperty(DotLiquid.Context,System.Object,System.String,System.Int32)
+  id: RemoveProperty(DotLiquid.Context,System.Object,System.String,System.Int32)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: RemoveProperty(Context, dynamic, string, int)
+  nameWithType: DataFilters.RemoveProperty(Context, dynamic, string, int)
+  fullName: CloudLiquid.Filters.DataFilters.RemoveProperty(DotLiquid.Context, dynamic, string, int)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: RemoveProperty
+    path: Filters/DataFilters.cs
+    startLine: 302
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Removes a property from the specified object or from an object at the specified index within a list.
+  example: []
+  syntax:
+    content: public static dynamic RemoveProperty(Context context, dynamic input, string key, int index = -1)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: dynamic
+      description: The object or list from which the property will be removed.
+    - id: key
+      type: System.String
+      description: The key of the property to be removed.
+    - id: index
+      type: System.Int32
+      description: The optional index of the object within a list. Default value is -1.
+    return:
+      type: dynamic
+      description: >-
+        If the input object is null, returns null or if the key is null or empty, returns the input object.
+            If index is -1 returns a new object with the specified property removed.
+            If index is not -1 returns a new list with the property removed from the object at the specified index.
+    content.vb: Public Shared Function RemoveProperty(context As Context, input As Object, key As String, index As Integer = -1) As Object
+  overload: CloudLiquid.Filters.DataFilters.RemoveProperty*
+  nameWithType.vb: DataFilters.RemoveProperty(Context, Object, String, Integer)
+  fullName.vb: CloudLiquid.Filters.DataFilters.RemoveProperty(DotLiquid.Context, Object, String, Integer)
+  name.vb: RemoveProperty(Context, Object, String, Integer)
+- uid: CloudLiquid.Filters.DataFilters.AddProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  commentId: M:CloudLiquid.Filters.DataFilters.AddProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  id: AddProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: AddProperty(Context, dynamic, string, dynamic, int)
+  nameWithType: DataFilters.AddProperty(Context, dynamic, string, dynamic, int)
+  fullName: CloudLiquid.Filters.DataFilters.AddProperty(DotLiquid.Context, dynamic, string, dynamic, int)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AddProperty
+    path: Filters/DataFilters.cs
+    startLine: 363
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Adds a property to the specified object or to an object at the specified index within a list.
+  example: []
+  syntax:
+    content: public static dynamic AddProperty(Context context, dynamic input, string key, dynamic entry, int index = -1)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: dynamic
+      description: The object or list to which the property will be added.
+    - id: key
+      type: System.String
+      description: The key of the property to be added
+    - id: entry
+      type: dynamic
+      description: The value of the property to be added.
+    - id: index
+      type: System.Int32
+      description: The optional index of the object within a list. Default value is -1.
+    return:
+      type: dynamic
+      description: >-
+        If the input object is null, returns null or if the key is null or empty, returns the input object.
+           If index is -1 returns a new object with the specified property added.
+           If index is not -1 returns a new list with the property added to the object at the specified index.
+    content.vb: Public Shared Function AddProperty(context As Context, input As Object, key As String, entry As Object, index As Integer = -1) As Object
+  overload: CloudLiquid.Filters.DataFilters.AddProperty*
+  nameWithType.vb: DataFilters.AddProperty(Context, Object, String, Object, Integer)
+  fullName.vb: CloudLiquid.Filters.DataFilters.AddProperty(DotLiquid.Context, Object, String, Object, Integer)
+  name.vb: AddProperty(Context, Object, String, Object, Integer)
+- uid: CloudLiquid.Filters.DataFilters.SetProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  commentId: M:CloudLiquid.Filters.DataFilters.SetProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  id: SetProperty(DotLiquid.Context,System.Object,System.String,System.Object,System.Int32)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: SetProperty(Context, dynamic, string, dynamic, int)
+  nameWithType: DataFilters.SetProperty(Context, dynamic, string, dynamic, int)
+  fullName: CloudLiquid.Filters.DataFilters.SetProperty(DotLiquid.Context, dynamic, string, dynamic, int)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: SetProperty
+    path: Filters/DataFilters.cs
+    startLine: 422
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Sets the value of a property in the specified object or in an object at the specified index within a list.
+  example: []
+  syntax:
+    content: public static dynamic SetProperty(Context context, dynamic input, string key, dynamic entry, int index = -1)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: dynamic
+      description: The object or list in which the property value will be set.
+    - id: key
+      type: System.String
+      description: The key of the property to be set.
+    - id: entry
+      type: dynamic
+      description: The value to set for the property.
+    - id: index
+      type: System.Int32
+      description: The optional index of the object within a list. Default value is -1.
+    return:
+      type: dynamic
+      description: >-
+        If the input object is null, returns null or if the key is null or empty, returns the input object.
+           If index is -1 returns a object with the property value set.
+           If index is not -1 returns a list with the property value set to the object at the specified index.
+    content.vb: Public Shared Function SetProperty(context As Context, input As Object, key As String, entry As Object, index As Integer = -1) As Object
+  overload: CloudLiquid.Filters.DataFilters.SetProperty*
+  nameWithType.vb: DataFilters.SetProperty(Context, Object, String, Object, Integer)
+  fullName.vb: CloudLiquid.Filters.DataFilters.SetProperty(DotLiquid.Context, Object, String, Object, Integer)
+  name.vb: SetProperty(Context, Object, String, Object, Integer)
+- uid: CloudLiquid.Filters.DataFilters.Coalesce(DotLiquid.Context,System.Object[])
+  commentId: M:CloudLiquid.Filters.DataFilters.Coalesce(DotLiquid.Context,System.Object[])
+  id: Coalesce(DotLiquid.Context,System.Object[])
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: Coalesce(Context, params dynamic[])
+  nameWithType: DataFilters.Coalesce(Context, params dynamic[])
+  fullName: CloudLiquid.Filters.DataFilters.Coalesce(DotLiquid.Context, params dynamic[])
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Coalesce
+    path: Filters/DataFilters.cs
+    startLine: 474
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Returns the first non-null value from the provided list of dynamic inputs.
+  example: []
+  syntax:
+    content: public static dynamic Coalesce(Context context, params dynamic[] input)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: input
+      type: dynamic[]
+      description: A list of dynamic inputs from which to select the first non-null value.
+    return:
+      type: dynamic
+      description: The first non-null value from the provided list of dynamic inputs, or null if all inputs are null.
+    content.vb: Public Shared Function Coalesce(context As Context, ParamArray input As Object()) As Object
+  overload: CloudLiquid.Filters.DataFilters.Coalesce*
+  nameWithType.vb: DataFilters.Coalesce(Context, ParamArray Object())
+  fullName.vb: CloudLiquid.Filters.DataFilters.Coalesce(DotLiquid.Context, ParamArray Object())
+  name.vb: Coalesce(Context, ParamArray Object())
+- uid: CloudLiquid.Filters.DataFilters.DecodeBase64(DotLiquid.Context,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.DecodeBase64(DotLiquid.Context,System.String)
+  id: DecodeBase64(DotLiquid.Context,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: DecodeBase64(Context, string)
+  nameWithType: DataFilters.DecodeBase64(Context, string)
+  fullName: CloudLiquid.Filters.DataFilters.DecodeBase64(DotLiquid.Context, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: DecodeBase64
+    path: Filters/DataFilters.cs
+    startLine: 490
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Decodes a Base64 encoded string into its original UTF-8 encoded string representation.
+  example: []
+  syntax:
+    content: public static dynamic DecodeBase64(Context context, string encodedString)
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: encodedString
+      type: System.String
+      description: The encoded string.
+    return:
+      type: dynamic
+      description: The original UTF-8 encoded string represented by the Base64 encoded string.
+    content.vb: Public Shared Function DecodeBase64(context As Context, encodedString As String) As Object
+  overload: CloudLiquid.Filters.DataFilters.DecodeBase64*
+  nameWithType.vb: DataFilters.DecodeBase64(Context, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.DecodeBase64(DotLiquid.Context, String)
+  name.vb: DecodeBase64(Context, String)
+- uid: CloudLiquid.Filters.DataFilters.FormatDateTime(DotLiquid.Context,System.Object,System.String,System.String)
+  commentId: M:CloudLiquid.Filters.DataFilters.FormatDateTime(DotLiquid.Context,System.Object,System.String,System.String)
+  id: FormatDateTime(DotLiquid.Context,System.Object,System.String,System.String)
+  parent: CloudLiquid.Filters.DataFilters
+  langs:
+  - csharp
+  - vb
+  name: FormatDateTime(Context, object, string, string)
+  nameWithType: DataFilters.FormatDateTime(Context, object, string, string)
+  fullName: CloudLiquid.Filters.DataFilters.FormatDateTime(DotLiquid.Context, object, string, string)
+  type: Method
+  source:
+    remote:
+      path: Filters/DataFilters.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: FormatDateTime
+    path: Filters/DataFilters.cs
+    startLine: 504
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Filters
+  summary: Formats a timestamp object into a string representation using the specified format and locale.
+  example: []
+  syntax:
+    content: public static string FormatDateTime(Context context, object timestamp, string format = "yyyy-MM-ddTHH:mm:ss.fffffffK", string locale = "en-us")
+    parameters:
+    - id: context
+      type: DotLiquid.Context
+      description: The context.
+    - id: timestamp
+      type: System.Object
+      description: The timestamp object to be formatted.
+    - id: format
+      type: System.String
+      description: The format string specifying the format. Default value is "yyyy-MM-ddTHH:mm:ss.fffffffK".
+    - id: locale
+      type: System.String
+      description: The locale.
+    return:
+      type: System.String
+      description: >-
+        A string representation of the format timestamp object according to the specified format and locale.
+            Returns null if the timestamp object is null.
+    content.vb: Public Shared Function FormatDateTime(context As Context, timestamp As Object, format As String = "yyyy-MM-ddTHH:mm:ss.fffffffK", locale As String = "en-us") As String
+  overload: CloudLiquid.Filters.DataFilters.FormatDateTime*
+  nameWithType.vb: DataFilters.FormatDateTime(Context, Object, String, String)
+  fullName.vb: CloudLiquid.Filters.DataFilters.FormatDateTime(DotLiquid.Context, Object, String, String)
+  name.vb: FormatDateTime(Context, Object, String, String)
+references:
+- uid: CloudLiquid.Filters
+  commentId: N:CloudLiquid.Filters
+  href: CloudLiquid.html
+  name: CloudLiquid.Filters
+  nameWithType: CloudLiquid.Filters
+  fullName: CloudLiquid.Filters
+  spec.csharp:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.Filters
+    name: Filters
+    href: CloudLiquid.Filters.html
+  spec.vb:
+  - uid: CloudLiquid
+    name: CloudLiquid
+    href: CloudLiquid.html
+  - name: .
+  - uid: CloudLiquid.Filters
+    name: Filters
+    href: CloudLiquid.Filters.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: CloudLiquid.Filters.DataFilters.Padleft*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Padleft
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Padleft_DotLiquid_Context_System_String_System_Int32_System_String_
+  name: Padleft
+  nameWithType: DataFilters.Padleft
+  fullName: CloudLiquid.Filters.DataFilters.Padleft
+- uid: DotLiquid.Context
+  commentId: T:DotLiquid.Context
+  parent: DotLiquid
+  isExternal: true
+  name: Context
+  nameWithType: Context
+  fullName: DotLiquid.Context
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: DotLiquid
+  commentId: N:DotLiquid
+  isExternal: true
+  name: DotLiquid
+  nameWithType: DotLiquid
+  fullName: DotLiquid
+- uid: CloudLiquid.Filters.DataFilters.Secret*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Secret
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Secret_DotLiquid_Context_System_String_
+  name: Secret
+  nameWithType: DataFilters.Secret
+  fullName: CloudLiquid.Filters.DataFilters.Secret
+- uid: dynamic
+  commentId: T:System.Object
+  isExternal: true
+  name: dynamic
+  nameWithType: dynamic
+  fullName: dynamic
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: CloudLiquid.Filters.DataFilters.Padright*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Padright
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Padright_DotLiquid_Context_System_String_System_Int32_System_String_
+  name: Padright
+  nameWithType: DataFilters.Padright
+  fullName: CloudLiquid.Filters.DataFilters.Padright
+- uid: CloudLiquid.Filters.DataFilters.Nullifnull*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Nullifnull
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Nullifnull_DotLiquid_Context_System_String_
+  name: Nullifnull
+  nameWithType: DataFilters.Nullifnull
+  fullName: CloudLiquid.Filters.DataFilters.Nullifnull
+- uid: CloudLiquid.Filters.DataFilters.Parsedouble*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Parsedouble
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Parsedouble_DotLiquid_Context_System_String_
+  name: Parsedouble
+  nameWithType: DataFilters.Parsedouble
+  fullName: CloudLiquid.Filters.DataFilters.Parsedouble
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.double
+  name: double
+  nameWithType: double
+  fullName: double
+  nameWithType.vb: Double
+  fullName.vb: Double
+  name.vb: Double
+- uid: CloudLiquid.Filters.DataFilters.Json*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Json
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Json_DotLiquid_Context_System_Object_System_String_
+  name: Json
+  nameWithType: DataFilters.Json
+  fullName: CloudLiquid.Filters.DataFilters.Json
+- uid: CloudLiquid.Filters.DataFilters.Xml*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Xml
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Xml_DotLiquid_Context_System_Object_
+  name: Xml
+  nameWithType: DataFilters.Xml
+  fullName: CloudLiquid.Filters.DataFilters.Xml
+- uid: CloudLiquid.Filters.DataFilters.LiquidContains*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.LiquidContains
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_LiquidContains_DotLiquid_Context_System_Object_System_String_
+  name: LiquidContains
+  nameWithType: DataFilters.LiquidContains
+  fullName: CloudLiquid.Filters.DataFilters.LiquidContains
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: CloudLiquid.Filters.DataFilters.DataType*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.DataType
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_DataType_DotLiquid_Context_System_Object_
+  name: DataType
+  nameWithType: DataFilters.DataType
+  fullName: CloudLiquid.Filters.DataFilters.DataType
+- uid: CloudLiquid.Filters.DataFilters.ConvertToInt*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.ConvertToInt
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_ConvertToInt_DotLiquid_Context_System_Object_
+  name: ConvertToInt
+  nameWithType: DataFilters.ConvertToInt
+  fullName: CloudLiquid.Filters.DataFilters.ConvertToInt
+- uid: CloudLiquid.Filters.DataFilters.String*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.String
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_String_DotLiquid_Context_System_Object_
+  name: String
+  nameWithType: DataFilters.String
+  fullName: CloudLiquid.Filters.DataFilters.String
+- uid: CloudLiquid.Filters.DataFilters.IsLoop*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.IsLoop
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_IsLoop_DotLiquid_Context_System_Object_
+  name: IsLoop
+  nameWithType: DataFilters.IsLoop
+  fullName: CloudLiquid.Filters.DataFilters.IsLoop
+- uid: CloudLiquid.Filters.DataFilters.ClearNulls*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.ClearNulls
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_ClearNulls_DotLiquid_Context_System_Object_
+  name: ClearNulls
+  nameWithType: DataFilters.ClearNulls
+  fullName: CloudLiquid.Filters.DataFilters.ClearNulls
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, dynamic>
+  nameWithType: Dictionary<string, dynamic>
+  fullName: System.Collections.Generic.Dictionary<string, dynamic>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: dynamic
+    name: dynamic
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - name: Object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: CloudLiquid.Filters.DataFilters.CreateHash*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.CreateHash
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_CreateHash_DotLiquid_Context_System_String_
+  name: CreateHash
+  nameWithType: DataFilters.CreateHash
+  fullName: CloudLiquid.Filters.DataFilters.CreateHash
+- uid: CloudLiquid.Filters.DataFilters.CreateList*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.CreateList
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_CreateList_DotLiquid_Context_System_Object_
+  name: CreateList
+  nameWithType: DataFilters.CreateList
+  fullName: CloudLiquid.Filters.DataFilters.CreateList
+- uid: System.Collections.Generic.List{System.Object}
+  commentId: T:System.Collections.Generic.List{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<dynamic>
+  nameWithType: List<dynamic>
+  fullName: System.Collections.Generic.List<dynamic>
+  nameWithType.vb: List(Of Object)
+  fullName.vb: System.Collections.Generic.List(Of Object)
+  name.vb: List(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: dynamic
+    name: dynamic
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: Object
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: CloudLiquid.Filters.DataFilters.AddToList*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.AddToList
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_AddToList_DotLiquid_Context_System_Collections_Generic_List_System_Object__System_Object_System_Boolean_System_Boolean_
+  name: AddToList
+  nameWithType: DataFilters.AddToList
+  fullName: CloudLiquid.Filters.DataFilters.AddToList
+- uid: CloudLiquid.Filters.DataFilters.RemoveFromList*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.RemoveFromList
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_RemoveFromList_DotLiquid_Context_System_Collections_Generic_List_System_Object__System_Object_
+  name: RemoveFromList
+  nameWithType: DataFilters.RemoveFromList
+  fullName: CloudLiquid.Filters.DataFilters.RemoveFromList
+- uid: CloudLiquid.Filters.DataFilters.GetListFromHash*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.GetListFromHash
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_GetListFromHash_DotLiquid_Context_System_Object_System_String_
+  name: GetListFromHash
+  nameWithType: DataFilters.GetListFromHash
+  fullName: CloudLiquid.Filters.DataFilters.GetListFromHash
+- uid: CloudLiquid.Filters.DataFilters.Log*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Log
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Log_DotLiquid_Context_System_Object_
+  name: Log
+  nameWithType: DataFilters.Log
+  fullName: CloudLiquid.Filters.DataFilters.Log
+- uid: CloudLiquid.Filters.DataFilters.RemoveProperty*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.RemoveProperty
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_RemoveProperty_DotLiquid_Context_System_Object_System_String_System_Int32_
+  name: RemoveProperty
+  nameWithType: DataFilters.RemoveProperty
+  fullName: CloudLiquid.Filters.DataFilters.RemoveProperty
+- uid: CloudLiquid.Filters.DataFilters.AddProperty*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.AddProperty
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_AddProperty_DotLiquid_Context_System_Object_System_String_System_Object_System_Int32_
+  name: AddProperty
+  nameWithType: DataFilters.AddProperty
+  fullName: CloudLiquid.Filters.DataFilters.AddProperty
+- uid: CloudLiquid.Filters.DataFilters.SetProperty*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.SetProperty
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_SetProperty_DotLiquid_Context_System_Object_System_String_System_Object_System_Int32_
+  name: SetProperty
+  nameWithType: DataFilters.SetProperty
+  fullName: CloudLiquid.Filters.DataFilters.SetProperty
+- uid: CloudLiquid.Filters.DataFilters.Coalesce*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.Coalesce
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_Coalesce_DotLiquid_Context_System_Object___
+  name: Coalesce
+  nameWithType: DataFilters.Coalesce
+  fullName: CloudLiquid.Filters.DataFilters.Coalesce
+- uid: dynamic[]
+  isExternal: true
+  name: dynamic[]
+  nameWithType: dynamic[]
+  fullName: dynamic[]
+  nameWithType.vb: Object()
+  fullName.vb: Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: dynamic
+    name: dynamic
+    isExternal: true
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - name: Object
+  - name: (
+  - name: )
+- uid: CloudLiquid.Filters.DataFilters.DecodeBase64*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.DecodeBase64
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_DecodeBase64_DotLiquid_Context_System_String_
+  name: DecodeBase64
+  nameWithType: DataFilters.DecodeBase64
+  fullName: CloudLiquid.Filters.DataFilters.DecodeBase64
+- uid: CloudLiquid.Filters.DataFilters.FormatDateTime*
+  commentId: Overload:CloudLiquid.Filters.DataFilters.FormatDateTime
+  href: CloudLiquid.Filters.DataFilters.html#CloudLiquid_Filters_DataFilters_FormatDateTime_DotLiquid_Context_System_Object_System_String_System_String_
+  name: FormatDateTime
+  nameWithType: DataFilters.FormatDateTime
+  fullName: CloudLiquid.Filters.DataFilters.FormatDateTime

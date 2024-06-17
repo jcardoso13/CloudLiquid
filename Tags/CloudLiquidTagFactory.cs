@@ -70,7 +70,7 @@ namespace CloudLiquid.Tags
         #endregion
 
         #region Public Methods
-        // <summary>
+        /// <summary>
         /// Creates an instance of the specified tag type.
         /// </summary>
         /// <returns>An instance of the tag.</returns>

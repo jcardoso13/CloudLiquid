@@ -1,0 +1,51 @@
+### YamlMime:ManagedReference
+items:
+- uid: CloudLiquid.Tags
+  commentId: N:CloudLiquid.Tags
+  id: CloudLiquid.Tags
+  children:
+  - CloudLiquid.Tags.AzureTag
+  - CloudLiquid.Tags.CaptureJSON
+  - CloudLiquid.Tags.CaptureXML
+  - CloudLiquid.Tags.CloudLiquidTagFactory
+  - CloudLiquid.Tags.IncludeLocal
+  langs:
+  - csharp
+  - vb
+  name: CloudLiquid.Tags
+  nameWithType: CloudLiquid.Tags
+  fullName: CloudLiquid.Tags
+  type: Namespace
+  assemblies:
+  - CloudLiquid
+references:
+- uid: CloudLiquid.Tags.AzureTag
+  commentId: T:CloudLiquid.Tags.AzureTag
+  href: CloudLiquid.Tags.AzureTag.html
+  name: AzureTag
+  nameWithType: AzureTag
+  fullName: CloudLiquid.Tags.AzureTag
+- uid: CloudLiquid.Tags.CaptureJSON
+  commentId: T:CloudLiquid.Tags.CaptureJSON
+  href: CloudLiquid.Tags.CaptureJSON.html
+  name: CaptureJSON
+  nameWithType: CaptureJSON
+  fullName: CloudLiquid.Tags.CaptureJSON
+- uid: CloudLiquid.Tags.CaptureXML
+  commentId: T:CloudLiquid.Tags.CaptureXML
+  href: CloudLiquid.Tags.CaptureXML.html
+  name: CaptureXML
+  nameWithType: CaptureXML
+  fullName: CloudLiquid.Tags.CaptureXML
+- uid: CloudLiquid.Tags.CloudLiquidTagFactory
+  commentId: T:CloudLiquid.Tags.CloudLiquidTagFactory
+  href: CloudLiquid.Tags.CloudLiquidTagFactory.html
+  name: CloudLiquidTagFactory
+  nameWithType: CloudLiquidTagFactory
+  fullName: CloudLiquid.Tags.CloudLiquidTagFactory
+- uid: CloudLiquid.Tags.IncludeLocal
+  commentId: T:CloudLiquid.Tags.IncludeLocal
+  href: CloudLiquid.Tags.IncludeLocal.html
+  name: IncludeLocal
+  nameWithType: IncludeLocal
+  fullName: CloudLiquid.Tags.IncludeLocal
