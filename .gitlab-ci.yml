@@ -50,7 +50,7 @@ build:
   artifacts:
     paths:
       - bin/Release/
-    expire_in: 1 week
+    expire_in: 1 hour
     when: on_success
 
 
@@ -81,6 +81,7 @@ test:
   artifacts:
     paths:
       - coverage-report/
+    expire_in: 1 hour
   coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
 
 
@@ -114,4 +115,4 @@ package:
   artifacts:
     paths:
       - nupkg/
-    expire_in: 1 week
+    expire_in: 1 hour
