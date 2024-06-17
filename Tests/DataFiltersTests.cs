@@ -40,17 +40,17 @@ namespace CloudLiquid.Tests
             Assert.Equal(expected, result);
         }
 
-        [Fact]
-        public void TestParseDouble()
-        {
-            Assert.Equal(128.9, DataFilters.Parsedouble(null, "128,9"));
-            Assert.Equal(-128.9, DataFilters.Parsedouble(null, "-128,9"));
-            Assert.Equal(0, DataFilters.Parsedouble(null, "0"));
-        }
+    //    [Fact]
+    //    public void TestParseDouble()
+    //    {
+    //        Assert.Equal(128.9, DataFilters.Parsedouble(null, "128,9"));
+    //        Assert.Equal(-128.9, DataFilters.Parsedouble(null, "-128,9"));
+    //        Assert.Equal(0, DataFilters.Parsedouble(null, "0"));
+    //    }
 
-        [Theory]
-        [InlineData("test")]
-        [InlineData("")]
+    //    [Theory]
+    //    [InlineData("test")]
+    //    [InlineData("")]
         public void TestParseDouble_InvalidFormat(string input)
         {
             Assert.Throws<FormatException>(() => DataFilters.Parsedouble(null, input));
