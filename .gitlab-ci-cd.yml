@@ -9,6 +9,7 @@ publish:
   script:
     - echo "Publishing the package to NuGet.org..."
     - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+    - echo "Your package was pushed."
   when: manual
   only:
     - main
