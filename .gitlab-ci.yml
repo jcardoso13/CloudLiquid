@@ -76,6 +76,7 @@ test:
     - echo "Starting tests stage..."
     - dotnet test --configuration Release /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:CoverletOutput=./coverage/
     - dotnet tool install -g dotnet-reportgenerator-globaltool
+    - export PATH="$PATH:/root/.dotnet/tools"
     - reportgenerator "-reports:./coverage/coverage.opencover.xml" "-targetdir:coverage-report" 
     - ls -la coverage-report
     - echo "test stage completed"
