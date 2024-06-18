@@ -3,7 +3,7 @@ stages:
   - test
   - analysis
   - package
-  - .post
+  - wait_for_ci
   - publish
 
 workflow:
