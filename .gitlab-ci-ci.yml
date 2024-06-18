@@ -61,6 +61,8 @@ test:
   artifacts:
     paths:
       - coverage-report/
+    reports:
+      cobertura: ./coverage/coverage.cobertura.xml
     expire_in: 1 hour
   coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
 
