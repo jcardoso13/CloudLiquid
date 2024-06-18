@@ -10,6 +10,7 @@ publish:
     - echo "Publishing the package to NuGet.org..."
     - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
     - echo "Your package was pushed."
+  needs: ["wait_for_ci"]
   when: manual
   only:
     - main
