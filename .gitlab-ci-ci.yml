@@ -1,12 +1,15 @@
+
 stages:
   - build
   - test
   - analysis
   - package
 
+variables:
+  DOTNET_VERSION: latest
 
 default:
-  image: mcr.microsoft.com/dotnet/sdk:latest
+  image: mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION
 
 
 # The Build stage
@@ -17,26 +20,52 @@ build:
     - dotnet restore
     - echo "Building the project..."
     - dotnet build --configuration Release --no-restore
+    - echo "Build succeeded."
   artifacts:
     paths:
       - bin/Release/
-    expire_in: 1 week
+    expire_in: 1 hour
+    when: on_success
 
 
 # The Test stage
+#test:
+#  stage: test
+#  script:
+#    - echo "Running tests..."
+#    - dotnet test --configuration Release --logger "trx;LogFileName=$TEST_RESULTS_DIR/test_results.trx" --verbosity normal --results-directory TestResults
+#    - echo "test stage completed"
+#  dependencies:
+#    - build
+#  artifacts:
+#    reports:
+#      junit: TestResults/*.trx
+#    paths:
+#      - TestResults/
+#    expire_in: 1 week
+
 test:
   stage: test
   script:
-    - echo "Running tests..."
-    - dotnet test --configuration Release --logger:trx --results-directory /TestResults --no-build --verbosity normal
+    - echo "Starting tests stage..."
+    - dotnet add package coverlet.msbuild
+    - dotnet test --configuration Release /p:CollectCoverage=true /p:IncludeTestAssembly=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./coverage/
+#    - ls -la coverage
+    - dotnet tool install -g dotnet-reportgenerator-globaltool
+    - export PATH="$PATH:/root/.dotnet/tools"
+    - reportgenerator "-reports:./coverage/coverage.cobertura.xml" "-targetdir:coverage-report" 
+#    - ls -la coverage-report
+    - echo "Test stage completed."
   dependencies:
     - build
   artifacts:
-    reports:
-      junit: TestResults/*.trx
     paths:
-      - TestResults/
-    expire_in: 1 week
+      - coverage-report/
+    reports:
+      cobertura: ./coverage/coverage.cobertura.xml
+    expire_in: 1 hour
+  coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
+
 
 
 # Code Analysis stage
@@ -60,13 +89,13 @@ package:
   stage: package
   script:
     - echo "Packing the project..."
-    - dotnet pack --configuration Release --output ./nupkg
-    - ls -la ./nupkg
+    - dotnet pack --configuration Release --output nupkg
+    - echo "Nuget package was created successfully."
   dependencies:
-    - build
     - analysis
- # when: manual
+    - build
+  when: manual
   artifacts:
     paths:
       - nupkg/
-    expire_in: 1 week
+    expire_in: 1 hour
