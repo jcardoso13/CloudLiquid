@@ -53,42 +53,53 @@ namespace CloudLiquid.Tests
             Assert.Equal(expected, result);
         }
 
-    //    [Fact]
-    //    public void TestParseDouble()
-    //    {
-    //        Assert.Equal(128.9, DataFilters.Parsedouble(null, "128,9"));
-    //        Assert.Equal(-128.9, DataFilters.Parsedouble(null, "-128,9"));
-    //        Assert.Equal(0, DataFilters.Parsedouble(null, "0"));
-    //    }
+        //    [Fact]
+        //    public void TestParseDouble()
+        //    {
+        //        Assert.Equal(128.9, DataFilters.Parsedouble(null, "128,9"));
+        //        Assert.Equal(-128.9, DataFilters.Parsedouble(null, "-128,9"));
+        //        Assert.Equal(0, DataFilters.Parsedouble(null, "0"));
+        //    }
 
-    //    [Theory]
-    //    [InlineData("test")]
-    //    [InlineData("")]
-     /* public void TestParseDouble_InvalidFormat(string input)
-        {
-            Assert.Throws<FormatException>(() => DataFilters.Parsedouble(null, input));
-        }
-     */
+        [Theory]
+        [InlineData("test")]
+        [InlineData("")]
+        public void TestParseDouble_InvalidFormat(string input)
+           {
+               Assert.Throws<FormatException>(() => DataFilters.Parsedouble(null, input));
+           }
+        
         [Fact]
-        public void TestDouble_NullInputThrowsArgumentNullException()
+        public void TestParsedouble()
+        {
+            string input = "123,45";
+            var result = DataFilters.Parsedouble(null, input);
+
+            Assert.Equal(123.45, result);
+        }
+        [Fact]
+        public void TestParsedouble_NullInput()
         {
             string input = null;
+
             Assert.Throws<ArgumentNullException>(() => DataFilters.Parsedouble(null, input));
         }
+
         [Fact]
-        public void TestJson_Dictionary() // fazer para int, bool, lista, dicionario/JsonObjects,testar settings nobrackets e testar decimais
-        {
+        public void TestJson_Dictionary() 
+        { 
             var data = new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
             var result = DataFilters.Json(null, data);
-            var test = GetReturnChar();
-            Assert.Equal($"{{{test}  \"key1\": \"value1\",{test}  \"key2\": \"value2\"{test}}}", result);
-        } /*
+
+            Assert.Equal($"{{{GetReturnChar()}  \"key1\": \"value1\",{GetReturnChar()}  \"key2\": \"value2\"{GetReturnChar()}}}", result);
+        }
         [Fact]
         public void TestJson_WithoutBrackets() 
         {
             var data = new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
             var result = DataFilters.Json(null, data, "nobrackets");
-           // Assert.Equal("\n  \"key1\": \"value1\",\n  \"key2\": \"value2\"\n", result);
+            var test = GetReturnChar();
+            Assert.Equal($"{test}  \"key1\": \"value1\",{test}  \"key2\": \"value2\"{test}", result);
         }
         [Fact]
         public void TestJson_Int()
@@ -111,16 +122,16 @@ namespace CloudLiquid.Tests
         {
             var input = new List<int> { 1, 2, 3 };
             string result = DataFilters.Json(null, input);
-
-          //  Assert.Equal("[\n  1,\n  2,\n  3\n]", result);
+           
+            Assert.Equal($"[{GetReturnChar()}  1,{GetReturnChar()}  2,{GetReturnChar()}  3{GetReturnChar()}]", result);
         }
-        /*[Fact]
+        [Fact]
         public void TestJson_Object()
         {
             var input = new { Name = "Maria", Age = 25 };
             string result = DataFilters.Json(null, input);
 
-            Assert.Equal("{\n  \"Name\": \"Maria\",\n  \"Age\": 25\n}", result);
+            Assert.Equal($"{{{GetReturnChar()}  \"Name\": \"Maria\",{GetReturnChar()}  \"Age\": 25{GetReturnChar()}}}", result);
         }
         [Fact]
         public void TestJson_Decimal()
@@ -128,7 +139,7 @@ namespace CloudLiquid.Tests
             var input = 123.45;
             string result = DataFilters.Json(null, input);
 
-           // Assert.Equal("123.45", result);
+            Assert.Equal("123.45", result);
         }
         [Fact]
         public void TestJson_DictionaryAndList()
@@ -139,19 +150,16 @@ namespace CloudLiquid.Tests
             { "key2", new List<dynamic> { "a", "b", "c" } }
         };
             string result = DataFilters.Json(null, data);
-
-          //  Assert.Equal("{\n  \"key1\": [\n    1,\n    2,\n    3\n  ],\n  \"key2\": [\n    \"a\",\n    \"b\",\n    \"c\"\n  ]\n}", result);
+            Assert.Equal($"{{{GetReturnChar()}  \"key1\": [{GetReturnChar()}    1,{GetReturnChar()}    2,{GetReturnChar()}    3{GetReturnChar()}  ],{GetReturnChar()}  \"key2\": [{GetReturnChar()}    \"a\",{GetReturnChar()}    \"b\",{GetReturnChar()}    \"c\"{GetReturnChar()}  ]{GetReturnChar()}}}", result);
         }
 
         [Fact]
         public void TestXml_Dictionary() // fazer para int bool, lista, dicionario/JsonObjects e testar decimais
         { 
             var input=new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
-           
             var result = DataFilters.Xml(null, input);
-            
-            Assert.Equal("<root type=\"object\">\n  <key1 type=\"string\">value1</key1>\n  <key2 type=\"string\">value2</key2>\n</root>", result);
 
+            Assert.Equal($"<root type=\"object\">{GetReturnChar()}  <key1 type=\"string\">value1</key1>{GetReturnChar()}  <key2 type=\"string\">value2</key2>{GetReturnChar()}</root>", result);
         }
         [Fact]
         public void TestXml_Int()
@@ -175,7 +183,7 @@ namespace CloudLiquid.Tests
             var input = new List<int> { 1, 2, 3 };
             string result = DataFilters.Xml(null, input);
 
-            Assert.Equal("<root type=\"array\">\n  <item type=\"number\">1</item>\n  <item type=\"number\">2</item>\n  <item type=\"number\">3</item>\n</root>", result);
+            Assert.Equal($"<root type=\"array\">{GetReturnChar()}  <item type=\"number\">1</item>{GetReturnChar()}  <item type=\"number\">2</item>{GetReturnChar()}  <item type=\"number\">3</item>{GetReturnChar()}</root>", result);
         }
         [Fact]
         public void TestXml_Object()
@@ -183,7 +191,7 @@ namespace CloudLiquid.Tests
             var input = new { Name = "Maria", Age = 25 };
             string result = DataFilters.Xml(null, input);
 
-            Assert.Equal("<root type=\"object\">\n  <Name type=\"string\">Maria</Name>\n  <Age type=\"number\">25</Age>\n</root>", result);
+            Assert.Equal($"<root type=\"object\">{GetReturnChar()}  <Name type=\"string\">Maria</Name>{GetReturnChar()}  <Age type=\"number\">25</Age>{GetReturnChar()}</root>", result);
         }
         [Fact]
         public void TestXml_Decimal()
@@ -203,9 +211,9 @@ namespace CloudLiquid.Tests
         };
             string result = DataFilters.Xml(null, data);
 
-            Assert.Equal("<root type=\"object\">\n  <key1 type=\"array\">\n    <item type=\"number\">1</item>\n    <item type=\"number\">2</item>\n    <item type=\"number\">3</item>\n  </key1>\n  <key2 type=\"array\">\n    <item type=\"string\">a</item>\n    <item type=\"string\">b</item>\n    <item type=\"string\">c</item>\n  </key2>\n</root>", result);
+            Assert.Equal($"<root type=\"object\">{GetReturnChar()}  <key1 type=\"array\">{GetReturnChar()}    <item type=\"number\">1</item>{GetReturnChar()}    <item type=\"number\">2</item>{GetReturnChar()}    <item type=\"number\">3</item>{GetReturnChar()}  </key1>{GetReturnChar()}  <key2 type=\"array\">{GetReturnChar()}    <item type=\"string\">a</item>{GetReturnChar()}    <item type=\"string\">b</item>{GetReturnChar()}    <item type=\"string\">c</item>{GetReturnChar()}  </key2>{GetReturnChar()}</root>", result);
         }
-        */
+        
         [Fact]
         public void TestSecret() // when running Functions or in Bash, the runner can set variables 
         {
