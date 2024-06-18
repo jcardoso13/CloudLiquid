@@ -187,7 +187,6 @@
   "CloudLiquid.Tests.DataFiltersTests.TestNullifnull": "CloudLiquid.Tests.DataFiltersTests.yml",
   "CloudLiquid.Tests.DataFiltersTests.TestPadleft(System.String,System.Int32,System.String,System.String)": "CloudLiquid.Tests.DataFiltersTests.yml",
   "CloudLiquid.Tests.DataFiltersTests.TestPadright(System.String,System.Int32,System.String,System.String)": "CloudLiquid.Tests.DataFiltersTests.yml",
-  "CloudLiquid.Tests.DataFiltersTests.TestParseDouble": "CloudLiquid.Tests.DataFiltersTests.yml",
   "CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat(System.String)": "CloudLiquid.Tests.DataFiltersTests.yml",
   "CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementDoesNotExist": "CloudLiquid.Tests.DataFiltersTests.yml",
   "CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementExist": "CloudLiquid.Tests.DataFiltersTests.yml",

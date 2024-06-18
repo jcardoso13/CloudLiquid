@@ -2376,19 +2376,6 @@ references:
   isSpec: "True"
   fullName: CloudLiquid.Tests.DataFiltersTests.TestPadright
   nameWithType: DataFiltersTests.TestPadright
-- uid: CloudLiquid.Tests.DataFiltersTests.TestParseDouble
-  name: TestParseDouble()
-  href: api/CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestParseDouble
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestParseDouble
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestParseDouble()
-  nameWithType: DataFiltersTests.TestParseDouble()
-- uid: CloudLiquid.Tests.DataFiltersTests.TestParseDouble*
-  name: TestParseDouble
-  href: api/CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestParseDouble_
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestParseDouble
-  isSpec: "True"
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestParseDouble
-  nameWithType: DataFiltersTests.TestParseDouble
 - uid: CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat(System.String)
   name: TestParseDouble_InvalidFormat(string)
   href: api/CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestParseDouble_InvalidFormat_System_String_
