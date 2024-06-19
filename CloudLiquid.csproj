@@ -31,18 +31,23 @@
     <!-- <ProjectReference Include="..\ContentFactory\ContentFactory.csproj" /> -->
     <None Include="README.md" Pack="true" PackagePath="\" />
 </ItemGroup>
-<PropertyGroup>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageId>CloudLiquid</PackageId>
-    <Choose>
+<Choose>
         <When Condition="'$(RELEASE_VERSION)' != ''">
-          <PackageVersion>$(RELEASE_VERSION)</PackageVersion>
+          <PropertyGroup>
+            <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
+            <PackageReadmeFile>README.md</PackageReadmeFile>
+            <PackageId>CloudLiquid</PackageId>
+            <PackageVersion>$(RELEASE_VERSION)</PackageVersion>
+          </PropertyGroup>
         </When>
         <When Condition="'$(RELEASE_VERSION)' == ''">
-          <PackageVersion>$([System.DateTime]::UtcNow.ToString(`yyyyMMdd-HHmm`))</PackageVersion>
+          <PropertyGroup>
+            <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
+            <PackageReadmeFile>README.md</PackageReadmeFile>
+            <PackageId>CloudLiquid</PackageId>
+            <PackageVersion>$([System.DateTime]::UtcNow.ToString(`yyyyMMdd-HHmm`))</PackageVersion>
+          </PropertyGroup>  
         </When>
-    </Choose>
- </PropertyGroup>
+  </Choose>
 
 </Project>
