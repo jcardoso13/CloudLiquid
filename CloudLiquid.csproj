@@ -35,6 +35,14 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageId>CloudLiquid</PackageId>
+    <Choose>
+        <When Condition="'$(RELEASE_VERSION)' != ''">
+          <PackageVersion>$(RELEASE_VERSION)</PackageVersion>
+        </When>
+        <When Condition="'$(RELEASE_VERSION)' == ''">
+          <PackageVersion>$([System.DateTime]::UtcNow.ToString(`yyyyMMdd-HHmm`))</PackageVersion>
+        </When>
+    </Choose>
  </PropertyGroup>
 
 </Project>
