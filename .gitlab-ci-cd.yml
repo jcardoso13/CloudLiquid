@@ -8,7 +8,7 @@ publish:
   script:
     - echo "Publishing the package to NuGet.org..."
 #    - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
-    - dotnet nuget add source "https://gitlab.example.com/api/v4/projects/34206/packages/nuget/index.json" --name gitlab --username $GITLAB_USERNAME --password $GITLAB_TOKEN --store-password-in-clear-text
+    - dotnet nuget add source "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/nuget/index.json" --name gitlab --username $GITLAB_USERNAME --password $GITLAB_TOKEN --store-password-in-clear-text
     - dotnet nuget push ./nupkg/*.nupkg --source gitlab
     - echo "Your package was pushed."
   when: manual
