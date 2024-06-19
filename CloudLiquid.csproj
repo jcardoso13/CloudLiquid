@@ -45,7 +45,7 @@
             <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
             <PackageReadmeFile>README.md</PackageReadmeFile>
             <PackageId>CloudLiquid</PackageId>
-            <PackageVersion>$([System.DateTime]::UtcNow.ToString(`yyyyMMdd-HHmm`))</PackageVersion>
+            <PackageVersion>1.0.$(CI_PIPELINE_IID)</PackageVersion>
           </PropertyGroup>  
         </When>
   </Choose>
