@@ -8,7 +8,9 @@ publish:
   image: mcr.microsoft.com/dotnet/sdk:latest
   script:
     - echo "Publishing the package to NuGet.org..."
-    - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+#    - dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+    - dotnet nuget add source "https://gitlab.example.com/api/v4/projects/34206/packages/nuget/index.json" --name gitlab-repo --username $GITLAB_USERNAME --password $GITLAB_TOKEN
+    - dotnet nuget push ./nupkg/*.nupkg --source gitlab-repo
     - echo "Your package was pushed."
   when: manual
   needs:
