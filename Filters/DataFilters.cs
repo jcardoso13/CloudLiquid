@@ -58,7 +58,7 @@ namespace CloudLiquid.Filters
         /// <returns>The parsed double value. </returns>
         public static double Parsedouble(Context context, string input)
         {
-            return Double.Parse(input);
+            return Double.Parse(input, CultureInfo.InvariantCulture);
         }
 
         /// <summary>Converts the input to a JSON string.</summary>

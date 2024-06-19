@@ -2,6 +2,7 @@ using CloudLiquid.Filters;
 using DotLiquid;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
 using Xunit;
@@ -65,14 +66,14 @@ namespace CloudLiquid.Tests
         [InlineData("test")]
         [InlineData("")]
         public void TestParseDouble_InvalidFormat(string input)
-           {
-               Assert.Throws<FormatException>(() => DataFilters.Parsedouble(null, input));
-           }
+        {
+            Assert.Throws<FormatException>(() => DataFilters.Parsedouble(null, input));
+        }
         
         [Fact]
         public void TestParsedouble()
         {
-            string input = "123,45";
+            string input = "123.45";
             var result = DataFilters.Parsedouble(null, input);
 
             Assert.Equal(123.45, result);
@@ -221,12 +222,12 @@ namespace CloudLiquid.Tests
             
             Assert.Equal("value1",Environment.GetEnvironmentVariable("key1"));
         }
-
         [Fact]
-        public void TestLiquidContains_DictionaryContainKey()
+        public void TestLiquidContains_DataIsHashAndObjectExists()
         {
-            var data = new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
-            string obj = "key1";
+            var data = new Hash();
+            data["key"] = "value";
+            string obj = "key";
 
             var result = DataFilters.LiquidContains(null, data, obj);
 
@@ -234,10 +235,11 @@ namespace CloudLiquid.Tests
         }
 
         [Fact]
-        public void TestLiquidContains_DictionaryDoesNotContainKey()
+        public void TestLiquidContains_DataIsHashAndObjectDoesNotExist()
         {
-            var data = new Dictionary<string, dynamic> { { "key1", "value1" }, { "key2", "value2" } };
-            string obj = "key3";
+            var data = new Hash();
+            data["key"] = "value";
+            string obj = "nonexistent";
 
             var result = DataFilters.LiquidContains(null, data, obj);
 
@@ -245,7 +247,31 @@ namespace CloudLiquid.Tests
         }
 
         [Fact]
-        public void TestLiquidContains_ListContainString()
+        public void TestLiquidContains_DataIsDictionaryAndObjectExists()
+        {
+            var data = new Dictionary<string, dynamic>();
+            data["key"] = "value";
+            string obj = "key";
+
+            var result = DataFilters.LiquidContains(null, data, obj);
+
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist()
+        {
+            var data = new Dictionary<string, dynamic>();
+            data["key"] = "value";
+            string obj = "nonexistent";
+
+            var result = DataFilters.LiquidContains(null, data, obj);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void TestLiquidContains_DataIsListAndObjectExists()
         {
             var data = new List<dynamic> { "value1", "value2", "value3" };
             string obj = "value2";
@@ -254,12 +280,11 @@ namespace CloudLiquid.Tests
 
             Assert.True(result);
         }
-
         [Fact]
-        public void TestLiquidContains_ListDoesNotContainString()
+        public void TestLiquidContains_DataIsListAndObjectDoesNotExist()
         {
             var data = new List<dynamic> { "value1", "value2", "value3" };
-            string obj = "value4";
+            string obj = "nonexistent";
 
             var result = DataFilters.LiquidContains(null, data, obj);
 
@@ -267,16 +292,37 @@ namespace CloudLiquid.Tests
         }
 
         [Fact]
-        public void TestLiquidContains_String()
+        public void TestLiquidContains_DataIsStringAndObjectExists()
         {
-            string data = "Hello, world!";
-            string obj = "world";
+            var data = "this is a test string";
+            string obj = "test";
 
             var result = DataFilters.LiquidContains(null, data, obj);
 
             Assert.True(result);
         }
 
+        [Fact]
+        public void TestLiquidContains_DataIsStringAndObjectDoesNotExist()
+        {
+            var data = "this is a test string";
+            string obj = "nonexistent";
+
+            var result = DataFilters.LiquidContains(null, data, obj);
+
+            Assert.False(result);
+        }
+
+        [Fact]
+        public void LiquidContains_DataInvalidType()
+        {
+            var data = 123; 
+            string obj = "key";
+
+            var result = DataFilters.LiquidContains(null, data, obj);
+
+            Assert.False(result);
+        }
         [Fact]
         public void TestInt()
         {
