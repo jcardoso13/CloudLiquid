@@ -45,7 +45,7 @@
             <PackageLicenseUrl>https://raw.githubusercontent.com/jcardoso13/CloudLiquid/master/LICENSE</PackageLicenseUrl>
             <PackageReadmeFile>README.md</PackageReadmeFile>
             <PackageId>CloudLiquid</PackageId>
-            <PackageVersion>1.1.$(CI_PIPELINE_ID)</PackageVersion>
+            <PackageVersion Condition="'$(CI_PIPELINE_ID)' != ''">1.1.$(CI_PIPELINE_ID)</PackageVersion>
           </PropertyGroup>  
         </When>
   </Choose>
