@@ -141,6 +141,12 @@ This will generate the following output:
 }
 ```
 
+## Filter and Tags Documentation
+
+The documentation for CloudLiquid filters can be found in the [Filters](./docs/Filters.md) file. This comprehensive guide provides detailed information on each filter available in CloudLiquid, including their usage, parameters, and examples. Whether you need to manipulate strings, format dates, or manipulate JSON Objects and Lists, the filter documentation will help you leverage the full power of CloudLiquid's filtering capabilities. Make sure to refer to this documentation whenever you need to apply filters to your CloudLiquid templates.
+
+
+
 ## Contributing
 Contributions to CloudLiquid are welcome! If you have any questions, feature requests, or issues, please add an issue on GitHub or contact the repository owner, João Pedro Cardoso (jpcardoso@outlook.pt).
 
