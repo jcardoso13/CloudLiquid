@@ -53,15 +53,6 @@ namespace CloudLiquid.Tests
             string result = DataFilters.Padright(null, input, totalWidth, padChar);
             Assert.Equal(expected, result);
         }
-
-        //    [Fact]
-        //    public void TestParseDouble()
-        //    {
-        //        Assert.Equal(128.9, DataFilters.Parsedouble(null, "128,9"));
-        //        Assert.Equal(-128.9, DataFilters.Parsedouble(null, "-128,9"));
-        //        Assert.Equal(0, DataFilters.Parsedouble(null, "0"));
-        //    }
-
         [Theory]
         [InlineData("test")]
         [InlineData("")]
