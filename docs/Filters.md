@@ -2,7 +2,7 @@
 
 Welcome to the documentation for the CloudLiquid filters! This guide will provide you with detailed information on each filter and how to use them in your Liquid templates.
 
-### Padleft
+### padleft
 **Description:** Pads the left side of the input string with the specified character to ensure the resulting string has a total width as specified.
 
 **JSON Input:**
@@ -16,7 +16,7 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 
 **Liquid:**
 ```liquid
-{{ 'Hello' | Padleft: 10, '*' }}
+{{ 'Hello' | padleft: 10, '*' }}
 ```
 
 **Output:**
@@ -24,7 +24,7 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 *****Hello
 ```
 
-### Secret
+### secret
 **Description:** Retrieves the value of an environment variable specified by the input.
 
 **JSON Input:**
@@ -36,7 +36,7 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 
 **Liquid:**
 ```liquid
-{{ 'PATH' | Secret }}
+{{ 'PATH' | secret }}
 ```
 
 **Output:**
@@ -44,7 +44,7 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 ```
 
-### Padright
+### padright
 **Description:** Pads the right side of the input string with the specified character until the total width specified is reached.
 
 **JSON Input:**
@@ -58,7 +58,7 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 
 **Liquid:**
 ```liquid
-{{ 'Hello' | Padright: 10, '*' }}
+{{ 'Hello' | padright: 10, '*' }}
 ```
 
 **Output:**
@@ -66,7 +66,7 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 Hello*****
 ```
 
-### Nullifnull
+### nullifnull
 **Description:** Returns "null" if the input string is null or empty; otherwise, returns the input string.
 
 **JSON Input:**
@@ -78,7 +78,7 @@ Hello*****
 
 **Liquid:**
 ```liquid
-{{ '' | Nullifnull }}
+{{ '' | nullifnull }}
 ```
 
 **Output:**
@@ -86,7 +86,7 @@ Hello*****
 null
 ```
 
-### Parsedouble
+### parsedouble
 **Description:** Parses the input string to a double.
 
 **JSON Input:**
@@ -98,7 +98,7 @@ null
 
 **Liquid:**
 ```liquid
-{{ '123.45' | Parsedouble }}
+{{ '123.45' | parsedouble }}
 ```
 
 **Output:**
@@ -106,7 +106,7 @@ null
 123.45
 ```
 
-### Json
+### json
 **Description:** Converts the input to a JSON string. Optionally removes the outer brackets if "nobrackets" is specified.
 
 **JSON Input:**
@@ -119,7 +119,7 @@ null
 
 **Liquid:**
 ```liquid
-{{ {"name": "John", "age": 30} | Json: 'nobrackets' }}
+{{ {"name": "John", "age": 30} | json: 'nobrackets' }}
 ```
 
 **Output:**
@@ -127,7 +127,7 @@ null
 "name":"John","age":30
 ```
 
-### Xml
+### xml
 **Description:** Converts the input object to an XML string.
 
 **JSON Input:**
@@ -139,7 +139,7 @@ null
 
 **Liquid:**
 ```liquid
-{{ {"name": "John", "age": 30} | Xml }}
+{{ {"name": "John", "age": 30} | xml }}
 ```
 
 **Output:**
@@ -150,7 +150,7 @@ null
 </root>
 ```
 
-### LiquidContains
+### liquid_contains
 **Description:** Checks if the data contains the specified object.
 
 **JSON Input:**
@@ -163,7 +163,7 @@ null
 
 **Liquid:**
 ```liquid
-{{ ["apple", "banana", "cherry"] | LiquidContains: 'banana' }}
+{{ ["apple", "banana", "cherry"] | liquid_contains: 'banana' }}
 ```
 
 **Output:**
@@ -171,7 +171,7 @@ null
 true
 ```
 
-### DataType
+### data_type
 **Description:** Determines the data type of the input data and returns its type as a string.
 
 **JSON Input:**
@@ -183,7 +183,7 @@ true
 
 **Liquid:**
 ```liquid
-{{ 123 | DataType }}
+{{ 123 | data_type }}
 ```
 
 **Output:**
@@ -191,7 +191,7 @@ true
 Integer
 ```
 
-### ConvertToInt
+### convert_to_int
 **Description:** Converts the input data to an integer.
 
 **JSON Input:**
@@ -203,7 +203,7 @@ Integer
 
 **Liquid:**
 ```liquid
-{{ "123" | ConvertToInt }}
+{{ "123" | convert_to_int }}
 ```
 
 **Output:**
@@ -211,7 +211,7 @@ Integer
 123
 ```
 
-### String
+### string
 **Description:** Converts the specified object to a string.
 
 **JSON Input:**
@@ -223,7 +223,7 @@ Integer
 
 **Liquid:**
 ```liquid
-{{ 123 | String }}
+{{ 123 | string }}
 ```
 
 **Output:**
@@ -231,7 +231,7 @@ Integer
 "123"
 ```
 
-### IsLoop
+### is_loop
 **Description:** Determines whether the specified object is a list.
 
 **JSON Input:**
@@ -243,7 +243,7 @@ Integer
 
 **Liquid:**
 ```liquid
-{{ ["apple", "banana", "cherry"] | IsLoop }}
+{{ ["apple", "banana", "cherry"] | is_loop }}
 ```
 
 **Output:**
@@ -251,7 +251,7 @@ Integer
 true
 ```
 
-### ClearNulls
+### clear_nulls
 **Description:** Removes null or empty entries from the specified dictionary.
 
 **JSON Input:**
@@ -263,7 +263,7 @@ true
 
 **Liquid:**
 ```liquid
-{{ {"name": "John", "age": null} | ClearNulls }}
+{{ {"name": "John", "age": null} | clear_nulls }}
 ```
 
 **Output:**
@@ -273,7 +273,7 @@ true
 }
 ```
 
-### CreateHash
+### create_hash
 **Description:** Creates a new hash and optionally adds a specified key with a null value.
 
 **JSON Input:**
@@ -285,7 +285,7 @@ true
 
 **Liquid:**
 ```liquid
-{{ '' | CreateHash: 'exampleKey' }}
+{{ '' | create_hash: 'exampleKey' }}
 ```
 
 **Output:**
@@ -295,7 +295,7 @@ true
 }
 ```
 
-### CreateList
+### create_list
 **Description:** Creates a new list with an optional type specification.
 
 **JSON Input:**
@@ -307,10 +307,11 @@ true
 
 **Liquid:**
 ```liquid
-{{ '' | CreateList: 'dynamic' }}
+{{ '' | create_list: 'dynamic' }}
 ```
 
 **Output:**
 ```
 []
 ```
+
