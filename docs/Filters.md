@@ -30,18 +30,18 @@ Welcome to the documentation for the CloudLiquid filters! This guide will provid
 **JSON Input:**
 ```json
 {
-    "input": "PATH"
+    "input": "ContainerName"
 }
 ```
 
 **Liquid:**
 ```liquid
-{{ 'PATH' | secret }}
+{{ content.input | secret }}
 ```
 
 **Output:**
 ```
-/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+liquid
 ```
 
 ### padright
