@@ -315,3 +315,219 @@ true
 []
 ```
 
+### add_to_list
+**Description:** Adds an item to the specified list with options for unique and null insertion.
+
+**JSON Input:**
+```json
+{
+    "data": ["apple", "banana"],
+    "insert": "banana",
+    "unique": true,
+    "nullInsert": false
+}
+```
+**Liquid:**
+```liquid
+{% assign list = data | AddToList: 'banana', true, false %}
+```
+
+**Output:**
+```
+["apple", "banana"]
+```
+
+### remove_from_list
+**Description:** Removes the specified item from the list.
+
+**JSON Input:**
+```json
+{
+    "data": ["apple", "banana", "cherry"],
+    "key": "banana"
+}
+```
+**Liquid:**
+```liquid
+{% assign list = data | RemoveFromList: 'banana' %}
+```
+
+**Output:**
+```
+["apple", "cherry"]
+```
+
+### get_list_from_hash
+**Description:**  Retrieves a list from a hash based on the specified key.
+
+**JSON Input:**
+```json
+{
+    "data": {"key1": ["item1", "item2"], "key2": ["item3", "item4"]},
+    "key": "key1"
+}
+```
+**Liquid:**
+```liquid
+{% assign list = data | GetListFromHash: 'key1' %}
+```
+
+**Output:**
+```
+["item1", "item2"]
+```
+
+### log
+**Description:** Writes the specified data to the console as a log entry.
+
+**JSON Input:**
+```json
+{
+    "data": "This is a log message"
+}
+```
+**Liquid:**
+```liquid
+{{ 'This is a log message' | Log }}
+```
+
+**Output:**
+```
+This is a log message
+```
+
+### remove_property
+**Description:** Removes a property from the specified object or from an object at the specified index within a list.
+
+**JSON Input:**
+```json
+{
+    "data": [{"key1": "value1", "key2": "value2"}, {"key1": "value3", "key2": "value4"}],
+    "key": "key1",
+    "index": 0
+}
+```
+**Liquid:**
+```liquid
+{% assign newData = data | RemoveProperty: 'key1', 0 %}
+```
+
+**Output:**
+```
+[
+    {"key2": "value2"},
+    {"key1": "value3", "key2": "value4"}
+]
+```
+
+### add_property
+**Description:** Adds a property to an object at the specified index within a list.
+
+**JSON Input:**
+```json
+{
+    "data": [{"key1": "value1"}, {"key1": "value3"}],
+    "key": "key2",
+    "entry": "value2",
+    "index": 1
+}
+```
+
+**Liquid:**
+```liquid
+{% assign newData = data | AddProperty: 'key2', 'value2', 1 %}
+```
+
+**Output:**
+```
+[
+    {"key1": "value1"},
+    {"key1": "value3", "key2": "value2"}
+]
+```
+
+### set_property
+**Description:** Sets the value of a property in an object at the specified index within a list.
+
+**JSON Input:**
+```json
+{
+    "data": [{"key1": "value1"}, {"key1": "value3"}],
+    "key": "key1",
+    "entry": "newValue",
+    "index": 1
+}
+```
+
+**Liquid:**
+```liquid
+{% assign newData = data | SetProperty: 'key1', 'newValue', 1 %}
+```
+
+**Output:**
+```
+[
+    {"key1": "value1"},
+    {"key1": "newValue"}
+]
+```
+
+### coalesce
+**Description:**  Returns the first non-null value from the provided list of dynamic inputs.
+
+**JSON Input:**
+```json
+{
+    "inputs": [null, null, "value", null]
+}
+```
+**Liquid:**
+```liquid
+{% assign firstNonNull = inputs | Coalesce %}
+```
+
+**Output:**
+```
+"value"
+```
+
+### decode_base64
+**Description:** Decodes a Base64 encoded string into its original UTF-8 encoded string representation.
+
+**JSON Input:**
+```json
+{
+    "encodedString": "aGVsbG8gd29ybGQ="
+}
+```
+**Liquid:**
+```liquid
+{% assign decodedString = encodedString | DecodeBase64 %}
+```
+
+**Output:**
+```
+"hello world"
+```
+
+### format_date_time
+**Description:**Formats a timestamp object into a string representation using the specified format and locale.
+
+**JSON Input:**
+```json
+{
+    "timestamp": "2024-06-01T12:00:00Z",
+    "format": "yyyy-MM-dd",
+    "locale": "en-us"
+}
+```
+**Liquid:**
+```liquid
+{% assign formattedDate = timestamp | FormatDateTime: 'yyyy-MM-dd', 'en-us' %}
+```
+
+**Output:**
+```
+"2024-06-01"
+```
+

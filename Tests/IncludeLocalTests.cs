@@ -2,11 +2,6 @@
 using CloudLiquid.Tags;
 using DotLiquid;
 using DotLiquid.Exceptions;
-using Moq;
-using DotLiquid.FileSystems;
-using Microsoft.Extensions.Primitives;
-using System.Globalization;
-
 namespace CloudLiquid.Tests
 {
     public class IncludeLocalTests
