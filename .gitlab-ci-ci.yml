@@ -1,10 +1,10 @@
 
 stages:
+  - deploy
   - build
   - test
   - analysis
   - package
-  - deploy
 
 variables:
   DOTNET_VERSION: latest
@@ -27,6 +27,7 @@ pages:
 # The Build stage
 build:
   stage: build
+  needs: ["pages"]
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
