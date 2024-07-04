@@ -109,11 +109,10 @@ package:
 # Deploy gitlab page
 pages:
   stage: deploy
-  needs: ["package"]
+  needs: [""]
   image: alpine:latest
   script:
     - echo "start setup of website ..."
-    - cp -r ./_site ./public
   artifacts:
     paths:
       - public
