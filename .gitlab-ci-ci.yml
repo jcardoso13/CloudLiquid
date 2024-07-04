@@ -34,7 +34,7 @@ build:
     - dotnet build --configuration Release --no-restore
     - echo "Build succeeded."
   dependencies:
-    - deploy
+    - pages
   artifacts:
     paths:
       - bin/Release/
