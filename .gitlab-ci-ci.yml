@@ -27,13 +27,14 @@ pages:
 # The Build stage
 build:
   stage: build
-  needs: ["deploy"]
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
     - echo "Building the project..."
     - dotnet build --configuration Release --no-restore
     - echo "Build succeeded."
+  dependencies:
+    - deploy
   artifacts:
     paths:
       - bin/Release/
