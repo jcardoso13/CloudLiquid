@@ -113,7 +113,6 @@ pages:
   image: alpine:latest
   script:
     - echo "start setup of website ..."
-    - rm -r public
     - cp -r ./_site ./public
   artifacts:
     paths:
