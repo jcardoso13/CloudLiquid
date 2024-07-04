@@ -109,7 +109,7 @@ package:
 # Deploy gitlab page
 pages:
   stage: deploy
-  needs: [""]
+  needs: []
   image: alpine:latest
   script:
     - echo "start setup of website ..."
