@@ -23,7 +23,7 @@ pages:
     - echo "start setup of website ..."
     - git config --global user.email "cbritole@nttdata.com"
     - git config --global user.name "Carlos Leal"
-    - git clone --branch=gh-pages https://oauth2:${GITHUB_TOKEN}@github.com/cbritole/cloudliquid.github.io.git public
+    - git clone --branch=gh-pages https://oauth2:${GITHUB_TOKEN}@github.com/cbritole/cloudliquid.git public
     - rm -rf public/*
     - cp -r _site/* public/
     - cd public
