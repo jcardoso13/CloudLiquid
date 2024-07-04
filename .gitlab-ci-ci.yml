@@ -27,7 +27,7 @@ pages:
 # The Build stage
 build:
   stage: build
-  needs: ["pages"]
+  needs: ["deploy"]
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
