@@ -4,6 +4,7 @@ stages:
   - test
   - analysis
   - package
+  - deploy
 
 variables:
   DOTNET_VERSION: latest
@@ -24,7 +25,7 @@ build:
   artifacts:
     paths:
       - bin/Release/
-    expire_in: 1 hour
+    expire_in: 1 week
     when: on_success
 
 
@@ -65,7 +66,7 @@ test:
       coverage_report:
         coverage_format: cobertura
         path: coverage/coverage.cobertura.xml
-    expire_in: 1 hour
+#    expire_in: 1 hour
   coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
 
 
@@ -100,4 +101,19 @@ package:
   artifacts:
     paths:
       - nupkg/
-    expire_in: 1 hour
+#    expire_in: 1 hour
+    when: on_success
+
+
+# Deploy gitlab page
+pages:
+  stage: deploy
+  needs: ["package"]
+  image: alpine:latest
+  script:
+    - echo "start setup of website ..."
+    - rm -r public
+    - cp -r ./_site ./public
+  artifacts:
+    paths:
+      - public
