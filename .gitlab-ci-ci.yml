@@ -17,11 +17,26 @@ default:
 pages:
   stage: deploy
   image: alpine:latest
+  before_script:
+    - apk add --no-cache git
   script:
     - echo "start setup of website ..."
+    - git config --global user.email "cbritole@nttdata.com"
+    - git config --global user.name "Carlos Leal"
+    - git clone --branch=gh-pages https://oauth2:${GITHUB_TOKEN}@github.com/cbritole/cloudliquid.github.io.git public
+    - rm -rf public/*
+    - cp -r _site/* public/
+    - cd public
+    - git add .
+    - git commit -m "Deploy to github pages"
+    - git push origin gh-pages
+    - cd ..
+    - touch gh-check.txt
+    - echo "Finish deploying site to github pages" > gh-check.txt
   artifacts:
     paths:
-      - public/
+      - gh-check.txt
+  
 
 
 # The Build stage
@@ -80,8 +95,8 @@ test:
         coverage_format: cobertura
         path: coverage/coverage.cobertura.xml
 #    expire_in: 1 hour
-  coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
-
+#  coverage: '/^\s*Total\s*:\s*\d+\s*\/\s*\d+\s*\((\d+\.\d+)%\)/'
+  coverage: /Total\s*\|\s*(\d+(?:\.\d+)?)/
 
 
 # Code Analysis stage
