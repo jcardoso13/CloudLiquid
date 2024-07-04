@@ -13,10 +13,20 @@ default:
   image: mcr.microsoft.com/dotnet/sdk:$DOTNET_VERSION
 
 
+# Deploy gitlab page
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - echo "start setup of website ..."
+  artifacts:
+    paths:
+      - public/
+
+
 # The Build stage
 build:
   stage: build
-  when: manual
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
@@ -107,13 +117,3 @@ package:
     when: on_success
 
 
-# Deploy gitlab page
-pages:
-  stage: deploy
-  needs: []
-  image: alpine:latest
-  script:
-    - echo "start setup of website ..."
-  artifacts:
-    paths:
-      - public/
