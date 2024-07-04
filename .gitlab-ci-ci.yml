@@ -16,6 +16,7 @@ default:
 # The Build stage
 build:
   stage: build
+  when: manual
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
@@ -115,4 +116,4 @@ pages:
     - echo "start setup of website ..."
   artifacts:
     paths:
-      - public
+      - public/
