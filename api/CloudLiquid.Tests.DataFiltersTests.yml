@@ -6,6 +6,7 @@ items:
   parent: CloudLiquid.Tests
   children:
   - CloudLiquid.Tests.DataFiltersTests.DecodeBase64_InvalidString
+  - CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType
   - CloudLiquid.Tests.DataFiltersTests.TestAddProperty_EmptyKey
   - CloudLiquid.Tests.DataFiltersTests.TestAddProperty_IndexSpecified
   - CloudLiquid.Tests.DataFiltersTests.TestAddProperty_NewProperty
@@ -33,7 +34,6 @@ items:
   - CloudLiquid.Tests.DataFiltersTests.TestDataType_ReturnNull
   - CloudLiquid.Tests.DataFiltersTests.TestDataType_String
   - CloudLiquid.Tests.DataFiltersTests.TestDecodeBase64_String
-  - CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException
   - CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_DefaultFormat
   - CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_NullTimestamp
   - CloudLiquid.Tests.DataFiltersTests.TestFormatDateTime_ThrowsExceptionForInvalidTimestamp
@@ -56,16 +56,21 @@ items:
   - CloudLiquid.Tests.DataFiltersTests.TestJson_List
   - CloudLiquid.Tests.DataFiltersTests.TestJson_Object
   - CloudLiquid.Tests.DataFiltersTests.TestJson_WithoutBrackets
-  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey
-  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey
-  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString
-  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString
-  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  - CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists
   - CloudLiquid.Tests.DataFiltersTests.TestLog
   - CloudLiquid.Tests.DataFiltersTests.TestNullifnull
   - CloudLiquid.Tests.DataFiltersTests.TestPadleft(System.String,System.Int32,System.String,System.String)
   - CloudLiquid.Tests.DataFiltersTests.TestPadright(System.String,System.Int32,System.String,System.String)
   - CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat(System.String)
+  - CloudLiquid.Tests.DataFiltersTests.TestParsedouble
+  - CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput
   - CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementDoesNotExist
   - CloudLiquid.Tests.DataFiltersTests.TestRemoveFromList_ElementExist
   - CloudLiquid.Tests.DataFiltersTests.TestRemoveProperty_EmptyKey
@@ -103,7 +108,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: DataFiltersTests
     path: Tests/DataFiltersTests.cs
-    startLine: 9
+    startLine: 11
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -138,7 +143,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestNullifnull
     path: Tests/DataFiltersTests.cs
-    startLine: 11
+    startLine: 25
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -174,7 +179,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestPadleft
     path: Tests/DataFiltersTests.cs
-    startLine: 18
+    startLine: 32
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -242,7 +247,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestPadright
     path: Tests/DataFiltersTests.cs
-    startLine: 30
+    startLine: 44
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -310,39 +315,57 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestParseDouble_InvalidFormat
     path: Tests/DataFiltersTests.cs
-    startLine: 53
+    startLine: 55
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
   syntax:
-    content: public void TestParseDouble_InvalidFormat(string input)
+    content: >-
+      [Theory]
+
+      [InlineData(new object[] { "test" })]
+
+      [InlineData(new object[] { "" })]
+
+      public void TestParseDouble_InvalidFormat(string input)
     parameters:
     - id: input
       type: System.String
-    content.vb: Public Sub TestParseDouble_InvalidFormat(input As String)
+    content.vb: >-
+      <Theory>
+
+      <InlineData(New Object() { "test" })>
+
+      <InlineData(New Object() { "" })>
+
+      Public Sub TestParseDouble_InvalidFormat(input As String)
   overload: CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
   nameWithType.vb: DataFiltersTests.TestParseDouble_InvalidFormat(String)
   fullName.vb: CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat(String)
   name.vb: TestParseDouble_InvalidFormat(String)
-- uid: CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException
-  id: TestDouble_NullInputThrowsArgumentNullException
+- uid: CloudLiquid.Tests.DataFiltersTests.TestParsedouble
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestParsedouble
+  id: TestParsedouble
   parent: CloudLiquid.Tests.DataFiltersTests
   langs:
   - csharp
   - vb
-  name: TestDouble_NullInputThrowsArgumentNullException()
-  nameWithType: DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException()
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException()
+  name: TestParsedouble()
+  nameWithType: DataFiltersTests.TestParsedouble()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestParsedouble()
   type: Method
   source:
     remote:
       path: Tests/DataFiltersTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestDouble_NullInputThrowsArgumentNullException
+    id: TestParsedouble
     path: Tests/DataFiltersTests.cs
-    startLine: 58
+    startLine: 63
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -350,12 +373,48 @@ items:
     content: >-
       [Fact]
 
-      public void TestDouble_NullInputThrowsArgumentNullException()
+      public void TestParsedouble()
     content.vb: >-
       <Fact>
 
-      Public Sub TestDouble_NullInputThrowsArgumentNullException()
-  overload: CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException*
+      Public Sub TestParsedouble()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestParsedouble*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput
+  id: TestParsedouble_NullInput
+  parent: CloudLiquid.Tests.DataFiltersTests
+  langs:
+  - csharp
+  - vb
+  name: TestParsedouble_NullInput()
+  nameWithType: DataFiltersTests.TestParsedouble_NullInput()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataFiltersTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: TestParsedouble_NullInput
+    path: Tests/DataFiltersTests.cs
+    startLine: 71
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void TestParsedouble_NullInput()
+    content.vb: >-
+      <Fact>
+
+      Public Sub TestParsedouble_NullInput()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
@@ -378,7 +437,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_Dictionary
     path: Tests/DataFiltersTests.cs
-    startLine: 64
+    startLine: 79
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -414,7 +473,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_WithoutBrackets
     path: Tests/DataFiltersTests.cs
-    startLine: 71
+    startLine: 87
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -450,7 +509,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_Int
     path: Tests/DataFiltersTests.cs
-    startLine: 78
+    startLine: 95
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -486,7 +545,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_Bool
     path: Tests/DataFiltersTests.cs
-    startLine: 86
+    startLine: 103
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -522,7 +581,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_List
     path: Tests/DataFiltersTests.cs
-    startLine: 94
+    startLine: 111
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -558,7 +617,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_Object
     path: Tests/DataFiltersTests.cs
-    startLine: 102
+    startLine: 119
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -594,7 +653,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_Decimal
     path: Tests/DataFiltersTests.cs
-    startLine: 110
+    startLine: 127
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -630,7 +689,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestJson_DictionaryAndList
     path: Tests/DataFiltersTests.cs
-    startLine: 118
+    startLine: 135
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -666,7 +725,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_Dictionary
     path: Tests/DataFiltersTests.cs
-    startLine: 131
+    startLine: 147
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -702,7 +761,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_Int
     path: Tests/DataFiltersTests.cs
-    startLine: 141
+    startLine: 155
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -738,7 +797,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_Bool
     path: Tests/DataFiltersTests.cs
-    startLine: 149
+    startLine: 163
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -774,7 +833,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_List
     path: Tests/DataFiltersTests.cs
-    startLine: 157
+    startLine: 171
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -810,7 +869,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_Object
     path: Tests/DataFiltersTests.cs
-    startLine: 165
+    startLine: 179
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -846,7 +905,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_Decimal
     path: Tests/DataFiltersTests.cs
-    startLine: 173
+    startLine: 187
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -882,7 +941,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestXml_DictionaryAndList
     path: Tests/DataFiltersTests.cs
-    startLine: 181
+    startLine: 195
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -918,7 +977,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestSecret
     path: Tests/DataFiltersTests.cs
-    startLine: 194
+    startLine: 208
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -936,25 +995,25 @@ items:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
     arguments: []
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey
-  id: TestLiquidContains_DictionaryContainKey
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists
+  id: TestLiquidContains_DataIsHashAndObjectExists
   parent: CloudLiquid.Tests.DataFiltersTests
   langs:
   - csharp
   - vb
-  name: TestLiquidContains_DictionaryContainKey()
-  nameWithType: DataFiltersTests.TestLiquidContains_DictionaryContainKey()
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey()
+  name: TestLiquidContains_DataIsHashAndObjectExists()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists()
   type: Method
   source:
     remote:
       path: Tests/DataFiltersTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestLiquidContains_DictionaryContainKey
+    id: TestLiquidContains_DataIsHashAndObjectExists
     path: Tests/DataFiltersTests.cs
-    startLine: 202
+    startLine: 215
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -962,35 +1021,35 @@ items:
     content: >-
       [Fact]
 
-      public void TestLiquidContains_DictionaryContainKey()
+      public void TestLiquidContains_DataIsHashAndObjectExists()
     content.vb: >-
       <Fact>
 
-      Public Sub TestLiquidContains_DictionaryContainKey()
-  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey*
+      Public Sub TestLiquidContains_DataIsHashAndObjectExists()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
     arguments: []
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey
-  id: TestLiquidContains_DictionaryDoesNotContainKey
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  id: TestLiquidContains_DataIsHashAndObjectDoesNotExist
   parent: CloudLiquid.Tests.DataFiltersTests
   langs:
   - csharp
   - vb
-  name: TestLiquidContains_DictionaryDoesNotContainKey()
-  nameWithType: DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey()
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey()
+  name: TestLiquidContains_DataIsHashAndObjectDoesNotExist()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist()
   type: Method
   source:
     remote:
       path: Tests/DataFiltersTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestLiquidContains_DictionaryDoesNotContainKey
+    id: TestLiquidContains_DataIsHashAndObjectDoesNotExist
     path: Tests/DataFiltersTests.cs
-    startLine: 213
+    startLine: 227
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -998,35 +1057,35 @@ items:
     content: >-
       [Fact]
 
-      public void TestLiquidContains_DictionaryDoesNotContainKey()
+      public void TestLiquidContains_DataIsHashAndObjectDoesNotExist()
     content.vb: >-
       <Fact>
 
-      Public Sub TestLiquidContains_DictionaryDoesNotContainKey()
-  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey*
+      Public Sub TestLiquidContains_DataIsHashAndObjectDoesNotExist()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
     arguments: []
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString
-  id: TestLiquidContains_ListContainString
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists
+  id: TestLiquidContains_DataIsDictionaryAndObjectExists
   parent: CloudLiquid.Tests.DataFiltersTests
   langs:
   - csharp
   - vb
-  name: TestLiquidContains_ListContainString()
-  nameWithType: DataFiltersTests.TestLiquidContains_ListContainString()
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString()
+  name: TestLiquidContains_DataIsDictionaryAndObjectExists()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists()
   type: Method
   source:
     remote:
       path: Tests/DataFiltersTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestLiquidContains_ListContainString
+    id: TestLiquidContains_DataIsDictionaryAndObjectExists
     path: Tests/DataFiltersTests.cs
-    startLine: 224
+    startLine: 239
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1034,35 +1093,35 @@ items:
     content: >-
       [Fact]
 
-      public void TestLiquidContains_ListContainString()
+      public void TestLiquidContains_DataIsDictionaryAndObjectExists()
     content.vb: >-
       <Fact>
 
-      Public Sub TestLiquidContains_ListContainString()
-  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString*
+      Public Sub TestLiquidContains_DataIsDictionaryAndObjectExists()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
     arguments: []
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString
-  id: TestLiquidContains_ListDoesNotContainString
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  id: TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
   parent: CloudLiquid.Tests.DataFiltersTests
   langs:
   - csharp
   - vb
-  name: TestLiquidContains_ListDoesNotContainString()
-  nameWithType: DataFiltersTests.TestLiquidContains_ListDoesNotContainString()
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString()
+  name: TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist()
   type: Method
   source:
     remote:
       path: Tests/DataFiltersTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestLiquidContains_ListDoesNotContainString
+    id: TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
     path: Tests/DataFiltersTests.cs
-    startLine: 235
+    startLine: 251
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1070,35 +1129,35 @@ items:
     content: >-
       [Fact]
 
-      public void TestLiquidContains_ListDoesNotContainString()
+      public void TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist()
     content.vb: >-
       <Fact>
 
-      Public Sub TestLiquidContains_ListDoesNotContainString()
-  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString*
+      Public Sub TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
     arguments: []
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String
-  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String
-  id: TestLiquidContains_String
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists
+  id: TestLiquidContains_DataIsListAndObjectExists
   parent: CloudLiquid.Tests.DataFiltersTests
   langs:
   - csharp
   - vb
-  name: TestLiquidContains_String()
-  nameWithType: DataFiltersTests.TestLiquidContains_String()
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String()
+  name: TestLiquidContains_DataIsListAndObjectExists()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists()
   type: Method
   source:
     remote:
       path: Tests/DataFiltersTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestLiquidContains_String
+    id: TestLiquidContains_DataIsListAndObjectExists
     path: Tests/DataFiltersTests.cs
-    startLine: 246
+    startLine: 263
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1106,12 +1165,156 @@ items:
     content: >-
       [Fact]
 
-      public void TestLiquidContains_String()
+      public void TestLiquidContains_DataIsListAndObjectExists()
     content.vb: >-
       <Fact>
 
-      Public Sub TestLiquidContains_String()
-  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String*
+      Public Sub TestLiquidContains_DataIsListAndObjectExists()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist
+  id: TestLiquidContains_DataIsListAndObjectDoesNotExist
+  parent: CloudLiquid.Tests.DataFiltersTests
+  langs:
+  - csharp
+  - vb
+  name: TestLiquidContains_DataIsListAndObjectDoesNotExist()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataFiltersTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: TestLiquidContains_DataIsListAndObjectDoesNotExist
+    path: Tests/DataFiltersTests.cs
+    startLine: 273
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void TestLiquidContains_DataIsListAndObjectDoesNotExist()
+    content.vb: >-
+      <Fact>
+
+      Public Sub TestLiquidContains_DataIsListAndObjectDoesNotExist()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists
+  id: TestLiquidContains_DataIsStringAndObjectExists
+  parent: CloudLiquid.Tests.DataFiltersTests
+  langs:
+  - csharp
+  - vb
+  name: TestLiquidContains_DataIsStringAndObjectExists()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataFiltersTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: TestLiquidContains_DataIsStringAndObjectExists
+    path: Tests/DataFiltersTests.cs
+    startLine: 284
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void TestLiquidContains_DataIsStringAndObjectExists()
+    content.vb: >-
+      <Fact>
+
+      Public Sub TestLiquidContains_DataIsStringAndObjectExists()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  id: TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  parent: CloudLiquid.Tests.DataFiltersTests
+  langs:
+  - csharp
+  - vb
+  name: TestLiquidContains_DataIsStringAndObjectDoesNotExist()
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist()
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataFiltersTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: TestLiquidContains_DataIsStringAndObjectDoesNotExist
+    path: Tests/DataFiltersTests.cs
+    startLine: 295
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void TestLiquidContains_DataIsStringAndObjectDoesNotExist()
+    content.vb: >-
+      <Fact>
+
+      Public Sub TestLiquidContains_DataIsStringAndObjectDoesNotExist()
+  overload: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType
+  commentId: M:CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType
+  id: LiquidContains_DataInvalidType
+  parent: CloudLiquid.Tests.DataFiltersTests
+  langs:
+  - csharp
+  - vb
+  name: LiquidContains_DataInvalidType()
+  nameWithType: DataFiltersTests.LiquidContains_DataInvalidType()
+  fullName: CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType()
+  type: Method
+  source:
+    remote:
+      path: Tests/DataFiltersTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: LiquidContains_DataInvalidType
+    path: Tests/DataFiltersTests.cs
+    startLine: 306
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void LiquidContains_DataInvalidType()
+    content.vb: >-
+      <Fact>
+
+      Public Sub LiquidContains_DataInvalidType()
+  overload: CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
@@ -1134,7 +1337,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestInt
     path: Tests/DataFiltersTests.cs
-    startLine: 257
+    startLine: 316
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1170,7 +1373,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestInt_DoubleToInt
     path: Tests/DataFiltersTests.cs
-    startLine: 265
+    startLine: 324
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1206,7 +1409,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestInt_InvalidString
     path: Tests/DataFiltersTests.cs
-    startLine: 273
+    startLine: 332
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1242,7 +1445,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDataType_Hash
     path: Tests/DataFiltersTests.cs
-    startLine: 279
+    startLine: 338
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1278,7 +1481,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDataType_Dictionary
     path: Tests/DataFiltersTests.cs
-    startLine: 287
+    startLine: 346
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1314,7 +1517,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDataType_String
     path: Tests/DataFiltersTests.cs
-    startLine: 296
+    startLine: 355
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1350,7 +1553,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDataType_Integer
     path: Tests/DataFiltersTests.cs
-    startLine: 302
+    startLine: 361
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1386,7 +1589,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDataType_Boolean
     path: Tests/DataFiltersTests.cs
-    startLine: 309
+    startLine: 368
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1422,7 +1625,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDataType_ReturnNull
     path: Tests/DataFiltersTests.cs
-    startLine: 315
+    startLine: 374
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1458,7 +1661,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestString_IntegerToString
     path: Tests/DataFiltersTests.cs
-    startLine: 323
+    startLine: 382
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1494,7 +1697,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestString_BooleanToString
     path: Tests/DataFiltersTests.cs
-    startLine: 332
+    startLine: 391
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1530,7 +1733,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestString_WithString
     path: Tests/DataFiltersTests.cs
-    startLine: 338
+    startLine: 397
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1566,7 +1769,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestString_NullToString
     path: Tests/DataFiltersTests.cs
-    startLine: 343
+    startLine: 402
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1602,7 +1805,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestIsLoop_ListDynamic
     path: Tests/DataFiltersTests.cs
-    startLine: 348
+    startLine: 407
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1638,7 +1841,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestIsLoop_ListInt
     path: Tests/DataFiltersTests.cs
-    startLine: 357
+    startLine: 416
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1674,7 +1877,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestIsLoop_WithString
     path: Tests/DataFiltersTests.cs
-    startLine: 366
+    startLine: 425
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1710,7 +1913,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestIsLoop_WithNull
     path: Tests/DataFiltersTests.cs
-    startLine: 375
+    startLine: 434
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1746,7 +1949,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestIsLoop_WithHash
     path: Tests/DataFiltersTests.cs
-    startLine: 384
+    startLine: 443
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1782,7 +1985,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestClearNulls_NullData
     path: Tests/DataFiltersTests.cs
-    startLine: 393
+    startLine: 452
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1818,7 +2021,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestClearNulls_NoDictionary
     path: Tests/DataFiltersTests.cs
-    startLine: 403
+    startLine: 462
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1854,7 +2057,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestClearNulls_DictionaryContainNulls
     path: Tests/DataFiltersTests.cs
-    startLine: 413
+    startLine: 472
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1890,7 +2093,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCreateHash_WithoutKey
     path: Tests/DataFiltersTests.cs
-    startLine: 429
+    startLine: 488
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1926,7 +2129,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCreateHash_WithKey
     path: Tests/DataFiltersTests.cs
-    startLine: 435
+    startLine: 494
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1962,7 +2165,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCreateHash_WithNullKey
     path: Tests/DataFiltersTests.cs
-    startLine: 445
+    startLine: 504
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -1998,7 +2201,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCreateList_WithoutType
     path: Tests/DataFiltersTests.cs
-    startLine: 453
+    startLine: 512
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2034,7 +2237,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCreateList_WithType
     path: Tests/DataFiltersTests.cs
-    startLine: 460
+    startLine: 519
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2070,7 +2273,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddToList_NullInsertAndNullInsertTrue
     path: Tests/DataFiltersTests.cs
-    startLine: 469
+    startLine: 528
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2106,7 +2309,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddToList_NullInsertAndNullInsertFalse
     path: Tests/DataFiltersTests.cs
-    startLine: 483
+    startLine: 542
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2142,7 +2345,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddToList_UniqueFalseAndInsert
     path: Tests/DataFiltersTests.cs
-    startLine: 495
+    startLine: 554
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2178,7 +2381,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddToList_UniqueTrueAndInsert
     path: Tests/DataFiltersTests.cs
-    startLine: 506
+    startLine: 565
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2214,7 +2417,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddToList_UniqueTrueAndInsertAlreadyInList
     path: Tests/DataFiltersTests.cs
-    startLine: 518
+    startLine: 577
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2250,7 +2453,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestRemoveFromList_ElementExist
     path: Tests/DataFiltersTests.cs
-    startLine: 530
+    startLine: 589
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2286,7 +2489,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestRemoveFromList_ElementDoesNotExist
     path: Tests/DataFiltersTests.cs
-    startLine: 542
+    startLine: 601
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2322,7 +2525,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestGetListFromHash_DataIsNull
     path: Tests/DataFiltersTests.cs
-    startLine: 554
+    startLine: 613
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2358,7 +2561,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestGetListFromHash_KeyExistInHash
     path: Tests/DataFiltersTests.cs
-    startLine: 564
+    startLine: 623
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2394,7 +2597,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestLog
     path: Tests/DataFiltersTests.cs
-    startLine: 580
+    startLine: 639
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2430,7 +2633,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestRemoveProperty_NullInput
     path: Tests/DataFiltersTests.cs
-    startLine: 593
+    startLine: 652
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2466,7 +2669,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestRemoveProperty_EmptyKey
     path: Tests/DataFiltersTests.cs
-    startLine: 603
+    startLine: 662
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2502,7 +2705,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestRemoveProperty_RemovesPropertyIfExists
     path: Tests/DataFiltersTests.cs
-    startLine: 613
+    startLine: 672
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2538,7 +2741,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestRemoveProperty_IndexSpecified
     path: Tests/DataFiltersTests.cs
-    startLine: 625
+    startLine: 684
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2574,7 +2777,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddProperty_NullInput
     path: Tests/DataFiltersTests.cs
-    startLine: 637
+    startLine: 696
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2610,7 +2813,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddProperty_EmptyKey
     path: Tests/DataFiltersTests.cs
-    startLine: 648
+    startLine: 707
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2646,7 +2849,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddProperty_NewProperty
     path: Tests/DataFiltersTests.cs
-    startLine: 659
+    startLine: 718
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2682,7 +2885,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestAddProperty_IndexSpecified
     path: Tests/DataFiltersTests.cs
-    startLine: 671
+    startLine: 730
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2718,7 +2921,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestSetProperty_NullInput
     path: Tests/DataFiltersTests.cs
-    startLine: 686
+    startLine: 745
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2754,7 +2957,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestSetProperty_EmptyKey
     path: Tests/DataFiltersTests.cs
-    startLine: 692
+    startLine: 751
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2790,7 +2993,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestSetProperty_UpdateProperty
     path: Tests/DataFiltersTests.cs
-    startLine: 703
+    startLine: 762
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2826,7 +3029,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestSetProperty_NewProperty
     path: Tests/DataFiltersTests.cs
-    startLine: 715
+    startLine: 774
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2862,7 +3065,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestSetProperty_UpdateWithIndex
     path: Tests/DataFiltersTests.cs
-    startLine: 727
+    startLine: 786
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2898,7 +3101,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCoalesce_AllNull
     path: Tests/DataFiltersTests.cs
-    startLine: 742
+    startLine: 801
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2934,7 +3137,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCoalesce_FirstNull
     path: Tests/DataFiltersTests.cs
-    startLine: 752
+    startLine: 811
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -2970,7 +3173,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestCoalesce
     path: Tests/DataFiltersTests.cs
-    startLine: 760
+    startLine: 819
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3006,7 +3209,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestDecodeBase64_String
     path: Tests/DataFiltersTests.cs
-    startLine: 769
+    startLine: 828
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3042,7 +3245,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: DecodeBase64_InvalidString
     path: Tests/DataFiltersTests.cs
-    startLine: 778
+    startLine: 837
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3078,7 +3281,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestFormatDateTime_DefaultFormat
     path: Tests/DataFiltersTests.cs
-    startLine: 785
+    startLine: 844
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3114,7 +3317,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestFormatDateTime_WithFormat
     path: Tests/DataFiltersTests.cs
-    startLine: 795
+    startLine: 854
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3150,7 +3353,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestFormatDateTime_NullTimestamp
     path: Tests/DataFiltersTests.cs
-    startLine: 806
+    startLine: 865
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3186,7 +3389,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: TestFormatDateTime_ThrowsExceptionForInvalidTimestamp
     path: Tests/DataFiltersTests.cs
-    startLine: 815
+    startLine: 874
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -3510,12 +3713,18 @@ references:
   name: TestParseDouble_InvalidFormat
   nameWithType: DataFiltersTests.TestParseDouble_InvalidFormat
   fullName: CloudLiquid.Tests.DataFiltersTests.TestParseDouble_InvalidFormat
-- uid: CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException*
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException
-  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestDouble_NullInputThrowsArgumentNullException
-  name: TestDouble_NullInputThrowsArgumentNullException
-  nameWithType: DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestDouble_NullInputThrowsArgumentNullException
+- uid: CloudLiquid.Tests.DataFiltersTests.TestParsedouble*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestParsedouble
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestParsedouble
+  name: TestParsedouble
+  nameWithType: DataFiltersTests.TestParsedouble
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestParsedouble
+- uid: CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestParsedouble_NullInput
+  name: TestParsedouble_NullInput
+  nameWithType: DataFiltersTests.TestParsedouble_NullInput
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestParsedouble_NullInput
 - uid: CloudLiquid.Tests.DataFiltersTests.TestJson_Dictionary*
   commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestJson_Dictionary
   href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestJson_Dictionary
@@ -3612,36 +3821,60 @@ references:
   name: TestSecret
   nameWithType: DataFiltersTests.TestSecret
   fullName: CloudLiquid.Tests.DataFiltersTests.TestSecret
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey*
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey
-  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DictionaryContainKey
-  name: TestLiquidContains_DictionaryContainKey
-  nameWithType: DataFiltersTests.TestLiquidContains_DictionaryContainKey
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryContainKey
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey*
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey
-  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DictionaryDoesNotContainKey
-  name: TestLiquidContains_DictionaryDoesNotContainKey
-  nameWithType: DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DictionaryDoesNotContainKey
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString*
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString
-  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_ListContainString
-  name: TestLiquidContains_ListContainString
-  nameWithType: DataFiltersTests.TestLiquidContains_ListContainString
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListContainString
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString*
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString
-  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_ListDoesNotContainString
-  name: TestLiquidContains_ListDoesNotContainString
-  nameWithType: DataFiltersTests.TestLiquidContains_ListDoesNotContainString
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_ListDoesNotContainString
-- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String*
-  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String
-  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_String
-  name: TestLiquidContains_String
-  nameWithType: DataFiltersTests.TestLiquidContains_String
-  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_String
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsHashAndObjectExists
+  name: TestLiquidContains_DataIsHashAndObjectExists
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectExists
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  name: TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsHashAndObjectDoesNotExist
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsDictionaryAndObjectExists
+  name: TestLiquidContains_DataIsDictionaryAndObjectExists
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectExists
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  name: TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsDictionaryAndObjectDoesNotExist
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsListAndObjectExists
+  name: TestLiquidContains_DataIsListAndObjectExists
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectExists
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsListAndObjectDoesNotExist
+  name: TestLiquidContains_DataIsListAndObjectDoesNotExist
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsListAndObjectDoesNotExist
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsStringAndObjectExists
+  name: TestLiquidContains_DataIsStringAndObjectExists
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectExists
+- uid: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  name: TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  nameWithType: DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist
+  fullName: CloudLiquid.Tests.DataFiltersTests.TestLiquidContains_DataIsStringAndObjectDoesNotExist
+- uid: CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType*
+  commentId: Overload:CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType
+  href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_LiquidContains_DataInvalidType
+  name: LiquidContains_DataInvalidType
+  nameWithType: DataFiltersTests.LiquidContains_DataInvalidType
+  fullName: CloudLiquid.Tests.DataFiltersTests.LiquidContains_DataInvalidType
 - uid: CloudLiquid.Tests.DataFiltersTests.TestInt*
   commentId: Overload:CloudLiquid.Tests.DataFiltersTests.TestInt
   href: CloudLiquid.Tests.DataFiltersTests.html#CloudLiquid_Tests_DataFiltersTests_TestInt

@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | CloudLiquid </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | CloudLiquid ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="CloudLiquid">
+            CloudLiquid
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<h2 id="cloudliquid-filters-documentation">CloudLiquid Filters Documentation</h2>
+<p>Welcome to the documentation for the CloudLiquid filters! This guide will provide you with detailed information on each filter and how to use them in your Liquid templates.</p>
+<h3 id="padleft">padleft</h3>
+<p><strong>Description:</strong> Pads the left side of the input string with the specified character to ensure the resulting string has a total width as specified.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: &quot;Hello&quot;,
+    &quot;totalWidth&quot;: 10,
+    &quot;padChar&quot;: &quot;*&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ 'Hello' | padleft: 10, '*' }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>*****Hello
+</code></pre>
+<h3 id="secret">secret</h3>
+<p><strong>Description:</strong> Retrieves the value of an environment variable specified by the input.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: &quot;ContainerName&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ content.input | secret }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>liquid
+</code></pre>
+<h3 id="padright">padright</h3>
+<p><strong>Description:</strong> Pads the right side of the input string with the specified character until the total width specified is reached.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: &quot;Hello&quot;,
+    &quot;totalWidth&quot;: 10,
+    &quot;padChar&quot;: &quot;*&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ 'Hello' | padright: 10, '*' }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Hello*****
+</code></pre>
+<h3 id="nullifnull">nullifnull</h3>
+<p><strong>Description:</strong> Returns &quot;null&quot; if the input string is null or empty; otherwise, returns the input string.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: &quot;&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ '' | nullifnull }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>null
+</code></pre>
+<h3 id="parsedouble">parsedouble</h3>
+<p><strong>Description:</strong> Parses the input string to a double.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: &quot;123.45&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ '123.45' | parsedouble }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>123.45
+</code></pre>
+<h3 id="json">json</h3>
+<p><strong>Description:</strong> Converts the input to a JSON string. Optionally removes the outer brackets if &quot;nobrackets&quot; is specified.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30},
+    &quot;settings&quot;: &quot;nobrackets&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30} | json: 'nobrackets' }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:30
+</code></pre>
+<h3 id="xml">xml</h3>
+<p><strong>Description:</strong> Converts the input object to an XML string.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;input&quot;: {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30} | xml }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="lang-xml">&lt;root&gt;
+    &lt;name&gt;John&lt;/name&gt;
+    &lt;age&gt;30&lt;/age&gt;
+&lt;/root&gt;
+</code></pre>
+<h3 id="liquid_contains">liquid_contains</h3>
+<p><strong>Description:</strong> Checks if the data contains the specified object.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;],
+    &quot;Obj&quot;: &quot;banana&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;] | liquid_contains: 'banana' }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>true
+</code></pre>
+<h3 id="data_type">data_type</h3>
+<p><strong>Description:</strong> Determines the data type of the input data and returns its type as a string.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: 123
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ 123 | data_type }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>Integer
+</code></pre>
+<h3 id="convert_to_int">convert_to_int</h3>
+<p><strong>Description:</strong> Converts the input data to an integer.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: &quot;123&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ &quot;123&quot; | convert_to_int }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>123
+</code></pre>
+<h3 id="string">string</h3>
+<p><strong>Description:</strong> Converts the specified object to a string.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: 123
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ 123 | string }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>&quot;123&quot;
+</code></pre>
+<h3 id="is_loop">is_loop</h3>
+<p><strong>Description:</strong> Determines whether the specified object is a list.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;] | is_loop }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>true
+</code></pre>
+<h3 id="clear_nulls">clear_nulls</h3>
+<p><strong>Description:</strong> Removes null or empty entries from the specified dictionary.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: null}
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: null} | clear_nulls }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="lang-json">{
+    &quot;name&quot;: &quot;John&quot;
+}
+</code></pre>
+<h3 id="create_hash">create_hash</h3>
+<p><strong>Description:</strong> Creates a new hash and optionally adds a specified key with a null value.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;key&quot;: &quot;exampleKey&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ '' | create_hash: 'exampleKey' }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code class="lang-json">{
+    &quot;exampleKey&quot;: null
+}
+</code></pre>
+<h3 id="create_list">create_list</h3>
+<p><strong>Description:</strong> Creates a new list with an optional type specification.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;type&quot;: &quot;dynamic&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ '' | create_list: 'dynamic' }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[]
+</code></pre>
+<h3 id="add_to_list">add_to_list</h3>
+<p><strong>Description:</strong> Adds an item to the specified list with options for unique and null insertion.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [&quot;apple&quot;, &quot;banana&quot;],
+    &quot;insert&quot;: &quot;banana&quot;,
+    &quot;unique&quot;: true,
+    &quot;nullInsert&quot;: false
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign list = data | AddToList: 'banana', true, false %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[&quot;apple&quot;, &quot;banana&quot;]
+</code></pre>
+<h3 id="remove_from_list">remove_from_list</h3>
+<p><strong>Description:</strong> Removes the specified item from the list.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;],
+    &quot;key&quot;: &quot;banana&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign list = data | RemoveFromList: 'banana' %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[&quot;apple&quot;, &quot;cherry&quot;]
+</code></pre>
+<h3 id="get_list_from_hash">get_list_from_hash</h3>
+<p><strong>Description:</strong>  Retrieves a list from a hash based on the specified key.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: {&quot;key1&quot;: [&quot;item1&quot;, &quot;item2&quot;], &quot;key2&quot;: [&quot;item3&quot;, &quot;item4&quot;]},
+    &quot;key&quot;: &quot;key1&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign list = data | GetListFromHash: 'key1' %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[&quot;item1&quot;, &quot;item2&quot;]
+</code></pre>
+<h3 id="log">log</h3>
+<p><strong>Description:</strong> Writes the specified data to the console as a log entry.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: &quot;This is a log message&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{{ 'This is a log message' | Log }}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>This is a log message
+</code></pre>
+<h3 id="remove_property">remove_property</h3>
+<p><strong>Description:</strong> Removes a property from the specified object or from an object at the specified index within a list.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [{&quot;key1&quot;: &quot;value1&quot;, &quot;key2&quot;: &quot;value2&quot;}, {&quot;key1&quot;: &quot;value3&quot;, &quot;key2&quot;: &quot;value4&quot;}],
+    &quot;key&quot;: &quot;key1&quot;,
+    &quot;index&quot;: 0
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign newData = data | RemoveProperty: 'key1', 0 %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[
+    {&quot;key2&quot;: &quot;value2&quot;},
+    {&quot;key1&quot;: &quot;value3&quot;, &quot;key2&quot;: &quot;value4&quot;}
+]
+</code></pre>
+<h3 id="add_property">add_property</h3>
+<p><strong>Description:</strong> Adds a property to an object at the specified index within a list.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [{&quot;key1&quot;: &quot;value1&quot;}, {&quot;key1&quot;: &quot;value3&quot;}],
+    &quot;key&quot;: &quot;key2&quot;,
+    &quot;entry&quot;: &quot;value2&quot;,
+    &quot;index&quot;: 1
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign newData = data | AddProperty: 'key2', 'value2', 1 %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[
+    {&quot;key1&quot;: &quot;value1&quot;},
+    {&quot;key1&quot;: &quot;value3&quot;, &quot;key2&quot;: &quot;value2&quot;}
+]
+</code></pre>
+<h3 id="set_property">set_property</h3>
+<p><strong>Description:</strong> Sets the value of a property in an object at the specified index within a list.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: [{&quot;key1&quot;: &quot;value1&quot;}, {&quot;key1&quot;: &quot;value3&quot;}],
+    &quot;key&quot;: &quot;key1&quot;,
+    &quot;entry&quot;: &quot;newValue&quot;,
+    &quot;index&quot;: 1
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign newData = data | SetProperty: 'key1', 'newValue', 1 %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>[
+    {&quot;key1&quot;: &quot;value1&quot;},
+    {&quot;key1&quot;: &quot;newValue&quot;}
+]
+</code></pre>
+<h3 id="coalesce">coalesce</h3>
+<p><strong>Description:</strong>  Returns the first non-null value from the provided list of dynamic inputs.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;inputs&quot;: [null, null, &quot;value&quot;, null]
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign firstNonNull = inputs | Coalesce %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>&quot;value&quot;
+</code></pre>
+<h3 id="decode_base64">decode_base64</h3>
+<p><strong>Description:</strong> Decodes a Base64 encoded string into its original UTF-8 encoded string representation.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;encodedString&quot;: &quot;aGVsbG8gd29ybGQ=&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign decodedString = encodedString | DecodeBase64 %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>&quot;hello world&quot;
+</code></pre>
+<h3 id="format_date_time">format_date_time</h3>
+<p>**Description:**Formats a timestamp object into a string representation using the specified format and locale.</p>
+<p><strong>JSON Input:</strong></p>
+<pre><code class="lang-json">{
+    &quot;timestamp&quot;: &quot;2024-06-01T12:00:00Z&quot;,
+    &quot;format&quot;: &quot;yyyy-MM-dd&quot;,
+    &quot;locale&quot;: &quot;en-us&quot;
+}
+</code></pre>
+<p><strong>Liquid:</strong></p>
+<pre><code class="lang-liquid">{% assign formattedDate = timestamp | FormatDateTime: 'yyyy-MM-dd', 'en-us' %}
+</code></pre>
+<p><strong>Output:</strong></p>
+<pre><code>&quot;2024-06-01&quot;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

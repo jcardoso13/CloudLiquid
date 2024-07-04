@@ -5,7 +5,9 @@ items:
   id: AzureTagTests
   parent: CloudLiquid.Tests
   children:
-  - CloudLiquid.Tests.AzureTagTests.TestAzureTag
+  - CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob
+  - CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax
+  - CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound
   langs:
   - csharp
   - vb
@@ -20,7 +22,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: AzureTagTests
     path: Tests/AzureTagTests.cs
-    startLine: 8
+    startLine: 11
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -37,25 +39,25 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: CloudLiquid.Tests.AzureTagTests.TestAzureTag
-  commentId: M:CloudLiquid.Tests.AzureTagTests.TestAzureTag
-  id: TestAzureTag
+- uid: CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound
+  commentId: M:CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound
+  id: AzureTag_TemplateNotFound
   parent: CloudLiquid.Tests.AzureTagTests
   langs:
   - csharp
   - vb
-  name: TestAzureTag()
-  nameWithType: AzureTagTests.TestAzureTag()
-  fullName: CloudLiquid.Tests.AzureTagTests.TestAzureTag()
+  name: AzureTag_TemplateNotFound()
+  nameWithType: AzureTagTests.AzureTag_TemplateNotFound()
+  fullName: CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound()
   type: Method
   source:
     remote:
       path: Tests/AzureTagTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestAzureTag
+    id: AzureTag_TemplateNotFound
     path: Tests/AzureTagTests.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -63,12 +65,84 @@ items:
     content: >-
       [Fact]
 
-      public void TestAzureTag()
+      public void AzureTag_TemplateNotFound()
     content.vb: >-
       <Fact>
 
-      Public Sub TestAzureTag()
-  overload: CloudLiquid.Tests.AzureTagTests.TestAzureTag*
+      Public Sub AzureTag_TemplateNotFound()
+  overload: CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob
+  commentId: M:CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob
+  id: AzureTag_InitializeWithLoggerAndBlob
+  parent: CloudLiquid.Tests.AzureTagTests
+  langs:
+  - csharp
+  - vb
+  name: AzureTag_InitializeWithLoggerAndBlob()
+  nameWithType: AzureTagTests.AzureTag_InitializeWithLoggerAndBlob()
+  fullName: CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob()
+  type: Method
+  source:
+    remote:
+      path: Tests/AzureTagTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AzureTag_InitializeWithLoggerAndBlob
+    path: Tests/AzureTagTests.cs
+    startLine: 25
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void AzureTag_InitializeWithLoggerAndBlob()
+    content.vb: >-
+      <Fact>
+
+      Public Sub AzureTag_InitializeWithLoggerAndBlob()
+  overload: CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax
+  commentId: M:CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax
+  id: AzureTag_InvalidMarkupSyntax
+  parent: CloudLiquid.Tests.AzureTagTests
+  langs:
+  - csharp
+  - vb
+  name: AzureTag_InvalidMarkupSyntax()
+  nameWithType: AzureTagTests.AzureTag_InvalidMarkupSyntax()
+  fullName: CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax()
+  type: Method
+  source:
+    remote:
+      path: Tests/AzureTagTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: AzureTag_InvalidMarkupSyntax
+    path: Tests/AzureTagTests.cs
+    startLine: 36
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void AzureTag_InvalidMarkupSyntax()
+    content.vb: >-
+      <Fact>
+
+      Public Sub AzureTag_InvalidMarkupSyntax()
+  overload: CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
@@ -333,9 +407,21 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CloudLiquid.Tests.AzureTagTests.TestAzureTag*
-  commentId: Overload:CloudLiquid.Tests.AzureTagTests.TestAzureTag
-  href: CloudLiquid.Tests.AzureTagTests.html#CloudLiquid_Tests_AzureTagTests_TestAzureTag
-  name: TestAzureTag
-  nameWithType: AzureTagTests.TestAzureTag
-  fullName: CloudLiquid.Tests.AzureTagTests.TestAzureTag
+- uid: CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound*
+  commentId: Overload:CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound
+  href: CloudLiquid.Tests.AzureTagTests.html#CloudLiquid_Tests_AzureTagTests_AzureTag_TemplateNotFound
+  name: AzureTag_TemplateNotFound
+  nameWithType: AzureTagTests.AzureTag_TemplateNotFound
+  fullName: CloudLiquid.Tests.AzureTagTests.AzureTag_TemplateNotFound
+- uid: CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob*
+  commentId: Overload:CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob
+  href: CloudLiquid.Tests.AzureTagTests.html#CloudLiquid_Tests_AzureTagTests_AzureTag_InitializeWithLoggerAndBlob
+  name: AzureTag_InitializeWithLoggerAndBlob
+  nameWithType: AzureTagTests.AzureTag_InitializeWithLoggerAndBlob
+  fullName: CloudLiquid.Tests.AzureTagTests.AzureTag_InitializeWithLoggerAndBlob
+- uid: CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax*
+  commentId: Overload:CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax
+  href: CloudLiquid.Tests.AzureTagTests.html#CloudLiquid_Tests_AzureTagTests_AzureTag_InvalidMarkupSyntax
+  name: AzureTag_InvalidMarkupSyntax
+  nameWithType: AzureTagTests.AzureTag_InvalidMarkupSyntax
+  fullName: CloudLiquid.Tests.AzureTagTests.AzureTag_InvalidMarkupSyntax

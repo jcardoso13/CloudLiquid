@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | CloudLiquid </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | CloudLiquid ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="CloudLiquid">
+            CloudLiquid
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<h2 id="cloudliquid-tags-documentation">CloudLiquid Tags Documentation</h2>
+<p>Welcome to the documentation for the CloudLiquid Tags! This guide will provide you with detailed information on each tag and how to use them in your Liquid templates.</p>
+<h3 id="azuretag-documentation">AzureTag Documentation</h3>
+<p>The <code>AzureTag</code> is designed to include templates from Azure Blob Storage into your Liquid templates. It initializes with either a <code>BlobContainerClient</code> or both a <code>BlobContainerClient</code> and a <code>ILogger</code> to facilitate interactions with Azure Blob Storage and optional logging.</p>
+<h4 id="example-usage">Example Usage</h4>
+<p>Assuming you have a template stored in Azure Blob Storage named <code>greeting.liquid</code> with the content:</p>
+<pre><code class="lang-liquid">Hello, {{ content.user.name }}!
+</code></pre>
+<p>And your JSON input is:</p>
+<pre><code class="lang-json">{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;John Doe&quot;
+  }
+}
+</code></pre>
+<p>You would use the <code>AzureTag</code> in your main Liquid template like so:</p>
+<pre><code class="lang-liquid">{% include_azure '&quot;greeting&quot; %}
+</code></pre>
+<p>The output would be:</p>
+<pre><code>Hello, John Doe!
+</code></pre>
+<h3 id="includelocal-documentation">IncludeLocal Documentation</h3>
+<p>The <code>IncludeLocal</code> tag allows you to include local Liquid templates within another Liquid template. It supports passing variables to the included templates.</p>
+<h4 id="example-usage-1">Example Usage</h4>
+<p>Given a local template named <code>signature</code>:</p>
+<pre><code class="lang-liquid">Best regards,
+{{ content.user.signature }}
+</code></pre>
+<p>And your JSON input is:</p>
+<pre><code class="lang-json">{
+  &quot;user&quot;: {
+    &quot;signature&quot;: &quot;John Doe&quot;
+  }
+}
+</code></pre>
+<p>You can include this local template in your main Liquid template as follows:</p>
+<pre><code class="lang-liquid">{% include_local 'signature' %}
+</code></pre>
+<p>The output would be:</p>
+<pre><code>Best regards,
+John Doe
+</code></pre>
+<h3 id="capturexml-documentation">CaptureXML Documentation</h3>
+<p>The <code>CaptureXML</code> tag captures the content within its block, parses it as XML, converts it to JSON, and assigns it to a variable. This is useful for converting XML content to a JSON object within a Liquid template.</p>
+<h4 id="example-usage-2">Example Usage</h4>
+<p>Given the following XML wrapped in a <code>CaptureXML</code> tag:</p>
+<pre><code class="lang-liquid">{% capture_xml userJson %}
+&lt;user&gt;
+  &lt;name&gt;John Doe&lt;/name&gt;
+  &lt;email&gt;john.doe@example.com&lt;/email&gt;
+&lt;/user&gt;
+{% endcapture_xml %}
+</code></pre>
+<p>The captured XML is converted to JSON and assigned to <code>userJson</code>. The equivalent JSON representation would be:</p>
+<pre><code class="lang-json">{
+  &quot;user&quot;: {
+    &quot;name&quot;: &quot;John Doe&quot;,
+    &quot;email&quot;: &quot;john.doe@example.com&quot;
+  }
+}
+</code></pre>
+<p>You can then use <code>userJson</code> in your Liquid template to access the converted JSON data.</p>
+<h3 id="capturejson-documentation">CaptureJSON Documentation</h3>
+<p>The <code>CaptureJSON</code> tag captures the content within its block, parses it as JSON, and assigns it to a variable. This allows for capturing and manipulating JSON data directly within a Liquid template.</p>
+<h4 id="example-usage-3">Example Usage</h4>
+<p>If you have JSON content that you want to capture and assign to a variable:</p>
+<pre><code class="lang-liquid">{% capture_json userinfo %}
+{
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;email&quot;: &quot;john.doe@example.com&quot;
+}
+{% endcapture_json %}
+</code></pre>
+<p>The JSON content is captured and assigned to <code>userInfo</code>. You can then access <code>userInfo</code> in your Liquid template, for example:</p>
+<pre><code class="lang-liquid">Hello, {{ userInfo.name }}!
+</code></pre>
+<p>The output would be:</p>
+<pre><code>Hello, John Doe!
+</code></pre>
+<p>Each of these tags enhances the functionality of Liquid templates, allowing for dynamic content inclusion, format conversion, and data manipulation directly within the template.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

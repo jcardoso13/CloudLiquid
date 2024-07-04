@@ -1,0 +1,528 @@
+{
+  "source_base_path": "C:/CloudLiquid/cloud-liquid-framework",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "ContentFactory/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "ContentFactory/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "SECURITY.md",
+      "output": {
+        ".html": {
+          "relative_path": "SECURITY.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.BaseCloudLiquidTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.BaseCloudLiquidTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.BasicContentWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.BasicContentWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.ContentFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.ContentFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.Csv2ContentReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.Csv2ContentReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.CsvContentReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.CsvContentReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.DictionaryFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.DictionaryFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.DictionaryStringObjectJsonConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.IContentReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.IContentReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.IContentWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.IContentWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.JsonContentReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.JsonContentReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.JsonContentWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.JsonContentWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.TSVContentReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.TSVContentReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.XmlContentReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.XmlContentReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.XmlContentWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.XmlContentWriter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ContentFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ContentFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Core.LiquidProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Core.LiquidProcessor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Filters.DataFilters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Filters.DataFilters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Filters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Filters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ObjectModel.CloudError.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ObjectModel.CloudError.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ObjectModel.RunResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ObjectModel.RunResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.ObjectModel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.ObjectModel.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tags.AzureTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tags.AzureTag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tags.CaptureJSON.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tags.CaptureJSON.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tags.CaptureXML.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tags.CaptureXML.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tags.CloudLiquidTagFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tags.CloudLiquidTagFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tags.IncludeLocal.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tags.IncludeLocal.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tags.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.AzureTagTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.AzureTagTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.CaptureJsonTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.CaptureJsonTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.CaptureXmlTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.CaptureXmlTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.DataFiltersTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.DataFiltersTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.Helper.DataObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.Helper.DataObject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.Helper.DataObjectDrop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.Helper.DataObjectDrop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.Helper.DataObjectRegistered.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.Helper.DataObjectRegistered.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.Helper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.Helper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.IncludeLocalTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.IncludeLocalTests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.Tests.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/CloudLiquid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/CloudLiquid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/Filters.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/Filters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/Tags.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/Tags.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

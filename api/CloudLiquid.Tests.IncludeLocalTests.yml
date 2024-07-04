@@ -5,7 +5,9 @@ items:
   id: IncludeLocalTests
   parent: CloudLiquid.Tests
   children:
-  - CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound
+  - CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup
+  - CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate
+  - CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup
   langs:
   - csharp
   - vb
@@ -20,7 +22,7 @@ items:
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
     id: IncludeLocalTests
     path: Tests/IncludeLocalTests.cs
-    startLine: 9
+    startLine: 6
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -37,25 +39,25 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-- uid: CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound
-  commentId: M:CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound
-  id: TestRender_TemplateNotFound
+- uid: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate
+  commentId: M:CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate
+  id: IncludeLocal_InvalidTemplate
   parent: CloudLiquid.Tests.IncludeLocalTests
   langs:
   - csharp
   - vb
-  name: TestRender_TemplateNotFound()
-  nameWithType: IncludeLocalTests.TestRender_TemplateNotFound()
-  fullName: CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound()
+  name: IncludeLocal_InvalidTemplate()
+  nameWithType: IncludeLocalTests.IncludeLocal_InvalidTemplate()
+  fullName: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate()
   type: Method
   source:
     remote:
       path: Tests/IncludeLocalTests.cs
       branch: main
       repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
-    id: TestRender_TemplateNotFound
+    id: IncludeLocal_InvalidTemplate
     path: Tests/IncludeLocalTests.cs
-    startLine: 11
+    startLine: 8
   assemblies:
   - CloudLiquid
   namespace: CloudLiquid.Tests
@@ -63,12 +65,84 @@ items:
     content: >-
       [Fact]
 
-      public void TestRender_TemplateNotFound()
+      public void IncludeLocal_InvalidTemplate()
     content.vb: >-
       <Fact>
 
-      Public Sub TestRender_TemplateNotFound()
-  overload: CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound*
+      Public Sub IncludeLocal_InvalidTemplate()
+  overload: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup
+  commentId: M:CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup
+  id: IncludeLocal_InvalidMarkup
+  parent: CloudLiquid.Tests.IncludeLocalTests
+  langs:
+  - csharp
+  - vb
+  name: IncludeLocal_InvalidMarkup()
+  nameWithType: IncludeLocalTests.IncludeLocal_InvalidMarkup()
+  fullName: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup()
+  type: Method
+  source:
+    remote:
+      path: Tests/IncludeLocalTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: IncludeLocal_InvalidMarkup
+    path: Tests/IncludeLocalTests.cs
+    startLine: 18
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void IncludeLocal_InvalidMarkup()
+    content.vb: >-
+      <Fact>
+
+      Public Sub IncludeLocal_InvalidMarkup()
+  overload: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup
+  commentId: M:CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup
+  id: Initialize_ValidMarkup
+  parent: CloudLiquid.Tests.IncludeLocalTests
+  langs:
+  - csharp
+  - vb
+  name: Initialize_ValidMarkup()
+  nameWithType: IncludeLocalTests.Initialize_ValidMarkup()
+  fullName: CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup()
+  type: Method
+  source:
+    remote:
+      path: Tests/IncludeLocalTests.cs
+      branch: main
+      repo: ssh://git@git-ssh.emeal.nttdata.com:766/ClustersAREASOFEXPER/composable-arquitectures/initiatives/cloud-liquid/cloud-liquid-framework.git
+    id: Initialize_ValidMarkup
+    path: Tests/IncludeLocalTests.cs
+    startLine: 28
+  assemblies:
+  - CloudLiquid
+  namespace: CloudLiquid.Tests
+  syntax:
+    content: >-
+      [Fact]
+
+      public void Initialize_ValidMarkup()
+    content.vb: >-
+      <Fact>
+
+      Public Sub Initialize_ValidMarkup()
+  overload: CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup*
   attributes:
   - type: Xunit.FactAttribute
     ctor: Xunit.FactAttribute.#ctor
@@ -333,9 +407,21 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound*
-  commentId: Overload:CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound
-  href: CloudLiquid.Tests.IncludeLocalTests.html#CloudLiquid_Tests_IncludeLocalTests_TestRender_TemplateNotFound
-  name: TestRender_TemplateNotFound
-  nameWithType: IncludeLocalTests.TestRender_TemplateNotFound
-  fullName: CloudLiquid.Tests.IncludeLocalTests.TestRender_TemplateNotFound
+- uid: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate*
+  commentId: Overload:CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate
+  href: CloudLiquid.Tests.IncludeLocalTests.html#CloudLiquid_Tests_IncludeLocalTests_IncludeLocal_InvalidTemplate
+  name: IncludeLocal_InvalidTemplate
+  nameWithType: IncludeLocalTests.IncludeLocal_InvalidTemplate
+  fullName: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidTemplate
+- uid: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup*
+  commentId: Overload:CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup
+  href: CloudLiquid.Tests.IncludeLocalTests.html#CloudLiquid_Tests_IncludeLocalTests_IncludeLocal_InvalidMarkup
+  name: IncludeLocal_InvalidMarkup
+  nameWithType: IncludeLocalTests.IncludeLocal_InvalidMarkup
+  fullName: CloudLiquid.Tests.IncludeLocalTests.IncludeLocal_InvalidMarkup
+- uid: CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup*
+  commentId: Overload:CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup
+  href: CloudLiquid.Tests.IncludeLocalTests.html#CloudLiquid_Tests_IncludeLocalTests_Initialize_ValidMarkup
+  name: Initialize_ValidMarkup
+  nameWithType: IncludeLocalTests.Initialize_ValidMarkup
+  fullName: CloudLiquid.Tests.IncludeLocalTests.Initialize_ValidMarkup
