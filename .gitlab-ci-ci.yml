@@ -33,6 +33,7 @@ pages:
     - cd ..
     - touch gh-check.txt
     - echo "Finish deploying site to github pages" > gh-check.txt
+  when: manual
   artifacts:
     paths:
       - gh-check.txt
@@ -42,14 +43,13 @@ pages:
 # The Build stage
 build:
   stage: build
+  needs: []
   script:
     - echo "Restoring dependencies..."
     - dotnet restore
     - echo "Building the project..."
     - dotnet build --configuration Release --no-restore
     - echo "Build succeeded."
-  dependencies:
-    - pages
   artifacts:
     paths:
       - bin/Release/
