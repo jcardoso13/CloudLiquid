@@ -106,7 +106,7 @@ analysis:
   script:
     - sonar-scanner -Dsonar.projectKey=$SONAR_PROJECT_KEY
                     -Dsonar.sources=.
-                    -D"sonar.exclusions=**/_site/**, **/public-old/"
+                    -D"sonar.exclusions=_site/**, public-old/**"
                     -Dsonar.host.url=$SONAR_HOST_URL
                     -Dsonar.login=$SONAR_LOGIN
   allow_failure: false
